@@ -1,0 +1,5 @@
+# Turn rewrite engine on
+RewriteEngine on
+RewriteRule ^home index.php [NC,L]
+RewriteRule ^post/([0-9]+) discuss.php?forum=$1 [NC,L]
+
