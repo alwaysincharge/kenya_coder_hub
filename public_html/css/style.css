@@ -24,10 +24,74 @@
     font-family: Inconsolata;
     width: 250px;
 }
+.pagination-head {
+    display: table; margin: 0 auto; padding-bottom: 40px;
+}
 
+.page-sub {
+    background: #ddd; padding: 7px; display: inline; margin-right: 20px; font-family: georgia; font-size: 15px;
+}
+
+.main-page {
+    background: #ddd; color: black; display: inline; padding: 7px; margin-right: 20px; font-family: georgia; font-size: 15px;
+}
+
+.title-username {
+    font-family: georgia; word-wrap: break-word; max-width: 400px; 
+}
+
+.post-username {
+    font-family: Josefin Slab; font-weight: bolder; font-size: 20px; text-decoration: none ! important;
+}
+
+.post-title {
+    color: black; text-decoration: underline; word-wrap: break-word; max-width: 400px; 
+}
+
+.post-body {
+    margin-top: -9px; font-family: georgia; word-wrap: break-word; max-width: 400px; 
+}
+
+.div-width {
+    width: 100%; max-width: 900px; display: table; margin: 0 auto;
+}
 
 .note-1 {
     width: 300px;  font-family: Josefin Slab; font-weight: bolder;
+}
+
+
+.forum-form {
+    margin-top: 20px; width: 100%; max-width: 500px; display: table; margin: 0 auto;
+}
+
+.forum-details {
+    width: 100%; max-width: 500px; font-family: georgia; padding: 12px; border-radius: 5px; border: 2px solid #ddd; margin-bottom: 10px;
+}
+
+.forum-title {
+    height: 40px; width: 100%; max-width: 500px; font-family: georgia; padding: 7px; border-radius: 5px; border: 2px solid #ddd; margin-bottom: 10px; 
+}
+
+.forum-post {
+    margin-bottom: 20px; font-family: georgia;
+}
+
+.forum-logout {
+    font-family: Josefin Slab; font-weight: bold; color: blue; font-size: 17px;
+}
+
+.single-post {
+    width: 100%; max-width: 500px; display: table; margin: 0 auto; margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 10px; 
+}
+
+
+.post-img {
+    height: 65px; width: 65px; border-radius: 5px; margin-left: -14px;
+}
+
+.post-drop {
+    margin-top: -30px;
 }
 
 .body-main { 

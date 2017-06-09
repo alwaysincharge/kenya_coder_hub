@@ -79,11 +79,11 @@ if (isset($_POST['submit']))  {
     
     
   
- check_emptiness($user_input, 'home');
+ check_emptiness($user_input, 'home', 'All fields have to be filled. Please try again.');
     
- check_emptiness($_POST['password'], 'home');
+ check_emptiness($_POST['password'], 'home', 'All fields have to be filled. Please try again.');
     
- check_emptiness($_POST['passwordagain'], 'home');
+ check_emptiness($_POST['passwordagain'], 'home', 'All fields have to be filled. Please try again.');
     
     
     
@@ -107,44 +107,50 @@ if (isset($_POST['submit']))  {
     
     
  are_both_passwords_equal('home');
+    
+    
+        
+ $newuser = $user->does_user_exist($user_input); 
+    
+ $newuser_result = $newuser->get_result();
+    
+    
+    
+    
+    
+    
+    
+ if($newuser_result->num_rows == 0) {
      
- $founduser = $user->does_user_exist($user_input);
-    
-    
- while ($founduser->fetch()) {
-     $user->username;
- }
-    
-    
- $founduser->num_rows;  
-    
-    
-    
-echo "Session ID: " . session_id() . "<br />";    
-    
-    
-    
- if($founduser->num_rows == 0) {
-    
        $user->create_user($user_input, $password_input, $email_input);
-       $last_id = $database->connection->insert_id;
-       after_successful_login();
-       $_SESSION['admin_id'] = $last_id;
-       $mail->send();
-       $mail->ClearAddresses();
-       echo $_SESSION['admin_id'];
      
-  
- } else {
+       $last_id = $database->connection->insert_id;
+     
+       after_successful_login();
+     
+       $_SESSION['admin_id'] = $last_id;
+     
+       $mail->send();
+     
+       $mail->ClearAddresses();
+     
+
+}  else {
     
-     alert_note('The username you entered already exists. Please try again.');
-     redirect_to('home');
- }
+        alert_note('The username you entered already exists. Please try again.');
+     
+        redirect_to('home'); 
+     
+ } 
+    
+    
+    
+    
     
 
-}
+}}
     
-} else  {
+ else  {
     
     alert_note('Please stop trying to hack the site. Thanks a lot.');
      redirect_to('home'); 

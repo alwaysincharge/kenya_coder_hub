@@ -43,9 +43,9 @@ if (isset($_POST['submit']))  {
     
   
     
- check_emptiness($user_input, 'home');
+ check_emptiness($user_input, 'home', 'All fields have to be filled. Please try again.');
     
- check_emptiness($_POST['password'], 'home');
+ check_emptiness($_POST['password'], 'home', 'All fields have to be filled. Please try again.');
     
     
     
@@ -54,53 +54,59 @@ if (isset($_POST['submit']))  {
  check_lenght($user_input, 7, 30);
     
  check_lenght($_POST['password'], 7, 30);    
-    
 
     
-    
      
- $founduser = $user->does_user_exist($user_input);
+ $founduser = $user->does_user_exist($user_input); 
+    
+ $founduser_result = $founduser->get_result();
     
     
     
     
- while ($founduser->fetch()) {
-              
- echo $user->username;
-     
- }
-    
-     
-    
- echo $founduser->num_rows;
     
     
     
- if($founduser->num_rows == 1) {
+ if($founduser_result->num_rows == 1) {
      
      
-     if (password_verify($_POST['password'], $user->password)) { 
+    
+         while($row = $founduser_result->fetch_assoc()) {
+    
+         if (password_verify($_POST['password'], $row['password'])) { 
          
-         $_SESSION['admin_id'] = $user->id;
-         echo $_SESSION['admin_id'];
+         $_SESSION['admin_id'] = $row['id'];
+             
+         after_successful_login();
          
-     }
+         }
      
-     else {
+         else {
          
+         alert_note('Login failed. Please try again with the right credentials.'); 
+             
+         redirect_to('home'); 
+                 
+         }
+     
+         }
+    
+    
+     
+     
+
+}  else {
+    
          alert_note('Login failed. Please try again with the right credentials.');
-         redirect_to('home');
-         
-      }
      
-       
- } else {
-    
-          alert_note('Login failed. Please try again with the right credentials.');
-          redirect_to('home'); 
+         redirect_to('home'); 
+     
  }
     
     
+    
+    
+  
     
 
 }

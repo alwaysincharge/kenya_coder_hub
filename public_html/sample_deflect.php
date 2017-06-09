@@ -15,9 +15,13 @@ if(request_is_post()) {
     
       redirect_to("home");      
        
-}  }   else  {
+}  
+
+
+
+}   else  {
     
-      alert_note('Please stop trying to hack the site. Thanks a lot. ');
+      alert_note('Please stop trying to hack the site. Thanks a lot.');
       redirect_to('home'); 
 }    
 

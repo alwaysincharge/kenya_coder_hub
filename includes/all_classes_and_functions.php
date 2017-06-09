@@ -6,3 +6,5 @@
 
 <?php include_once('user_class.php'); ?>
 
+<?php include_once('post_class.php'); ?>
+

@@ -1,6 +1,9 @@
 <?php
 
 
+
+
+
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -46,9 +49,9 @@ function does_it_contain($param, $value1, $value2, $value3)  {
 
 
 
-function check_emptiness($property, $url) {    
+function check_emptiness($property, $url, $msg) {    
    if(trim($property) === '') {
-   alert_note('You cannot leave any fields empty. Please try again.');
+   alert_note($msg);
    redirect_to($url) ;
  }    
 }
@@ -58,6 +61,15 @@ function check_emptiness($property, $url) {
 function check_lenght($property, $min, $max) {
     if ((strlen($property) < $min) || (strlen($property) > $max)) {
          alert_note('Usernames, email or passwords cannot be smaller than ' . $min . ' characters or bigger than ' . $max . '. Please try again.');
+      redirect_to('home');
+    }   
+}
+
+
+
+function check_lenght_2($property, $min, $max, $msg) {
+    if ((strlen($property) < $min) || (strlen($property) > $max)) {
+         alert_note($msg);
       redirect_to('home');
     }   
 }
