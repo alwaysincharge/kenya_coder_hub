@@ -206,6 +206,10 @@ width: 70%; float: right; margin-top: 20px;
     clear: both;
 }
 
+.skill-style {
+    font-family: Josefin Slab; font-size: 20px; font-weight: bold; background: #ddd; border-radius: 5px; padding: 8px; cursor: default;
+}
+
 .hide-text {
     font: 0/0 a;
     color: transparent;
@@ -213,6 +217,23 @@ width: 70%; float: right; margin-top: 20px;
     background-color: transparent;
     border: 0;
 }
+
+.div-div {
+    margin-bottom: 40px;
+}
+
+.tab-1 {
+     font-family: Josefin Slab; font-size: 20px; font-weight: bold; word-wrap: break-word; max-width: 400px;
+}
+
+.tab-2 {
+    font-family: Josefin Slab; font-size: 17px; font-weight: bold; word-wrap: break-word; max-width: 400px;
+}
+
+.story-style {
+    padding: 5px; font-family: Josefin Slab; font-size: 17px; font-weight: bold; word-wrap: break-word; max-width: 400px; margin-top: 20px;  margin-bottom: 30px;
+}
+
 
 .input-block-level {
     display: block;

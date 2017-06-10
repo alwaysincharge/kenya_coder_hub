@@ -75,6 +75,26 @@ class User {
     
     
     
+         public function display_all_user_details_by_user($user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("select * from users where username = ?");
+        
+         $stmt->bind_param("s", $username);
+
+         // set parameters and execute
+        
+         $username = $user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
     
     
     

@@ -130,7 +130,7 @@
                     
                 <p class="title-username">
                         
-                <span class="post-username"><a href=""><?php echo $row['username'];  ?></a></span>
+                <span class="post-username"><a href="/fridaycamp/public_html/user/<?php echo $row['username']; ?>"><?php echo $row['username'];  ?></a></span>
                         
                 <a href='post/<?php echo $row['id']; ?>' class="post-title"> <?php echo substr($row['title'], 0, 80); if (strlen($row['title']) > 70) {echo "...";}  ?></a>
                     

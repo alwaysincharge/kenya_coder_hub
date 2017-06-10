@@ -90,6 +90,26 @@ class Post {
          }
     
     
+    
+    
+         public function get_users_post($user_post) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT forum.title, forum.id as forumid, forum.body, forum.code, forum.owner, users.img_path, users.username, users.id as usersid FROM forum
+         INNER JOIN users ON users.id = forum.owner where users.username = ? order by forum.id desc LIMIT 10 ");
+             
+         $stmt->bind_param("s", $username);
+             
+         $username = $user_post;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
       
     
 }
