@@ -71,6 +71,25 @@ class Post {
          }
     
     
+    
+         public function get_this_post($id_of_post) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT forum.title, forum.id as forumid, forum.body, forum.code, forum.owner, users.img_path, users.username, users.id as usersid FROM forum
+         INNER JOIN users ON users.id = forum.owner where forum.id = ? LIMIT 1");
+             
+         $stmt->bind_param("i", $id);
+             
+         $id = $id_of_post;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
       
     
 }

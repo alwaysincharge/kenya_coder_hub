@@ -11,8 +11,7 @@
     
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     
-    <link href="css/style.css" media="screen,projection" rel="stylesheet" type="text/css">
-	<link href="css/style.css" media="screen,projection" rel="stylesheet" type="text/css">
+    <link href="/fridaycamp/public_html/css/style.css" media="screen,projection" rel="stylesheet" type="text/css">
 	<link href="css/custom.css" media="screen,projection" rel="stylesheet" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Raleway:400,800' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">

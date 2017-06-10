@@ -8,3 +8,7 @@
 
 <?php include_once('post_class.php'); ?>
 
+<?php include_once('comment_class.php'); ?>
+
+<?php include_once('reply_class.php'); ?>
+

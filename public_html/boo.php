@@ -37,7 +37,12 @@ if($numRows > 0) {
 }
 */
 
+// user enters 5 integers and the program will store 
+// them into an array and will display the sum of them 
 
+
+
+// 
     
 
     

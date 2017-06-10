@@ -40,6 +40,82 @@
     font-family: georgia; word-wrap: break-word; max-width: 400px; 
 }
 
+.post-image-1 {
+    height: 65px; width: 65px; border-radius: 5px; margin-left: 55px;
+}
+
+.name-box {
+    font-family: Josefin Slab; font-weight: bolder; font-size: 20px; word-wrap: break-word;
+}
+
+.whole-box {
+    width: 100%; max-width: 900px; display: table; margin: 0 auto; height: 1000px;
+}
+
+.posting-box {
+    width: 100%; margin-bottom: 30px;
+}
+
+.body-box {
+    margin-top: 7px; font-family: georgia; word-wrap: break-word; 
+}
+
+
+.code-box {
+    margin-top: 7px; background: #eff0f1; padding: 10px; font-family: Inconsolata; word-wrap: break-word;
+}
+
+.reply-box {
+width: 70%; float: right; margin-top: 20px;
+}
+
+.comment-box {
+    width: 80%; float: right;
+}
+
+.form-box {
+    max-width: 500px; display: table; margin: 0 auto;
+}
+
+.head-of-form {
+    font-family: Josefin Slab; font-weight: bolder; font-size: 20px; display: table; margin: 0 auto; margin-top: 30px; margin-bottom: 30;
+}
+
+
+.input-1 {
+    border: 2px solid #ddd; border-radius: 5px; font-family: georgia; height: 40px; padding: 5px; width: 100%; resize: none; margin-bottom: 30px;
+}
+
+.input-2 {
+    border: 2px solid #ddd; border-radius: 5px; font-family: georgia; height: 40px; padding: 5px; height: 100px; width: 100%; resize: none; margin-bottom: 30px;
+}
+
+.form-call {
+    font-family: georgia; cursor: pointer;
+        
+}
+
+
+.form-heading-1 {
+    display: table; margin: 0 auto; font-family: georgia; font-size: 15px; margin-top: 30px; margin-bottom: 30px;
+}
+
+.username-post {
+    font-weight: bolder; word-wrap: break-word; font-family: Josefin Slab; font-size: 18px;
+}
+.comment-image-1 {
+    height: 65px; width: 65px; border-radius: 5px; margin-left: 15px;
+}
+
+
+.reply-image-1 {
+    height: 65px; width: 65px; border-radius: 5px; margin-left: 5px;
+}
+
+.choose-page {
+    margin-left: -5px; width: 80px; font-family: georgia; padding: 10px; border-radius: 5px; margin-right: 10px; background: #ddd; margin-top: 30px;
+}
+
 .post-username {
     font-family: Josefin Slab; font-weight: bolder; font-size: 20px; text-decoration: none ! important;
 }

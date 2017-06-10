@@ -24,7 +24,7 @@
  <div class="row div-width">
      
      
-     <div class="col-md-9" style="background: red;">
+     <div class="col-md-9">
          
                      
                <form method='post' action="new_post.php"  class='forum-form'>
@@ -132,12 +132,12 @@
                         
                 <span class="post-username"><a href=""><?php echo $row['username'];  ?></a></span>
                         
-                <a href='' class="post-title"> <?php echo substr($row['title'], 0, 80); if (strlen($row['title']) > 70) {echo "...";}  ?></a>
+                <a href='post/<?php echo $row['id']; ?>' class="post-title"> <?php echo substr($row['title'], 0, 80); if (strlen($row['title']) > 70) {echo "...";}  ?></a>
                     
                 </p>
                     
                     
-                <p class="post-body">  <a href='' style="color: black;"><?php echo substr($row['body'], 0, 300); if (strlen($row['body']) > 260) {echo "...";}  ?></a> </p>
+                <p class="post-body">  <a href='post/<?php echo $row['id']; ?>' style="color: black;"><?php echo substr($row['body'], 0, 300); if (strlen($row['body']) > 260) {echo "...";}  ?></a> </p>
                     
                                         
                  
@@ -236,7 +236,28 @@
      
      
      
-     <div class="col-md-3" style="background: yellow;">
+     <div class="col-md-3" style="padding-bottom: 40px;">
+         
+          <form class="search1" method="get" action="resulting.php">
+                  
+              <input maxlength="100" name="keywords" style="border-radius: 5px; border: 2px solid #ddd;  padding-left: 15px; padding-top: 5px; padding-bottom: 5px; font-family: Inconsolata;
+    width: 200px; margin-left: 10px;" placeholder="Search posts" />
+        
+              <input style="display: none;" type="submit" name="submit" value="submit" />
+                  
+              </form>
+           
+               
+               <div>
+               
+               <br>
+              <a href="forum.php"><p class="choose-page">All Posts</p></a>
+               
+               <br>
+               
+               <a href="forumpop.php" class="choose-page">Top Posts</a>
+               
+               </div>
      
      
      </div>
