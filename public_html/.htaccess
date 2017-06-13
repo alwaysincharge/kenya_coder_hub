@@ -12,3 +12,5 @@ RewriteRule ^post/([0-9]+) post.php?forum=$1 [NC,L]
 
 RewriteRule ^user/([a-z,A-Z,0-9]+) user.php?person=$1 [NC,L]
 
+RewriteRule ^message/conversation/([0-9]+) messages.php?usersid=$1 [NC,L]
+

@@ -1,9 +1,16 @@
 
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
+
+
+
+
 <?php
 
 
+after_successful_logout();
+
+/*
  $fools = $user->does_user_exist('foolswater');
     
  $result = $fools->get_result();

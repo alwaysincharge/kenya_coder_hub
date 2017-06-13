@@ -65,12 +65,27 @@
                    
                 <div class="col-xs-6">
                     
-                    <p style="margin-top: 40px; font-family: Josefin Slab; font-weight: bolder; font-size: 20px;  word-wrap: break-word; max-width: 400px;"><?php echo $details['fullname'];   ?></p>
+                    <p class="fullname-user"><?php echo $details['fullname'];   ?></p>
                     
-                    <p style="font-family: Josefin Slab; font-weight: bolder; font-size: 20px;"><?php echo $details['username'];   ?></p>
+                    <p class="username-user"><?php echo $details['username'];   ?></p>
+                    
+                    <p class="email-user"><?php echo $details['email'];   ?></p>
                     
                     
-                    <p style="font-family: Josefin Slab; font-weight: bolder; font-size: 17px; word-wrap: break-word; max-width: 400px;"><?php echo $details['email'];   ?></p>
+                      <?php if ($details['id'] == $_SESSION['admin_id']) { ?>
+                   
+                     <button name="submit" class="btn" style="font-family: georgia;"><a>Edit Profile</a></button>   
+                       
+                     <?php }  ?>
+                    
+                    
+                    
+                      <?php if ($details['id'] != $_SESSION['admin_id']) { ?>
+                   
+                     <button name="submit" class="btn" style="font-family: georgia;"><a>Send Message</a></button>   
+                       
+                     <?php }  ?>
+                     
                     
                 </div>
                        
@@ -81,36 +96,103 @@
                
                
                
-              <p class="story-style"><?php echo $details['story'];   ?></p>
+              <p class="story-style" style="<?php if ($details['story'] != '') { echo "margin-top: 20px;";} ?>"><?php echo $details['story'];   ?></p>
                
                
                
-              <div class="row" style="margin-bottom: 30px;">
                
-              <div class="col-xs-6">
+               
+               
+              <?php if ($details['skill1'] != '') { ?>
                    
-                   <p class="skill-style"><?php echo $details['skill1'];   ?></p>
+              <p class="head-subject">Skills</p>   
+                       
+              <?php }  ?>
+               
+               
+              
+               
+              <div class="row">
+                
+               
+              <div class="col-xs-6" style="<?php if ($details['skill1'] != '') { echo "margin-bottom: 30px;";} ?>">
+                  
+                  
                    
-                   <p class="skill-style"><?php echo $details['skill3'];   ?></p>
+              <?php if ($details['skill1'] != '') { ?>
                    
-                   <p class="skill-style"><?php echo $details['skill5'];   ?></p>
+              <p class="skill-style"><?php echo $details['skill1'];   ?></p> 
+                       
+              <?php }  ?>
+                  
+                  
+                  
+                  
+              <?php if ($details['skill3'] != '') { ?>
                    
-                   <p class="skill-style"><?php echo $details['skill7'];   ?></p>
+              <p class="skill-style"><?php echo $details['skill3'];   ?></p> 
+                       
+              <?php }  ?>
+                  
+                  
+                  
+                  
+              <?php if ($details['skill5'] != '') { ?>
+                   
+              <p class="skill-style"><?php echo $details['skill5'];   ?></p> 
+                       
+              <?php }  ?>
+                  
+                  
+                  
+              <?php if ($details['skill7'] != '') { ?>
+                   
+              <p class="skill-style"><?php echo $details['skill7'];   ?></p> 
+                       
+              <?php }  ?>
+                  
+                  
+
                    
                </div>
                
                
                
                
-               <div class="col-xs-6">
+              <div class="col-xs-6" style="<?php if ($details['skill2'] != '') { echo "margin-bottom: 30px;";} ?>">
                    
-                   <p class="skill-style"><?php echo $details['skill2'];   ?></p>
+
+              <?php if ($details['skill2'] != '') { ?>
                    
-                   <p class="skill-style"><?php echo $details['skill4'];   ?></p>
+              <p class="skill-style"><?php echo $details['skill2'];   ?></p> 
+                       
+              <?php }  ?>
                    
-                   <p class="skill-style"><?php echo $details['skill6'];   ?></p>
                    
-                   <p class="skill-style"><?php echo $details['skill8'];   ?></p>
+                   
+              <?php if ($details['skill4'] != '') { ?>
+                   
+              <p class="skill-style"><?php echo $details['skill4'];   ?></p> 
+                       
+              <?php }  ?>
+                   
+                   
+                   
+              <?php if ($details['skill6'] != '') { ?>
+                   
+              <p class="skill-style"><?php echo $details['skill6'];   ?></p> 
+                       
+              <?php }  ?>
+                   
+                   
+                   
+              <?php if ($details['skill8'] != '') { ?>
+                   
+              <p class="skill-style"><?php echo $details['skill8'];   ?></p> 
+                       
+              <?php }  ?>
+                   
+                   
                    
                </div>
                
@@ -119,6 +201,14 @@
 
                
                
+               
+               
+               
+              <?php if ($details['project1'] != '') { ?>
+                   
+              <p class="head-subject">Projects</p>   
+                       
+              <?php }  ?>
   
                <div class="div-div">
                <p class="tab-1"><?php echo $details['project1'];   ?></p>
@@ -157,7 +247,11 @@
 
                
                
-               
+              <?php if ($details['school1'] != '') { ?>
+                   
+              <p class="head-subject">Education</p>   
+                       
+              <?php }  ?>
                
                
                
@@ -229,16 +323,12 @@
                     
                 <div class="col-xs-2" style="">   
                     
-                    <div class="dropdown">
+                    <div>
                     
                         <img class="post-img"  src='/fridaycamp/public_html/<?php echo $row['img_path'];  ?>' />
+                
+                    </div> 
                     
-                        <div class='dropdown-content post-drop'>
-                   
-                        </div>
-                        
-                    </div>
-                       
                 </div>
                     
                     

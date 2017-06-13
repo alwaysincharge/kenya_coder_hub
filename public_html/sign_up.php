@@ -41,9 +41,7 @@ $mail->isHTML(true);
 
 
 if(request_is_post()) {
-if(csrf_token_is_valid()) {  
-if(request_is_same_domain()) {
-if(is_session_valid())    {
+
     
     
 if (isset($_POST['submit']))  {
@@ -126,8 +124,6 @@ if (isset($_POST['submit']))  {
      
        $last_id = $database->connection->insert_id;
      
-       after_successful_login();
-     
        $_SESSION['admin_id'] = $last_id;
      
        $mail->send();
@@ -156,26 +152,6 @@ if (isset($_POST['submit']))  {
      redirect_to('home'); 
 }    
 
-}
-    else  {
-    
-    alert_note('Please stop trying to hack the site. Thanks a lot.');
-     redirect_to('home'); 
-}
-    
-}
 
- else  {
-    
-    alert_note('Please stop trying to hack the site. Thanks a lot.');
-     redirect_to('home'); 
-}
-    }
-
- else  {
-    
-    alert_note('Please stop trying to hack the site. Thanks a lot.');
-     redirect_to('home'); 
-}
 
 ?>

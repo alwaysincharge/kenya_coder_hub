@@ -210,12 +210,49 @@ width: 70%; float: right; margin-top: 20px;
     font-family: Josefin Slab; font-size: 20px; font-weight: bold; background: #ddd; border-radius: 5px; padding: 8px; cursor: default;
 }
 
+.img-right {
+    border-radius: 5px; float: right; margin-right: -20px;
+}
+
+
+.img-left {
+    border-radius: 5px; float: left; margin-left: -20px;
+}
+
 .hide-text {
     font: 0/0 a;
     color: transparent;
     text-shadow: none;
     background-color: transparent;
     border: 0;
+}
+
+.mess-insert {
+ font-family: Josefin Slab; padding: 12px; border-radius: 5px; border: 2px solid #ddd; font-size: 20px; width: 100%;
+}
+
+.mess-send {
+    margin-bottom: 20px; font-family: Josefin Slab;
+}
+
+.mess-body {
+    font-family: Josefin Slab; font-weight: bolder; font-size: 17px; padding: 12px; border-radius: 5px; border: 2px solid #ddd;
+}
+
+.email-user {
+    font-family: Josefin Slab; font-weight: bolder; font-size: 17px; word-wrap: break-word; max-width: 400px;
+}
+
+.username-user {
+    font-family: Josefin Slab; font-weight: bolder; font-size: 20px;
+}
+
+.fullname-user {
+    font-family: Josefin Slab; font-weight: bolder; font-size: 20px;  word-wrap: break-word; max-width: 400px;
+}
+
+.head-subject {
+    font-family: Josefin Slab; font-weight: bolder; font-size: 24px; word-wrap: break-word; max-width: 400px; text-decoration: underline; margin-top: 20px;
 }
 
 .div-div {
@@ -231,7 +268,7 @@ width: 70%; float: right; margin-top: 20px;
 }
 
 .story-style {
-    padding: 5px; font-family: Josefin Slab; font-size: 17px; font-weight: bold; word-wrap: break-word; max-width: 400px; margin-top: 20px;  margin-bottom: 30px;
+    padding: 5px; font-family: Josefin Slab; font-size: 17px; font-weight: bold; word-wrap: break-word; max-width: 400px; 
 }
 
 

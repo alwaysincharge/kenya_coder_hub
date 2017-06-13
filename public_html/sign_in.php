@@ -11,9 +11,7 @@ $user_input = '';
 
 
 if(request_is_post()) {
-if(csrf_token_is_valid_2()) {  
-if(request_is_same_domain()) {
-if(is_session_valid()) {
+
     
     
     
@@ -77,7 +75,7 @@ if (isset($_POST['submit']))  {
          
          $_SESSION['admin_id'] = $row['id'];
              
-         after_successful_login();
+         
          
          }
      
@@ -113,30 +111,10 @@ if (isset($_POST['submit']))  {
     
 } else  {
     
-     alert_note('Please stop trying to hack the site. Thanks a lot. ');
+     alert_note('Please stop trying to hack the site. Thanks a lot.');
      redirect_to('home'); 
 }    
 
-}
- else  {
-    
-     alert_note('Please stop trying to hack the site. Thanks a lot. ');
-     redirect_to('home'); 
-}
-    
-}
 
- else  {
-    
-     alert_note('Please stop trying to hack the site. Thanks a lot. ');
-     redirect_to('home'); 
-}
-    }
-
- else  {
-    
-     alert_note('Please stop trying to hack the site. Thanks a lot. ');
-     redirect_to('home'); 
-}
 
 ?>

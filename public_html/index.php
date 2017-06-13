@@ -50,8 +50,6 @@
                  
                     <form method="post" action="sign_in.php" enctype="multipart/form-data">
                          
-                       
-                    <?php echo csrf_token_tag_2(); ?>  
                         
                     <input placeholder="username" type="text" name="username" class="form2">
                 
@@ -169,7 +167,7 @@
                     
                 </div>
                 
-                <?php echo csrf_token_tag(); ?>
+                
                 <br><br><br>
                 
                 </form>

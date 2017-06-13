@@ -42,7 +42,7 @@
                
                      </div> 
                        
-                     <?php echo csrf_token_tag(); ?>
+                     
                    
                      <div class="selection" style="display: none;">
                    
