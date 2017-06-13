@@ -25,6 +25,9 @@
 <body>
     
     
+     <?php  include("nav.php"); ?>
+    
+    
 <div class="row" style="width: 100%; max-width: 900px; display: table; margin: 0 auto;">
     
     
@@ -102,9 +105,9 @@
                     
                     
                     
-                <p style="font-family: georgia; padding-right: 5px; color: black; margin-top: -10px; word-wrap: break-word; max-width: 180px;"> 
+                <p style="font-family: Josefin Slab; font-weight: bolder; padding-right: 5px; color: black; margin-top: -10px; word-wrap: break-word; max-width: 180px; font-size: 17px;"> 
                          
-                <?php if ($row2['sender'] == $_SESSION['admin_id']) {echo "<i class='fa fa-check' aria-hidden='true'></i><i class='fa fa-check' aria-hidden='true'></i>";} ?>
+                <?php if ($row2['sender'] == $_SESSION['admin_id']) {echo "<i class='fa fa-check' aria-hidden='true'></i>";} ?>
                 <?php echo substr(nl2br($row2['message']), 0, 260); if (strlen($row2['message']) > 260) {echo "...";} ?></p> 
                     
                  </div> 

@@ -23,6 +23,9 @@
 	<body>
         
         
+        <?php  include("nav.php"); ?>
+        
+        
         
         <div style="position: fixed; right: 30px; z-index: 2;">
             
@@ -66,7 +69,7 @@
 			<div class="row posting-box">
 				<div class="col-xs-2" style="">
 					<div class="dropdown">
-						<img class="post-image-1" src=''>
+						<img class="post-image-1" src='/fridaycamp/public_html/male.png'>
 					</div>
 				</div>
 

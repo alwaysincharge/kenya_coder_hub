@@ -25,13 +25,16 @@
     
     
     
-<body class="body-main">
+<body>
 
-
-
+<?php  include("nav.php"); ?>
 
 
 <div style="background: white; min-height: 900px;">
+    
+    
+    
+
                 
        <div class="row" style="background: white; padding-top: 40px; width: 100%; max-width: 900px; display: table; margin: 0 auto; padding: 20px;">   
         

@@ -9,7 +9,9 @@
     padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: Inconsolata;
+    font-family: Josefin Slab;
+    font-weight: bolder;
+    font-size: 20px;
     width: 250px;
 }
 
@@ -21,8 +23,8 @@
     padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: Inconsolata;
     width: 250px;
+    font-family: Josefin Slab;
 }
 .pagination-head {
     display: table; margin: 0 auto; padding-bottom: 40px;
@@ -113,7 +115,7 @@ width: 70%; float: right; margin-top: 20px;
 }
 
 .choose-page {
-    margin-left: -5px; width: 80px; font-family: georgia; padding: 10px; border-radius: 5px; margin-right: 10px; background: #ddd; margin-top: 30px;
+    margin-left: -5px; width: 80px; font-family: Josefin Slab; font-weight: bolder; padding: 10px; border-radius: 5px; margin-right: 10px; background: #ddd; margin-top: 30px;
 }
 
 .post-username {
@@ -142,11 +144,11 @@ width: 70%; float: right; margin-top: 20px;
 }
 
 .forum-details {
-    width: 100%; max-width: 500px; font-family: georgia; padding: 12px; border-radius: 5px; border: 2px solid #ddd; margin-bottom: 10px;
+    width: 100%; max-width: 500px;  font-family: Josefin Slab; font-weight: bolder; font-size: 20px; padding: 12px; border-radius: 5px; border: 2px solid #ddd; margin-bottom: 10px;
 }
 
 .forum-title {
-    height: 40px; width: 100%; max-width: 500px; font-family: georgia; padding: 7px; border-radius: 5px; border: 2px solid #ddd; margin-bottom: 10px; 
+    height: 40px; width: 100%; max-width: 500px;  font-family: Josefin Slab; font-weight: bolder; font-size: 20px; padding: 7px; border-radius: 5px; border: 2px solid #ddd; margin-bottom: 10px; 
 }
 
 .forum-post {
@@ -228,7 +230,7 @@ width: 70%; float: right; margin-top: 20px;
 }
 
 .mess-insert {
- font-family: Josefin Slab; padding: 12px; border-radius: 5px; border: 2px solid #ddd; font-size: 20px; width: 100%;
+ font-family: Josefin Slab; padding: 12px; border-radius: 5px; border: 2px solid #ddd; font-size: 20px; width: 100%; font-weight: bolder;
 }
 
 .mess-send {

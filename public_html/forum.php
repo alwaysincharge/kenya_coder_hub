@@ -21,6 +21,10 @@
     
 <body>
     
+    
+ <?php  include("nav.php"); ?>
+    
+    
  <div class="row div-width">
      
      
@@ -240,7 +244,7 @@
          
           <form class="search1" method="get" action="resulting.php">
                   
-              <input maxlength="100" name="keywords" style="border-radius: 5px; border: 2px solid #ddd;  padding-left: 15px; padding-top: 5px; padding-bottom: 5px; font-family: Inconsolata;
+              <input maxlength="100" name="keywords" style="border-radius: 5px; border: 2px solid #ddd;  padding-left: 15px; padding-top: 5px; padding-bottom: 5px; font-family: Josefin Slab; font-weight: bolder; font-size: 16px; 
     width: 200px; margin-left: 10px;" placeholder="Search posts" />
         
               <input style="display: none;" type="submit" name="submit" value="submit" />
