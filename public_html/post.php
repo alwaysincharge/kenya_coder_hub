@@ -89,7 +89,7 @@
 					<div class="selection" style="display: none;">
 						<br>
 
-						<form action="new_comment.php" method='post'>
+						<form action="/fridaycamp/public_html/new_comment.php" method='post'>
 							<textarea class="toggle forum-details" maxlength="500" name="body" placeholder='Comment'></textarea> 
 
 							<textarea class="toggle forum-details" maxlength="500" name="code" placeholder='Paste related code here.'></textarea><br>

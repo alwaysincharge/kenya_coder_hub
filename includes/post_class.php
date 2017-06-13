@@ -50,6 +50,42 @@ class Post {
          }
     
     
+         public function all_popular_posts() {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT forum.title, forum.id, forum.body, forum.code, forum.owner, users.img_path, users.username, comment.postid FROM forum
+         INNER JOIN users ON users.id = forum.owner INNER JOIN comment ON comment.postid = forum.id order by forum.id DESC");
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+        
+         public function all_popular_posts_pagination($first_result_input, $results_per_page_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT forum.title, forum.id, forum.body, forum.code, forum.owner, users.img_path, users.username, comment.postid FROM forum
+         INNER JOIN users ON users.id = forum.owner INNER JOIN comment ON comment.postid = forum.id order by forum.id DESC LIMIT ?, ?");
+             
+         $stmt->bind_param("ii", $first_result, $results_per_page);
+             
+         $first_result = $first_result_input;
+             
+         $results_per_page = $results_per_page_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
     
          public function posts_paginated($first_result_input, $results_per_page_input) {
          

@@ -340,14 +340,14 @@
                     
                 <p class="title-username">
                         
-                <span class="post-username"><a href="/fridaycamp/public_html/user.php?person=<?php echo $row['username']; ?>"><?php echo $row['username'];  ?></a></span>
+                <span class="post-username"><a><?php echo $row['username'];  ?></a></span>
                         
-                <a href='post/<?php echo $row['id']; ?>' class="post-title"> <?php echo substr($row['title'], 0, 80); if (strlen($row['title']) > 70) {echo "...";}  ?></a>
+                <a href='../post/<?php echo $row['forumid']; ?>' class="post-title"> <?php echo substr($row['title'], 0, 80); if (strlen($row['title']) > 70) {echo "...";}  ?></a>
                     
                 </p>
                     
                     
-                <p class="post-body">  <a href='post/<?php echo $row['id']; ?>' style="color: black;"><?php echo substr($row['body'], 0, 300); if (strlen($row['body']) > 260) {echo "...";}  ?></a> </p>
+                <p class="post-body">  <a href='../post/<?php echo $row['forumid']; ?>' style="color: black;"><?php echo substr($row['body'], 0, 300); if (strlen($row['body']) > 260) {echo "...";}  ?></a> </p>
                     
                                         
                  

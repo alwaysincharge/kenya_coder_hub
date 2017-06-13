@@ -18,7 +18,7 @@
         
                 <a href="/jjj/forum"><img src="/fridaycamp/public_html/assets/campfire.svg" height="40"></a>
                 
-                <a href="/jjj/forum" style="font-family: Josefin Slab; color: blue; margin-left: 20px; font-weight: bolder; font-size: 22px;">Friday Camp</a>
+                <a href="/fridaycamp/public_html/home" style="font-family: Josefin Slab; color: blue; margin-left: 20px; font-weight: bolder; font-size: 22px;">Friday Camp</a>
                 
                 
 
@@ -32,7 +32,7 @@
                 
     
                 
-                 <a href="/jjj/forum.php" class="text-1"><img src="/fridaycamp/public_html/assets/house.svg" height="30"></a>
+                 <a href="/fridaycamp/public_html/home" class="text-1"><img src="/fridaycamp/public_html/assets/house.svg" height="30"></a>
 
                  <a class="text-1" href="mess.php"><img src="/fridaycamp/public_html/assets/mail.svg" height="30"></a>
                 

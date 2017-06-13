@@ -57,6 +57,10 @@ if (isset($_POST['submit']))  {
         
  $post->create_post($title_input, $body_input, $code_input, $owner_input); 
     
+ $last_id = $database->connection->insert_id;
+    
+ redirect_to('post/' . $last_id);
+    
  
     
     

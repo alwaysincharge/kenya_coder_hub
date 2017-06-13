@@ -1,8 +1,6 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
-
-
-<!DOCTYPE html>
+<?php if(!isset($_GET['state'])) {$_GET['state'] = '';} ?>
 
 
 
@@ -20,302 +18,439 @@
     
 </head>
     
- 
     
     
     
-<body class="body-main">
-        
-                
-
-        
-        
-        <nav style="width: 70%; max-width: 900px; margin: 0 auto; padding-top: 20px;"><br>
-            
-            
-               <img src="assets/logo.svg" height="40">
-
-               <a class="text-1">Tsutsus</a>
-            
-               <a class="text-1">Forum</a>
-            
-               <div class="dropdown">
     
-                    <a class="text-1" style="font-weight: bolder; text-decoration: underline;">Login Here</a>
+<body>
+    
+    
+ <?php  include("nav.php"); ?>
+    
+    
+ <div class="row div-width">
+     
+     <p style="display: table; margin: 0 auto; font-family: Josefin Slab; font-weight: bolder; font-size: 30px; margin-top: -20px; margin-bottom: 40px;">Connect with the top Programmers in Kenya.</p>
+     
+     
+     <div class="col-md-9">
+         
+                     
+               <form method='post' action="new_post.php"  class='forum-form'>
             
-                    <div class="dropdown-content">
-                
-                    <p class="smalltext6">Fill the form to sign in.</p>
+                     <textarea maxlength="500" placeholder='Do you have a question, job or story to share?' name="body" class="toggle forum-details"></textarea>
+                   
+                     <div class="selection" style="display: none;">
+                       
+                     <textarea maxlength="500" placeholder='Paste related code here.' name="code" class="toggle forum-details"></textarea>
                     
-                 
-                    <form method="post" action="sign_in.php" enctype="multipart/form-data">
-                         
-                        
-                    <input placeholder="username" type="text" name="username" class="form2">
-                
-                    <input placeholder="password" type="password" name="password" class="form2">
-            
-                    <button class="form2" type="submit" name="submit" value="submit">Log into Doc 95</button>
-                        
-                 
-                    
-                    </form>   
-
-                    </div>
-            
-            
-                </div>
-              
-        </nav>
-        
-    
-        
-        
-        
-        
-        
-        
-        
-        <div style="display: table; margin: 0 auto;">
-            
-        
-        <?php  
-    
-        if (isset($_SESSION['note1'])) {
-        echo $_SESSION['note1'];  
-            $_SESSION['note1'] = null;
-        }   else {
-            $_SESSION['note1'] = null;
-        }
-        ?>
-            
-            
-        </div>
-
-        
-        
-        
-        
-        
-        
-        
-        <div style="width: 70%; max-width: 900px; margin: 0 auto;">
-            
-            
-        <br><br><br>
-        <div class="row" style="width: 100%; max-with: 900px;">
-            
-            
-            
-            <div class="col-xs-5">
-                
-                 <p class="bigtext1">Kenya's whole tech community,</p>
-                
-                 <p class="bigtext1">all on one website.</p>
-                
-                 <br>
-                
-                 <h5 class="bigtext2">Create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.</h5>
-                
-                 <br><br>
-                
-            </div>
-            
-            
-            
-            
-            
-            <div class="col-xs-2">
-                
-                 
-            </div>
-            
-            
-            
-            
-            
-            <div class="col-xs-5">
-                
-                
-                
-                <form method="post" action="sign_up.php" enctype="multipart/form-data">
-                          
-                <h5 class="smalltext1">You should join us. Sign Up below.</h5>
+                               
+                     <textarea maxlength="500" placeholder="Title of your post." name="title" class="forum-title"></textarea> <br>
                
-                
-                <input placeholder="username" type="text" class="form1" name="username" value="<?php if (isset($_POST['username'])) { echo $_POST['username'];}  ?>">
-                
-                <input placeholder="password" type="password" class="form1" name="password">
-                
-                <input placeholder="confirm password" type="password" class="form1" name="passwordagain">
-                    
-                <input placeholder="e-mail" type="email" class="form1" name="email">
-                
-                    
-                
-                <div class="toggle">
-                    
-                <button class="form1" type="submit" name="submit" style="margin-bottom: 10px;">Sign Up for Doc 95</button>   
-                    
-                </div>
-
-                    
-                    
-                <div class="selection" style="display: none;">
-                    
-                <p class='creating'>Creating profile...</p>
-                    
-                </div>
-                
-                
-                <br><br><br>
-                
+                     <button name="submit" class="forum-post btn">Post</button>
+               
+                     </div> 
+                       
+                     
+                   
+                     <div class="selection" style="display: none;">
+                   
+                     <a href="index.php"><p class="forum-logout">You need to sign-in to write a post.</p>
+                         
+                     </a>
+                   
+                     </div>
+   
                 </form>
-
-        
-            </div>
-                  
-            
-        </div>
+         
+         
+         
+         
+         
+         
+         
+                
+               
+                    
+                    
+              
+         
+                <?php if ((isset($_GET['state'])) &&   ($_GET['state'] == 'all')) { ?>
+                    
+                <?php
+         
            
-        <br>
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-     <div style="background: white;"> 
+               $results_per_page = 3;
          
          
          
-         <div class="row" style="width: 80%; margin: 0 auto; ">
-             
-             
-             
-             
+               if (!isset($_GET['page'])) {
+                   
+               $page = 1;
+                   
+               } else {
+                   
+               $page = $_GET['page'];
+                   
+               }
          
-             <div class="col-md-4">
-                 
-                 <div class="profile1">
-                 
-                    <img src="assets/pic1.jpg" class="profile-pic">
-             
-                    <p class="profile-name">James Villini</p>
-                     
-                    <p class="profile-info">I am a mean stack evangelist and avid coffee connoisseur.</p>
-                     
-                    <br>
-                     
-                     <a href="sample_deflect.php"><button class="formx">View Profile</button></a> <br>
-                
-                     <a href="sample_deflect.php"><button class="formx">Send Message</button></a> <br>
-                                     
-                 
-                 </div>
-                 
-             </div>
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             <div class="col-md-4">
-                 
-                 <div class="profile1">
-                 
-                    <img src="assets/pic2.jpg" class="profile-pic">
-             
-                    <p class="profile-name">Sarah Bright</p>
-                     
-                    <p class="profile-info">I am a PHP developer in Westlands, Nairobi who loves to code in OOP.</p>
-                     
-                    <br>
-                     
-                     <a href="sample_deflect.php"><button class="formx">View Profile</button></a> <br>
-                
-                     <a href="sample_deflect.php"><button class="formx">Send Message</button></a> <br>
-                                     
-                 
-                 </div>
-                 
-             </div>
-             
-             
-             
-             
-             
-             
-             
-             
-             
-            <div class="col-md-4">
-                 
-                 <div class="profile1">
-                 
-                    <img src="assets/pic3.jpg" class="profile-pic">
-             
-                    <p class="profile-name">May Fayfex</p>
-                     
-                    <p class="profile-info">I've been coding in Java for 10 years and have developed 12 android apps.</p>
-                     
-                    <br>
-                     
-                     <a href="sample_deflect.php"><button class="formx">View Profile</button></a> <br>
-                
-                     <a href="sample_deflect.php"><button class="formx">Send Message</button></a> <br>
-                                     
-                 
-                 </div>
-                 
-             </div>
-             
-             
-             
-          
-             
-             
-             
          
-         </div>
+         
+               $first_result = ($page - 1) * $results_per_page;
+         
+               $pagination = $post->all_posts();
+         
+               $pagination_result = $pagination->get_result();
+         
+               $number_of_results = $pagination_result->num_rows;
+         
+               $number_of_pages = ceil($number_of_results/$results_per_page);
+    
+         
+         
+         
+                    
+                $allposts = $post->posts_paginated($first_result, $results_per_page); 
+    
+                $allposts_result = $allposts->get_result();   
+                    
         
+                while($row = $allposts_result->fetch_assoc()) { ?>
+         
+         
+                <div class="row single-post">
+                    
+                    
+                <div class="col-xs-2" style="">   
+                    
+                    <div class="dropdown">
+                    
+                        <img class="post-img"  src='<?php echo $row['img_path'];  ?>' />
+                    
+                        <div class='dropdown-content post-drop'>
+                   
+                        </div>
+                        
+                    </div>
+                       
+                </div>
+                    
+                    
+                <div class="col-xs-10">
+                    
+                    
+                <p class="title-username">
+                        
+                <span class="post-username"><a href="/fridaycamp/public_html/user/<?php echo $row['username']; ?>"><?php echo $row['username'];  ?></a></span>
+                        
+                <a href='post/<?php echo $row['id']; ?>' class="post-title"> <?php echo substr($row['title'], 0, 80); if (strlen($row['title']) > 70) {echo "...";}  ?></a>
+                    
+                </p>
+                    
+                    
+                <p class="post-body">  <a href='post/<?php echo $row['id']; ?>' style="color: black;"><?php echo substr($row['body'], 0, 300); if (strlen($row['body']) > 260) {echo "...";}  ?></a> </p>
+                    
+                    
+                <?php    
+                    
+                $num_comments = $comment->get_number_of_comments($row['id']); 
+    
+                $num_comments_result = $num_comments->get_result();   
+                    
         
-<br><br><br>
+                while($num = $num_comments_result->fetch_assoc()) { ?>
+                                        
+                <p style="margin-top: -9px; font-family: Josefin Slab; font-weight: bolder; "><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span style="font-size: 15px; margin-left: 10px;"><?php echo $num['count'];  ?></span></p>
+                    
+                    
+                <?php }?>    
+                    
+                </div> 
+                    
+                </div>  
+                    
+                <?php }
+                    
+                    
+                ?>
+                    
+                    
+                     <?php }
+                    
+                    
+                ?>
+
+               
+               
+               
+                 
          
          
          
          
-        
-    </div>   
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+                <?php if ($_GET['state'] != 'all') { ?>
+   
+                <?php
     
     
-    </body>
+               $results_per_page = 3;
+         
+         
+         
+               if (!isset($_GET['page'])) {
+                   
+               $page = 1;
+                   
+               } else {
+                   
+               $page = $_GET['page'];
+                   
+               }
+         
+         
+         
+               $first_result = ($page - 1) * $results_per_page;
+         
+               $pagination = $post->all_popular_posts();
+         
+               $pagination_result = $pagination->get_result();
+         
+               $number_of_results = $pagination_result->num_rows;
+         
+               $number_of_pages = ceil($number_of_results/$results_per_page);
+    
+         
+         
+            
+                $allpopularposts = $post->all_popular_posts_pagination($first_result, $results_per_page); 
+    
+                $allpopularposts_result = $allpopularposts->get_result();   
+                    
+        
+                while($popularrow = $allpopularposts_result->fetch_assoc()) { ?>
+         
+         
+                <div class="row single-post">
+                    
+                    
+                <div class="col-xs-2" style="">   
+                    
+                    <div class="dropdown">
+                    
+                        <img class="post-img"  src='<?php echo $popularrow['img_path'];  ?>' />
+                    
+                        <div class='dropdown-content post-drop'>
+                   
+                        </div>
+                        
+                    </div>
+                       
+                </div>
+                    
+                    
+                <div class="col-xs-10">
+                    
+                    
+                <p class="title-username">
+                        
+                <span class="post-username"><a href="/fridaycamp/public_html/user/<?php echo $popularrow['username']; ?>"><?php echo $popularrow['username'];  ?></a></span>
+                        
+                <a href='post/<?php echo $popularrow['id']; ?>' class="post-title"> <?php echo substr($popularrow['title'], 0, 80); if (strlen($popularrow['title']) > 70) {echo "...";}  ?></a>
+                    
+                </p>
+                    
+                    
+                <p class="post-body">  <a href='post/<?php echo $popularrow['id']; ?>' style="color: black;"><?php echo substr($popularrow['body'], 0, 300); if (strlen($popularrow['body']) > 260) {echo "...";}  ?></a> </p>
+                    
+                    
+                <?php    
+                    
+                $num_comments = $comment->get_number_of_comments($popularrow['id']); 
+    
+                $num_comments_result = $num_comments->get_result();   
+                    
+        
+                while($num2 = $num_comments_result->fetch_assoc()) { ?>
+                                        
+                <p style="margin-top: -9px; font-family: Josefin Slab; font-weight: bolder; "><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span style="font-size: 15px; margin-left: 10px;"><?php echo $num2['count'];  ?></span></p>
+                    
+                    
+                <?php }?>    
+                    
+                </div> 
+                    
+                </div>  
+                    
+                <?php }
+                    
+                    
+                ?>
+                    
+                    
+                   
+         
+         
+       <?php  } ?>
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+                        
+                       <div class="pagination-head">
+
+                           <?php 
+                           
+                           if ($number_of_results <= $results_per_page)  {
+                               
+                               
+                           } else {
+                               
+                                       for ($page = 1; $page <= $number_of_pages; $page++) {
+                                       
+        
+                                       if (isset($_GET['page'])) {
+                                           
+                                           
+                                        if ( $page == $_GET['page']) {
+                                          echo "<a class='main-page'>" . $page . "</a>";  
+                                       } else {
+                                            
+                                            if ($_GET['state'] == 'all') {
+                                                echo "<a class='page-sub' href='index.php?state=all&page={$page}'>" . $page . "</a>";
+                                            } else {
+                                                echo "<a class='page-sub' href='index.php?page={$page}'>" . $page . "</a>";
+                                            }
+                                            
+                                            
+                                            
+                                       }
+                                       
+                                           
+                                       } else {
+                                           if ($page == 1) {
+                                               echo "<a class='main-page'>" . $page . "</a>";   
+                                           } else {
+                                                if ($_GET['state'] == 'all') {
+                                                echo "<a class='page-sub' href='index.php?state=all&page={$page}'>" . $page . "</a>";
+                                            } else {
+                                                echo "<a class='page-sub' href='index.php?page={$page}'>" . $page . "</a>";
+                                            }
+                                           }
+                                           
+                                       }   
+
+                                   }
+                               
+                                }
+        
+                                                            
+                              ?> 
+                           
+                         </div>
+                    
+                    
+                    
+
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+     
+     
+     </div>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     <div class="col-md-3" style="padding-bottom: 40px;">
+         
+          <form class="search1" method="get" action="resulting.php">
+                  
+              <input maxlength="100" name="keywords" style="border-radius: 5px; border: 2px solid #ddd;  padding-left: 15px; padding-top: 5px; padding-bottom: 5px; font-family: Josefin Slab; font-weight: bolder; font-size: 16px; 
+    width: 200px; margin-left: 10px;" placeholder="Search posts" />
+        
+              <input style="display: none;" type="submit" name="submit" value="submit" />
+                  
+              </form>
+           
+               
+               <div>
+               
+               <br>
+                   
+               <a href="index.php"><p class="choose-page" style="<?php if ($_GET['state'] != 'all') { echo "width: 95px;"; }   ?>">Top Posts 
+                  
+               <?php if ($_GET['state'] != 'all') { echo "<i class='fa fa-check' aria-hidden='true'></i>"; }   ?></p></a>
+               
+               <br>
+               
+               <a href="index.php?state=all" class="choose-page">All Posts <?php if ($_GET['state'] == 'all') { echo "<i class='fa fa-check' aria-hidden='true'></i>"; }   ?></a>
+               
+               </div>
+     
+     
+     </div>
     
     
-    <?php include('js/general_javascript.php');  ?>
-          
-      
     
+</div>   
+    
+</body>
+    
+    
+    
+    
+    
+     <?php include('js/general_javascript.php');  ?>  
     
 </html>

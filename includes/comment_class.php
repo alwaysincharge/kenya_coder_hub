@@ -56,6 +56,25 @@ class Comment {
     
     
     
+         public function get_number_of_comments($id_of_post) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT count(*) as count from comment where postid = ?");
+             
+         $stmt->bind_param("i", $id);
+             
+         $id = $id_of_post;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
     
     
     
