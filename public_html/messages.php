@@ -42,15 +42,11 @@
                     
               while($row = $list_result->fetch_assoc()) { ?>
         
-              <a href="">  
+              <a href="/fridaycamp/public_html/messages.php?usersid=<?php echo $row['usersid'];  ?>">  
                   
                   <div class="row" style="margin-bottom: 20px;">
                                         
-                <div class="col-xs-3">
             
-                      <img height="60" width="60" style="border-radius: 5px; float: left; margin: 0 5px 0px 0px;" src="/fridaycamp/public_html/male.png">
-                    
-                </div>
                 
                 
               <?php
@@ -60,10 +56,56 @@
               $one_message_result = $one_message->get_result();   
                     
               while($row2 = $one_message_result->fetch_assoc()) { ?>
+                      
+                <div class="col-xs-3">
+            
+                      <img height="60" width="60" style="border-radius: 5px; float: left; margin: 0 5px 0px 0px;" src="/fridaycamp/public_html/male.png">
+                    
+                </div>
+                      
+                      
                 <div class="col-xs-9" style="">
                     
-                    <p style=" font-family: Josefin Slab; font-weight: bolder; font-size: 17px;"><?php echo $row['username'];  ?></p>
-                     <p style="font-family: georgia; padding-right: 5px; color: black; margin-top: -10px; word-wrap: break-word; max-width: 180px;">   <?php echo substr(nl2br($row['message']), 0, 260); if (strlen($row2['message']) > 260) {echo "...";} ?></p> 
+                     <p style=" font-family: Josefin Slab; font-weight: bolder; font-size: 17px;">
+                         
+                         <?php if ($row2['sender'] == $_SESSION['admin_id']) {
+                  
+                         $one_info = $message->get_info_by_receiver($row2['receiver']); 
+    
+                         $one_info_result = $one_info->get_result();   
+                    
+                         while($row3 = $one_info_result->fetch_assoc()) { 
+                         
+                         echo $row3['username'];
+                         
+                         }
+                         
+                         
+                         
+                         } else {
+                  
+                         $one_info = $message->get_info_by_receiver($row2['sender']); 
+    
+                         $one_info_result = $one_info->get_result();   
+                    
+                         while($row3 = $one_info_result->fetch_assoc()) { 
+                         
+                         echo $row3['username'];
+                             
+                         }
+                  
+                         }
+                         
+                         ?>
+                    </p>
+                    
+                    
+                    
+                    
+                <p style="font-family: georgia; padding-right: 5px; color: black; margin-top: -10px; word-wrap: break-word; max-width: 180px;"> 
+                         
+                <?php if ($row2['sender'] == $_SESSION['admin_id']) {echo "<i class='fa fa-check' aria-hidden='true'></i><i class='fa fa-check' aria-hidden='true'></i>";} ?>
+                <?php echo substr(nl2br($row2['message']), 0, 260); if (strlen($row2['message']) > 260) {echo "...";} ?></p> 
                     
                  </div> 
                 <?php }?>
@@ -112,7 +154,7 @@
           <textarea placeholder='Send a message to atsunewjoint.' name="message"  maxlength="500" class="toggle mess-insert"></textarea>
               
       
-                   
+             
           <div class="selection" style="display: none;">        
                
           <button name="submit" class="btn mess-send">Send Message</button>

@@ -64,7 +64,7 @@ class Message {
          
          global $database;
                             
-         $stmt = $database->connection->prepare("SELECT max(messages.id) as max, messages.sender, messages.receiver, messages.message,  messages.conversation, users.img_path, users.username FROM messages
+         $stmt = $database->connection->prepare("SELECT max(messages.id) as max, messages.sender, messages.receiver, messages.message,  messages.conversation, users.img_path, users.username, users.id as usersid FROM messages
          INNER JOIN users ON users.id = messages.sender WHERE (messages.sender = ? OR messages.receiver = ?) group by messages.conversation order by max desc");
              
          $stmt->bind_param("ii", $loggin_id1, $loggin_id2);
@@ -87,7 +87,26 @@ class Message {
          
          global $database;
                             
-         $stmt = $database->connection->prepare("SELECT message, id from messages WHERE id = ?");
+         $stmt = $database->connection->prepare("SELECT message, sender, receiver, id from messages WHERE id = ?");
+             
+         $stmt->bind_param("i", $loggin_id1);
+             
+         $loggin_id1 = $loggin_id_input1;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+         public function get_info_by_receiver($loggin_id_input1) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT username, id, img_path FROM users where id = ?");
              
          $stmt->bind_param("i", $loggin_id1);
              
