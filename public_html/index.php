@@ -30,7 +30,32 @@
     
  <div class="row div-width">
      
-     <p style="display: table; margin: 0 auto; font-family: Josefin Slab; font-weight: bolder; font-size: 30px; margin-top: -20px; margin-bottom: 40px;">Connect with the top Programmers in Kenya.</p>
+     
+     
+     <?php if (!isset($_GET['keywords'])) { ?>
+     
+      <p class="home-head">Connect with the top Programmers in Kenya.</p>
+     
+     <?php } ?>
+     
+     
+     
+     
+     
+     <?php if (isset($_GET['keywords'])) { 
+     
+        $search_posts2 = $search->search_through_posts('%' . $_GET['keywords'] . "%", '%' . $_GET['keywords'] . "%"); 
+    
+        $search_posts_result2 = $search_posts2->get_result();
+                                                         
+        echo "<p class='home-head'>Showing {$search_posts_result2->num_rows} results for '{$_GET['keywords']}'.</p>";
+     
+     } ?>
+     
+     
+    
+     
+     
      
      
      <div class="col-md-9">
@@ -66,18 +91,12 @@
          
          
          
+
          
          
-         
-                
-               
+              <?php if ((isset($_GET['state'])) &&   ($_GET['state'] == 'all')) { ?>
                     
-                    
-              
-         
-                <?php if ((isset($_GET['state'])) &&   ($_GET['state'] == 'all')) { ?>
-                    
-                <?php
+              <?php
          
            
                $results_per_page = 3;
@@ -160,7 +179,7 @@
         
                 while($num = $num_comments_result->fetch_assoc()) { ?>
                                         
-                <p style="margin-top: -9px; font-family: Josefin Slab; font-weight: bolder; "><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span style="font-size: 15px; margin-left: 10px;"><?php echo $num['count'];  ?></span></p>
+                <p class="comment-1"><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span class="comment-2"><?php echo $num['count'];  ?></span></p>
                     
                     
                 <?php }?>    
@@ -190,18 +209,7 @@
          
          
          
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-                <?php if ($_GET['state'] != 'all') { ?>
+                <?php if (($_GET['state'] != 'all') && (!isset($_GET['keywords']))) { ?>
    
                 <?php
     
@@ -285,7 +293,84 @@
         
                 while($num2 = $num_comments_result->fetch_assoc()) { ?>
                                         
-                <p style="margin-top: -9px; font-family: Josefin Slab; font-weight: bolder; "><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span style="font-size: 15px; margin-left: 10px;"><?php echo $num2['count'];  ?></span></p>
+                <p class="comment-1"><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span class="comment-2"><?php echo $num2['count'];  ?></span></p>
+                    
+                    
+                <?php }?>    
+                    
+                </div> 
+                    
+                </div>  
+                    
+                <?php }
+                    
+                    
+                ?>
+         
+                 <?php  } ?>
+         
+         
+         
+         
+         
+         
+    
+                <?php if (isset($_GET['keywords'])) { ?>
+                    
+                <?php
+         
+                    
+                $search_posts = $search->search_through_posts('%' . $_GET['keywords'] . "%", '%' . $_GET['keywords'] . "%"); 
+    
+                $search_posts_result = $search_posts->get_result();   
+                    
+        
+                while($rowsearch = $search_posts_result->fetch_assoc()) { ?>
+         
+         
+                <div class="row single-post">
+                    
+                    
+                <div class="col-xs-2" style="">   
+                    
+                    <div class="dropdown">
+                    
+                        <img class="post-img"  src='<?php echo $rowsearch['img_path'];  ?>' />
+                    
+                        <div class='dropdown-content post-drop'>
+                   
+                        </div>
+                        
+                    </div>
+                       
+                </div>
+                    
+                    
+                <div class="col-xs-10">
+                    
+                    
+                <p class="title-username">
+                        
+                <span class="post-username"><a href="/fridaycamp/public_html/user/<?php echo $rowsearch['username']; ?>"><?php echo $rowsearch['username'];  ?></a></span>
+                        
+                <a href='post/<?php echo $rowsearch['id']; ?>' class="post-title"> <?php echo substr($rowsearch['title'], 0, 80); if (strlen($rowsearch['title']) > 70) {echo "...";}  ?></a>
+                    
+                </p>
+                    
+                    
+                <p class="post-body">  <a href='post/<?php echo $rowsearch['id']; ?>' style="color: black;"><?php echo substr($rowsearch['body'], 0, 300); if (strlen($rowsearch['body']) > 260) {echo "...";}  ?></a> </p>
+                    
+                    
+                <?php    
+                    
+                $num_comments = $comment->get_number_of_comments($rowsearch['id']); 
+    
+                $num_comments_result = $num_comments->get_result();   
+                    
+        
+                while($num = $num_comments_result->fetch_assoc()) { ?>
+                                        
+                <p class="comment-1"><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span class="comment-2"><?php echo $num['count'];  ?></span></p>
                     
                     
                 <?php }?>    
@@ -300,36 +385,19 @@
                 ?>
                     
                     
-                   
+                     <?php }
+                    
+                    
+                ?>
+
          
-         
-       <?php  } ?>
-         
-         
-         
-         
-         
-         
+    
          
          
          
+                       <?php
          
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
+                       if (!isset($_GET['keywords'])) { ?>
                         
                        <div class="pagination-head">
 
@@ -383,7 +451,10 @@
                            
                          </div>
                     
+                       <?php }
                     
+                    
+                    ?>
                     
 
          
@@ -414,25 +485,30 @@
      
      <div class="col-md-3" style="padding-bottom: 40px;">
          
-          <form class="search1" method="get" action="resulting.php">
+         
+              <form class="search1" method="get" action="index.php?search=<?php echo $_GET['keywords'];  ?>">
                   
-              <input maxlength="100" name="keywords" style="border-radius: 5px; border: 2px solid #ddd;  padding-left: 15px; padding-top: 5px; padding-bottom: 5px; font-family: Josefin Slab; font-weight: bolder; font-size: 16px; 
-    width: 200px; margin-left: 10px;" placeholder="Search posts" />
+              <input maxlength="100" name="keywords" class="home-search" placeholder="Search posts" />
         
               <input style="display: none;" type="submit" name="submit" value="submit" />
                   
               </form>
            
+         
+         
                
                <div>
                
                <br>
                    
-               <a href="index.php"><p class="choose-page" style="<?php if ($_GET['state'] != 'all') { echo "width: 95px;"; }   ?>">Top Posts 
+               <a href="index.php"><p class="choose-page" style="<?php if (($_GET['state'] != 'all') && (!isset($_GET['keywords']))) { echo "width: 95px;"; }   ?>">Top Posts 
                   
-               <?php if ($_GET['state'] != 'all') { echo "<i class='fa fa-check' aria-hidden='true'></i>"; }   ?></p></a>
+               <?php if (($_GET['state'] != 'all') && (!isset($_GET['keywords']))) { echo "<i class='fa fa-check' aria-hidden='true'></i>"; }   ?></p></a>
                
                <br>
+                   
+                   
+                   
                
                <a href="index.php?state=all" class="choose-page">All Posts <?php if ($_GET['state'] == 'all') { echo "<i class='fa fa-check' aria-hidden='true'></i>"; }   ?></a>
                

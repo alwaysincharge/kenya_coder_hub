@@ -114,12 +114,29 @@ width: 70%; float: right; margin-top: 20px;
     height: 65px; width: 65px; border-radius: 5px; margin-left: 5px;
 }
 
+.comment-1 {
+    margin-top: -9px; font-family: Josefin Slab; font-weight: bolder; 
+}
+
+.comment-2 {
+    font-size: 15px; margin-left: 10px;
+}
+
+.home-search {
+    border-radius: 5px; border: 2px solid #ddd;  padding-left: 15px; padding-top: 5px; padding-bottom: 5px; font-family: Josefin Slab; font-weight: bolder; font-size: 16px; 
+    width: 200px; margin-left: 10px;
+}
+
 .choose-page {
     margin-left: -5px; width: 80px; font-family: Josefin Slab; font-weight: bolder; padding: 10px; border-radius: 5px; margin-right: 10px; background: #ddd; margin-top: 30px;
 }
 
 .post-username {
     font-family: Josefin Slab; font-weight: bolder; font-size: 20px; text-decoration: none ! important;
+}
+
+.home-head {
+    display: table; margin: 0 auto; font-family: Josefin Slab; font-weight: bolder; font-size: 30px; margin-top: -20px; margin-bottom: 40px;
 }
 
 .post-title {

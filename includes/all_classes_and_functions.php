@@ -14,3 +14,5 @@
 
 <?php include_once('message_class.php'); ?>
 
+<?php include_once('search_class.php'); ?>
+
