@@ -65,7 +65,30 @@ class Message {
          global $database;
                             
          $stmt = $database->connection->prepare("SELECT max(messages.id) as max, messages.sender, messages.receiver, messages.message,  messages.conversation, users.img_path, users.username, users.id as usersid FROM messages
-         INNER JOIN users ON users.id = messages.sender WHERE (messages.sender = ? OR messages.receiver = ?) group by messages.conversation order by max desc");
+         INNER JOIN users ON users.id = messages.receiver WHERE (messages.sender = ? OR messages.receiver = ?) group by messages.conversation order by max desc");
+             
+         $stmt->bind_param("ii", $loggin_id1, $loggin_id2);
+             
+         $loggin_id1 = $loggin_id_input1;
+             
+         $loggin_id2 = $loggin_id_input2;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
+         public function first_conversation($loggin_id_input1, $loggin_id_input2) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT max(messages.id) as max, messages.sender, messages.receiver, messages.message,  messages.conversation, users.img_path, users.username, users.id as usersid FROM messages
+         INNER JOIN users ON users.id = messages.receiver WHERE (messages.sender = ? OR messages.receiver = ?) group by messages.conversation order by max desc limit 1");
              
          $stmt->bind_param("ii", $loggin_id1, $loggin_id2);
              

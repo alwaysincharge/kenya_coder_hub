@@ -1,5 +1,11 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
+<?php if(!isset($_GET['usersid'])) {$_GET['usersid'] = '';} ?>
+
+<?php if(!isset($_GET['status'])) {$_GET['status'] = '';} ?>
+
+<?php  if ($_GET['usersid'] == $_SESSION['admin_id']) {redirect_to('home');}    ?>
+
 
 
 <!DOCTYPE html>
@@ -31,7 +37,42 @@
 <div class="row" style="width: 100%; max-width: 900px; display: table; margin: 0 auto;">
     
     
+              <?php
+                 
+              $one_user = $user->find_one_user($_GET['usersid']); 
     
+              $one_user_result = $one_user->get_result();   
+                    
+              while($userrow1 = $one_user_result->fetch_assoc()) { ?>
+    
+              <p class="home-head">Your conversation with <?php echo $userrow1['username'];  ?>.</p>
+    
+              <?php  } ?>
+    
+    
+    
+              <?php
+    
+              if ($_GET['status'] == 'empty') { ?>
+                 
+              <p class="home-head">Your currently have no messages.</p>
+                  
+              <?php }
+    
+    
+              ?>
+    
+    
+    
+              
+    
+              <?php
+    
+              if ($_GET['status'] != 'empty') { ?>
+                 
+            
+                  
+            
     
 <div class="col-md-4">
     
@@ -47,7 +88,7 @@
         
               <a href="/fridaycamp/public_html/messages.php?usersid=<?php echo $row['usersid'];  ?>">  
                   
-                  <div class="row" style="margin-bottom: 20px;">
+                  <div class="row" style="margin-bottom: 20px; border-right: 2px solid #ddd;">
                                         
             
                 
@@ -154,7 +195,7 @@
                             
           <input type="hidden" name="receiver" value="<?php echo $_GET['usersid']; ?>">
                
-          <textarea placeholder='Send a message to atsunewjoint.' name="message"  maxlength="500" class="toggle mess-insert"></textarea>
+          <textarea placeholder='Send a message.' name="message"  maxlength="500" class="toggle mess-insert"></textarea>
               
       
              
@@ -237,6 +278,11 @@
 </div>
     
     
+    
+               <?php }
+    
+    
+               ?>
 </div>
     
     

@@ -10,7 +10,7 @@
     
 <head>
     
-	<title>Tsutsus - Meet Kenya's programmers.</title>
+	<title>Friday Camp - Meet Kenya's programmers.</title>
     
     <meta name="description" content="Create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.">
     
@@ -91,12 +91,17 @@
          
          
          
+         
+         
+         
+         
+         
 
          
          
-              <?php if ((isset($_GET['state'])) &&   ($_GET['state'] == 'all')) { ?>
+               <?php if ((isset($_GET['state'])) &&   ($_GET['state'] == 'all')) { ?>
                     
-              <?php
+               <?php
          
            
                $results_per_page = 3;
@@ -194,7 +199,7 @@
                 ?>
                     
                     
-                     <?php }
+                <?php }
                     
                     
                 ?>
@@ -209,15 +214,15 @@
          
          
          
-                <?php if (($_GET['state'] != 'all') && (!isset($_GET['keywords']))) { ?>
+         
+               <?php if (($_GET['state'] != 'all') && (!isset($_GET['keywords']))) { ?>
    
-                <?php
+               <?php
     
     
                $results_per_page = 3;
          
-         
-         
+    
                if (!isset($_GET['page'])) {
                    
                $page = 1;
@@ -227,7 +232,6 @@
                $page = $_GET['page'];
                    
                }
-         
          
          
                $first_result = ($page - 1) * $results_per_page;
@@ -385,13 +389,19 @@
                 ?>
                     
                     
-                     <?php }
+                <?php }
                     
                     
                 ?>
 
          
     
+         
+         
+         
+         
+         
+         
          
          
          

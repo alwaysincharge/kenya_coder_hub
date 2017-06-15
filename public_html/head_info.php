@@ -5,7 +5,7 @@
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"> </script>
 
-    <link rel="shortcut icon" type="image/x-icon" href="assets/logo1.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/campfire.ico" />
     
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     

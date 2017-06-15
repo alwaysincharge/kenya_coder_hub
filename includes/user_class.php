@@ -53,6 +53,28 @@ class User {
     
     
     
+    
+    
+         public function find_one_user($id_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("select id, username, img_path from users where id = ?");
+        
+         $stmt->bind_param("i", $id);
+
+         // set parameters and execute
+        
+         $id = $id_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
           
     
          public function display_all_user_details($id_input) {

@@ -33,8 +33,43 @@
     
                 
                  <a href="/fridaycamp/public_html/home" class="text-1"><img src="/fridaycamp/public_html/assets/house.svg" height="30"></a>
+                
+                
+        
+                     
+                 <a class='text-1' href='messages.php?<?php
+                 
+                 $list = $message->first_conversation($_SESSION['admin_id'], $_SESSION['admin_id']); 
+    
+                 $list_result = $list->get_result();
+                
+                 $first_num = $list_result->num_rows;
+                    
+                 if ($first_num > 0) {
+                     
+                 while($row = $list_result->fetch_assoc()) {
+                     
+                 echo "usersid={$row['usersid']}";
+                    
+                 }
+                     
+                 } 
+                     
+                 
+                     
+                 else {
+                     
+                 echo "status=empty";
+                     
+                 }
 
-                 <a class="text-1" href="mess.php"><img src="/fridaycamp/public_html/assets/mail.svg" height="30"></a>
+
+                  ?>'><img src='/fridaycamp/public_html/assets/mail.svg' height='30'></a>
+                     
+                 
+                
+                
+                
                 
                  <a class="text-1" href="notif.php"><img src="/fridaycamp/public_html/assets/megaphone.svg" height="30"></a>
             
@@ -85,7 +120,7 @@
             
 
             
-              <form class="search1" method="get" action="result.php">
+              <form class="search1" method="get" action="search.php?keywords=<?php  echo $_GET['keywords'];   ?>">
                   
               <input maxlength="100" name="keywords" class="search-main" placeholder="Search users and skills" />
         
