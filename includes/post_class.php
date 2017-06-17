@@ -50,6 +50,28 @@ class Post {
          }
     
     
+         public function my_posts($current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT forum.title, forum.id, forum.body, forum.code, forum.owner, users.img_path, users.username FROM forum
+         INNER JOIN users ON users.id = forum.owner where forum.owner = ? order by forum.id DESC");
+             
+         $stmt->bind_param("i", $current_user);
+             
+         $current_user = $current_user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
+    
          public function all_popular_posts() {
          
          global $database;

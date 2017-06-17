@@ -53,6 +53,26 @@ class User {
     
     
     
+         public function does_user_exist_by_id($current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("select id, username, password from users where id = ?");
+        
+         $stmt->bind_param("i", $current_user);
+
+         // set parameters and execute
+        
+         $current_user = $current_user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
     
     
          public function find_one_user($id_input) {
@@ -108,6 +128,106 @@ class User {
          // set parameters and execute
         
          $username = $user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+         public function edit_username($user_input, $current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("UPDATE users SET username = ?  where id = ?");
+        
+         $stmt->bind_param("si", $username, $current_user);
+
+         // set parameters and execute
+        
+         $username = $user_input;
+             
+         $current_user = $current_user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+         public function edit_email($email_input, $current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("UPDATE users SET email = ?  where id = ?");
+        
+         $stmt->bind_param("si", $email, $current_user);
+
+         // set parameters and execute
+        
+         $email = $email_input;
+             
+         $current_user = $current_user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
+        
+         public function edit_password($password_input, $current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("UPDATE users SET password = ?  where id = ?");
+        
+         $stmt->bind_param("si", $password, $current_user);
+
+         // set parameters and execute
+        
+         $password = $password_input;
+             
+         $current_user = $current_user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
+    
+         public function edit_picture($type_input, $path_input, $name_input, $current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("UPDATE users SET img_type = ?, img_path = ?, img_name = ?  where id = ?");
+        
+         $stmt->bind_param("sssi", $type, $path, $name, $current_user);
+
+         // set parameters and execute
+        
+         $type = $type_input;
+             
+         $path = $path_input;
+             
+         $name = $name_input;
+             
+         $current_user = $current_user_input;
           
          $stmt->execute();
               

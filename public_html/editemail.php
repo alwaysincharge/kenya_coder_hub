@@ -44,15 +44,15 @@
                 
                 
                 
-            <form method="post"  action="/fridaycamp/public_html/code_edit_username.php">
+            <form method="post"  action="/fridaycamp/public_html/code_edit_email.php">
            
             <br>
-            <p class="home-head">Change your username.</p>
+            <p class="home-head">Change your email.</p>
                
                
             <div class="col-xs-6" style="">
                 
-            <textarea style="border: 2px solid #ddd; border-radius: 5px; font-family: georgia; height: 40px; padding: 5px; width: 100%; resize: none;" placeholder="username" name="username"></textarea>
+            <textarea style="border: 2px solid #ddd; border-radius: 5px; font-family: georgia; height: 40px; padding: 5px; width: 100%; resize: none;" placeholder="email" name="email"></textarea>
                         
             </div>
            

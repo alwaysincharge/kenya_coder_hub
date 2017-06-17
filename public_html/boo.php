@@ -11,6 +11,71 @@
 after_successful_logout();
 
 /*
+
+
+
+
+   
+            
+            
+        <?php if (isset($_SESSION['body'])) {?>
+    
+        <textarea maxlength='500' placeholder='Do you have a question, job or story to share?' name='body' class='toggle forum-details'><?php  echo $_SESSION['body']; $_SESSION['body'] = null;  ?></textarea>
+            
+        <?php }   else { ?>
+    
+        <textarea maxlength='500' placeholder='Do you have a question, job or story to share?' name='body' class='toggle forum-details'></textarea>
+            
+        <?php  } ?>
+                   
+
+                   
+                   
+                   
+                   
+        <div class="selection" style="display: none;">
+            
+            
+            
+            
+        <?php if (isset($_SESSION['code'])) {?>
+    
+        <textarea maxlength="500" placeholder='Paste related code here.' name="code" class="toggle forum-details"><?php  echo $_SESSION['code']; $_SESSION['code'] = null;  ?></textarea>
+            
+        <?php }   else { ?>
+    
+        <textarea maxlength="500" placeholder='Paste related code here.' name="code" class="toggle forum-details"></textarea>
+            
+        <?php  } ?>    
+            
+
+            
+            
+            
+        <?php if (isset($_SESSION['title'])) {?>
+    
+        <textarea maxlength="500" placeholder="Title of your post." name="title" class="forum-title"><?php  echo $_SESSION['title']; $_SESSION['title'] = null;  ?></textarea>
+            
+        <?php }   else { ?>
+    
+        <textarea maxlength="500" placeholder="Title of your post." name="title" class="forum-title"></textarea>
+            
+        <?php  } ?>   
+            
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
  $fools = $user->does_user_exist('foolswater');
     
  $result = $fools->get_result();

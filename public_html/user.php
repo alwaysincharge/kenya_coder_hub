@@ -60,7 +60,7 @@
                
                <div class="col-xs-6">
                 
-                   <img  src='/fridaycamp/public_html/male.png' width="170" style="border-radius: 5px; margin-top: 30px; display: table; margin: 0 auto; " />
+                   <img  src="/fridaycamp/public_html/<?php echo $details['img_path'];  ?>" width="170" style="border-radius: 5px; margin-top: 30px; display: table; margin: 0 auto; " />
                    
                 </div>
                
@@ -328,7 +328,7 @@
                     
                     <div>
                     
-                        <img class="post-img"  src='/fridaycamp/public_html/<?php echo $row['img_path'];  ?>' />
+                        <img class="post-img"  src="/fridaycamp/public_html/<?php echo $row['img_path'];  ?>" />
                 
                     </div> 
                     

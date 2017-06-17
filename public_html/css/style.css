@@ -75,6 +75,10 @@ width: 70%; float: right; margin-top: 20px;
     width: 80%; float: right;
 }
 
+.comment-box-2 {
+    width: 100%; float: right; margin-bottom: 40px;
+}
+
 .form-box {
     max-width: 500px; display: table; margin: 0 auto;
 }
@@ -108,7 +112,9 @@ width: 70%; float: right; margin-top: 20px;
 .comment-image-1 {
     height: 65px; width: 65px; border-radius: 5px; margin-left: 15px;
 }
-
+.comment-image-2 {
+    height: 65px; width: 65px; border-radius: 5px; margin-left: -10px;
+}
 
 .reply-image-1 {
     height: 65px; width: 65px; border-radius: 5px; margin-left: 5px;
@@ -150,9 +156,21 @@ width: 70%; float: right; margin-top: 20px;
 .div-width {
     width: 100%; max-width: 900px; display: table; margin: 0 auto;
 }
+.file-style-1 {
+    background: white; font-family: georgia; border: 2px solid #ddd; width: 160px;
+}
+
+
+.file-style-1:hover {
+    background: white; font-family: georgia; border: 2px solid #ddd; width: 160px;
+}
 
 .note-1 {
     width: 300px;  font-family: Josefin Slab; font-weight: bolder;
+}
+
+.pass-style {
+    margin-bottom: 10px; border: 2px solid #ddd; border-radius: 5px; font-family: georgia; height: 40px; padding: 5px; width: 100%; resize: none;
 }
 
 
@@ -244,6 +262,14 @@ width: 70%; float: right; margin-top: 20px;
     text-shadow: none;
     background-color: transparent;
     border: 0;
+}
+
+.edit-pic-1 {
+    max-width: 500px; display: table; margin: 0 auto;
+}
+
+.loading-class {
+    width: 250px; color: blue; font-family: Josefin Slab; font-size: 15px;  padding-left: 0px; padding-top: 5px; padding-bottom: 5px; display: table; margin: 0 auto; font-weight: bolder;
 }
 
 .mess-insert {

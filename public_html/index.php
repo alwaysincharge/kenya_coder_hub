@@ -54,13 +54,33 @@
      
      
     
-     
+
+            
+        
+        <?php  
+    
+        if (isset($_SESSION['note1'])) {
+        echo "<div style='display: table; margin: 0 auto; margin-top: -30px;'>{$_SESSION['note1']}</div>";  
+            $_SESSION['note1'] = null;
+        }   else {
+            $_SESSION['note1'] = null;
+        }
+        ?>
+            
+            
+        
      
      
      
      <div class="col-md-9">
          
-                     
+         
+         
+         
+         
+         
+         
+         
                <form method='post' action="new_post.php"  class='forum-form'>
             
                      <textarea maxlength="500" placeholder='Do you have a question, job or story to share?' name="body" class="toggle forum-details"></textarea>
@@ -85,11 +105,10 @@
                      </a>
                    
                      </div>
-   
+                   
+                     <br><br>
+                   
                 </form>
-         
-         
-         
          
          
          
@@ -149,7 +168,7 @@
                     
                     <div class="dropdown">
                     
-                        <img class="post-img"  src='<?php echo $row['img_path'];  ?>' />
+                        <img class="post-img"  src="<?php echo $row['img_path'];  ?>" />
                     
                         <div class='dropdown-content post-drop'>
                    
@@ -262,7 +281,7 @@
                     
                     <div class="dropdown">
                     
-                        <img class="post-img"  src='<?php echo $popularrow['img_path'];  ?>' />
+                        <img class="post-img"  src="<?php echo $popularrow['img_path'];  ?>" />
                     
                         <div class='dropdown-content post-drop'>
                    
@@ -339,7 +358,7 @@
                     
                     <div class="dropdown">
                     
-                        <img class="post-img"  src='<?php echo $rowsearch['img_path'];  ?>' />
+                        <img class="post-img"  src="<?php echo $rowsearch['img_path'];  ?>" />
                     
                         <div class='dropdown-content post-drop'>
                    

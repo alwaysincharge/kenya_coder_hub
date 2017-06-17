@@ -35,8 +35,7 @@ if (isset($_POST['submit']))  {
 
  $owner_input = $_SESSION['admin_id'];
     
-
-    
+  
     
   
  check_emptiness($title_input, 'home', 'The body or title field cannot be empty. Please try again.');

@@ -22,8 +22,7 @@
 
 if(request_is_post()) {
   
-if(request_is_same_domain()) {
-if(is_session_valid())    {
+
     
     
 if (isset($_POST['submit']))  {
@@ -78,21 +77,6 @@ if (isset($_POST['submit']))  {
 }    
 
 
-    
-}
-
- else  {
-    
-    alert_note('Please stop trying to hack the site. Thanks a lot. 3');
-     redirect_to('home'); 
-}
-    }
-
- else  {
-    
-    alert_note('Please stop trying to hack the site. Thanks a lot. 4');
-     redirect_to('home'); 
-}
 
 
 

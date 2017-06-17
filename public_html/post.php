@@ -69,7 +69,7 @@
 			<div class="row posting-box">
 				<div class="col-xs-2" style="">
 					<div class="dropdown">
-						<img class="post-image-1" src='/fridaycamp/public_html/male.png'>
+						<img class="post-image-1" src="/fridaycamp/public_html/<?php echo $row['img_path'];  ?>">
 					</div>
 				</div>
 
@@ -137,7 +137,7 @@
 			
 				<div class="col-xs-2" style="">
 					<div class="dropdown">
-						<img class="comment-image-1" src=''>
+						<img class="comment-image-1" src="/fridaycamp/public_html/<?php echo $row['img_path'];  ?>">
 					</div>
 				</div>
 
@@ -157,7 +157,7 @@
 					<div class="selection" style="display: none;">
 						<br>
 
-						<form action="new_reply.php" method='post'>
+						<form action="/fridaycamp/public_html/new_reply.php" method='post'>
 							<textarea class="toggle forum-details" maxlength="500" name="body" placeholder='Reply'></textarea>
                             
                             <input type="hidden" name="replyowner" value="<?php echo $_SESSION['admin_id']; ?>">
@@ -195,7 +195,7 @@
 				<div class="row reply-box">
 					<div class="col-xs-2" style="">
 						<div class="dropdown">
-							<img class="reply-image-1" src=''>
+							<img class="reply-image-1" src="/fridaycamp/public_html/<?php echo $row['img_path'];  ?>">
 						</div>
 					</div>
 

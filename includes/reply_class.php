@@ -55,6 +55,32 @@ class Reply {
     
     
     
+         public function my_replies($current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT reply.id as replyid, reply.body, reply.code, comment.postid, reply.replyowner, reply.commentid, users.img_path, users.username, users.id as usersid FROM reply
+         
+         INNER JOIN users ON users.id = reply.replyowner 
+         
+         INNER JOIN comment ON comment.id = reply.commentid
+         
+         INNER JOIN forum ON forum.id = comment.postid
+         
+         where reply.replyowner = ? order by reply.id desc");
+             
+         $stmt->bind_param("i", $current_user);
+             
+         $current_user = $current_user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
     
     
     

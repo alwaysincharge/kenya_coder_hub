@@ -32,7 +32,7 @@
             <?php  
     
             if (isset($_SESSION['note1'])) {
-            echo "<div style='display: table; margin: 0 auto; margin-top: -30px;'>{$_SESSION['note1']}</div>";  
+            echo "<div style='display: table; margin: 0 auto; margin-top: -30px; margin-bottom: 20px;'>{$_SESSION['note1']}</div>";  
             $_SESSION['note1'] = null;
             }   else {
             $_SESSION['note1'] = null;
@@ -43,36 +43,34 @@
                 
                 
                 
+            <form method="post" action="code_edit_password.php">
                 
-            <form method="post"  action="/fridaycamp/public_html/code_edit_username.php">
-           
-            <br>
-            <p class="home-head">Change your username.</p>
-               
-               
+            <p class="home-head">Change your password.</p>
+                
             <div class="col-xs-6" style="">
                 
-            <textarea style="border: 2px solid #ddd; border-radius: 5px; font-family: georgia; height: 40px; padding: 5px; width: 100%; resize: none;" placeholder="username" name="username"></textarea>
-                        
-            </div>
-           
-           
-           
-            <div class="col-xs-6" style="">
-               
+            <input type="password" class="pass-style" name="password1" placeholder="new password">
+                
+            <input type="password" class="pass-style" name="oldpassword" placeholder="old password">
+                                       
             <button name="submit" class="btn" style="font-family: georgia;">Submit</button>
                     
             </div>
            
+           
+           
+            <div class="col-xs-6" style="">
+                
+            <input type="password" class="pass-style" name="password2" placeholder="repeat new password">
+                        
+            </div> 
+                
             </form>
-           
-           
-           </div>
+                
+            </div>
     
     
     
 </body>
-    
-    
     
 </html>

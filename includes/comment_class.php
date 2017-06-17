@@ -55,6 +55,25 @@ class Comment {
     
     
     
+         public function my_comments($current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT comment.id as commentid, comment.postid, comment.body, comment.code, comment.commentowner, users.img_path, users.username, users.id as usersid, forum.id FROM comment
+         INNER JOIN users ON users.id = comment.commentowner INNER JOIN forum ON comment.postid = forum.id where comment.commentowner = ? order by comment.id desc");
+             
+         $stmt->bind_param("i", $current_user);
+             
+         $current_user = $current_user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
     
          public function get_number_of_comments($id_of_post) {
          
