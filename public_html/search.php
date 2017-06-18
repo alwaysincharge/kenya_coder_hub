@@ -46,7 +46,7 @@
                            
                            <div style="width: 200px; display: table; margin: 0 auto; border-bottom: 2px solid #ddd; padding-bottom: 20px;">
                            
-                           <img src='<?php echo $row['img_path']; ?>' style="width: 200px; border-radius: 5px; height: 210px;" />
+                           <img src="<?php echo $row['img_path']; ?>" style="width: 200px; border-radius: 5px; height: 210px;" />
                                
                                <p style="font-family: Josefin Slab; font-weight: bolder; font-size: 20px; margin-top:10px;"><a href='/fridaycamp/public_html/user/<?php echo $row['username']; ?>'><?php echo $row['username'];  ?></a></p>
                                <!--

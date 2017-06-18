@@ -1,6 +1,5 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
-<?php if(!isset($_GET['state'])) {$_GET['state'] = '';} ?>
 
 
 
@@ -53,7 +52,7 @@
       
             if ($numPosts == 0) {
                 
-            echo "<p style='display: table; margin: 0 auto; font-georgia;'>No posts yet.</p>";
+            echo "<p style='display: table; margin: 0 auto; font-family: georgia;'>No posts yet.</p>";
                 
             }
         
@@ -136,7 +135,7 @@
       
             if ($numComments == 0) {
                 
-            echo "<p style='display: table; margin: 0 auto; font-georgia;'>No comments yet.</p>";
+            echo "<p style='display: table; margin: 0 auto; font-family: georgia;'>No comments yet.</p>";
                 
             }
         
@@ -197,7 +196,7 @@
       
             if ($numReplies == 0) {
                 
-            echo "<p style='display: table; margin: 0 auto; font-georgia;'>No replies yet.</p>";
+            echo "<p style='display: table; margin: 0 auto; font-family: georgia;'>No replies yet.</p>";
                 
             }
         

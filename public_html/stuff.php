@@ -36,7 +36,28 @@ foreach ($class_vars as $name => $value) {
 
 
 
+    <?php
+                 
+                 $unread = $message->all_unread($_SESSION['admin_id']); 
+    
+                 $unread_result = $unread->get_result();
+                
+                 
+                     
+                 while($row = $unread_result->fetch_assoc()) {
+                     
+                     if ($row['count'] > 0) {
+                         
+                       echo "<a style='font-family: Josefin Slab; font-weight: bolder; font-size: 16px;'>( " . $row['count'] . " )</a>";
+                         
+                     }
+                     
 
+                    
+                 }
+                     
+                     
+                 ?>
 
         
         

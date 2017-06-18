@@ -6,6 +6,8 @@
 
 <?php  if ($_GET['usersid'] == $_SESSION['admin_id']) {redirect_to('home');}    ?>
 
+<?php $message->mark_as_read($_GET['usersid'], $_SESSION['admin_id']); ?>
+
 
 
 <!DOCTYPE html>
@@ -86,7 +88,15 @@
                     
               while($row = $list_result->fetch_assoc()) { ?>
         
-              <a href="/fridaycamp/public_html/messages.php?usersid=<?php echo $row['usersid'];  ?>">  
+              <a href="/fridaycamp/public_html/messages.php?usersid=<?php                      if ($row['sender'] == $_SESSION['admin_id']) {
+                         
+                        echo $row['receiver']; 
+                         
+                     } elseif ($row['receiver'] == $_SESSION['admin_id']) {
+                         
+                        echo $row['sender'];
+                         
+                     }  ?>">  
                   
                   <div class="row" style="margin-bottom: 20px; border-right: 2px solid #ddd;">
                                         
@@ -144,17 +154,66 @@
                     </p>
                     
                     
+                   
+                    
+
                     
                     
-                <p style="font-family: Josefin Slab; font-weight: bolder; padding-right: 5px; color: black; margin-top: -10px; word-wrap: break-word; max-width: 180px; font-size: 17px;"> 
+                    
+                <p style="font-family: georgia;  padding-right: 5px; color: black; margin-top: -10px; word-wrap: break-word; max-width: 180px; font-size: 15px;"> 
                          
-                <?php if ($row2['sender'] == $_SESSION['admin_id']) {echo "<i class='fa fa-check' aria-hidden='true'></i>";} ?>
-                <?php echo substr(nl2br($row2['message']), 0, 260); if (strlen($row2['message']) > 260) {echo "...";} ?></p> 
+
                     
-                 </div> 
+               
+                    
+                 <?php
+                   
+                                                                               
+                                                                 
+                 if ($row['sender'] == $_SESSION['admin_id']) {
+                     
+                     $sender = $row['receiver'];
+                     
+                 } elseif ($row['receiver'] == $_SESSION['admin_id']) {
+                     
+                     $sender = $row['sender'];
+                     
+                 }
+                    
+                                                                 
+                                                                 
+                 
+                 $unread = $message->all_this_unread($_SESSION['admin_id'], $sender); 
+    
+                 $unread_result = $unread->get_result();
+                  
+                 while($row = $unread_result->fetch_assoc()) {
+                     
+                     if ($row['count'] > 0) {
+                         
+                       echo "<span style='font-family: Josefin Slab; color: blue; font-weight: bolder; font-size: 15px; margin-top: -20px;'>" . $row['count'] . " Unread</span>";
+                         
+                     }
+                 
+                 } ?>
+                    
+                    
+                    
+                    
+                <?php if ($row2['sender'] == $_SESSION['admin_id']) {echo "<i class='fa fa-check' aria-hidden='true'></i>";} ?>
+                    
+                <?php echo substr(nl2br($row2['message']), 0, 130); if (strlen($row2['message']) > 130) {echo "...";} ?> 
+                    
+                    
+                </p> 
+                    
+                    
+                    
+                </div> 
+                      
                 <?php }?>
                       
-                  </div>
+                </div>
 
     
     
@@ -244,7 +303,7 @@
             
             <?php if ($_SESSION['admin_id'] == $row['sender']) { ?>
                  
-             <img height="60" width="60" class="img-right" src="/fridaycamp/public_html/male.png">  
+             <img height="60" width="60" class="img-right" src="/fridaycamp/public_html/<?php  echo $row['img_path']; ?>">  
             
             <?php }                                         
                                                        
@@ -262,7 +321,7 @@
             
          <?php if ($_SESSION['admin_id'] != $row['sender']) { ?>
             
-         <img height="60" width="60" class="img-left" src="/fridaycamp/public_html/male.png">
+         <img height="60" width="60" class="img-left" src="/fridaycamp/public_html/<?php  echo $row['img_path']; ?>">
             
         <?php }                                         
                                                        

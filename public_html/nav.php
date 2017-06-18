@@ -49,7 +49,17 @@
                      
                  while($row = $list_result->fetch_assoc()) {
                      
-                 echo "usersid={$row['usersid']}";
+                     if ($row['sender'] == $_SESSION['admin_id']) {
+                         
+                        echo "usersid={$row['receiver']}"; 
+                         
+                     } elseif ($row['receiver'] == $_SESSION['admin_id']) {
+                         
+                        echo "usersid={$row['sender']}";
+                         
+                     }
+                     
+
                     
                  }
                      
@@ -64,7 +74,52 @@
                  }
 
 
-                  ?>'><img src='/fridaycamp/public_html/assets/mail.svg' height='30'></a>
+                  ?>'><img src='/fridaycamp/public_html/assets/mail.svg' height='30'>
+                
+                
+                
+                
+                   <?php
+                 
+                 $unread = $message->all_unread($_SESSION['admin_id']); 
+    
+                 $unread_result = $unread->get_result();
+                
+                 
+                     
+                 while($row = $unread_result->fetch_assoc()) {
+                     
+                     if ($row['count'] > 0) {
+                         
+                       echo "<span style='font-family: Josefin Slab; color: blue; font-weight: bolder; font-size: 16px;'>(" . $row['count'] . ")</span>";
+                         
+                     }
+                     
+
+                    
+                 } ?>
+                
+                </a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                     
+                     
+                
+                
+                
+                
+                
+                
                      
                  
                 
@@ -137,7 +192,7 @@
                                  <a href="mystuff.php" style="font-family: Josefin Slab;">My Stuff</a><br>
                 
                 
-                <a href="saves.php" style="font-family: Josefin Slab;">Saved Posts</a><br>
+                <a href="bookmark.php" style="font-family: Josefin Slab;">Saved Posts</a><br>
                 
                             <a href="editprofilepicture.php" style="font-family: Josefin Slab;">Edit Profile Picture</a><br>
                             <a href="editprofile.php" style="font-family: Josefin Slab;">Edit Info</a><br>

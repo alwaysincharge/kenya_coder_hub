@@ -25,6 +25,10 @@
     
     
         
+ <?php  include("nav.php"); ?>
+    
+    
+        
             <div style="background: white; min-height: 900px; ">
                 
 

@@ -85,7 +85,7 @@
 					<p class='code-box'>
 						<?php  echo $row['code'];  ?>
 					</p>
-					<a class="toggle form-call">Comment</a>
+					<a href="/fridaycamp/public_html/code_bookmark.php?forumid=<?php echo $_GET['forum']; ?>" class="form-call">Save</a> // <a class="form-call">Delete</a> // <a class="toggle form-call">Comment</a>
 					<div class="selection" style="display: none;">
 						<br>
 

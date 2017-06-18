@@ -106,6 +106,71 @@ class Message {
     
     
     
+    
+    
+         public function mark_as_read($loggin_id_input1, $loggin_id_input2) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("UPDATE messages SET ready = 'read' where sender = ? AND receiver = ? ");
+             
+         $stmt->bind_param("ii", $loggin_id1, $loggin_id2);
+             
+         $loggin_id1 = $loggin_id_input1;
+             
+         $loggin_id2 = $loggin_id_input2;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
+    
+         public function all_unread($loggin_id_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("select count(*) as count from messages where receiver = ? AND ready != 'read' ");
+             
+         $stmt->bind_param("i", $loggin_id);
+             
+         $loggin_id = $loggin_id_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+         public function all_this_unread($loggin_id_input1, $loggin_id_input2) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("select count(*) as count from messages where receiver = ? AND ready != 'read' AND sender = ? ");
+             
+         $stmt->bind_param("ii", $loggin_id1, $loggin_id2);
+             
+         $loggin_id1 = $loggin_id_input1;
+             
+         $loggin_id2 = $loggin_id_input2;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
          public function one_message($loggin_id_input1) {
          
          global $database;
