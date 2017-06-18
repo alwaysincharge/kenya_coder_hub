@@ -16,9 +16,9 @@
             
             
         
-                <a href="/jjj/forum"><img src="/fridaycamp/public_html/assets/campfire.svg" height="40"></a>
+                <a href="/jjj/forum"><img src="/fridaycamp/public_html/assets/campfire.svg" height="25"></a>
                 
-                <a href="/fridaycamp/public_html/home" style="font-family: Josefin Slab; color: blue; margin-left: 20px; font-weight: bolder; font-size: 22px;">Friday Camp</a>
+                <a href="/fridaycamp/public_html/home" style="font-family: Josefin Slab; font-weight: bolder; margin-left: 20px; font-size: 20px; margin-left: 6px;">Friday<span style="color: black;">//</span>Camp</a>
                 
                 
 
@@ -32,7 +32,7 @@
                 
     
                 
-                 <a href="/fridaycamp/public_html/home" class="text-1"><img src="/fridaycamp/public_html/assets/house.svg" height="30"></a>
+                 <a href="/fridaycamp/public_html/home" class="text-1"><img src="/fridaycamp/public_html/assets/house.svg" height="22" width="22"></a>
                 
                 
         
@@ -74,7 +74,7 @@
                  }
 
 
-                  ?>'><img src='/fridaycamp/public_html/assets/mail.svg' height='30'>
+                  ?>'><img src='/fridaycamp/public_html/assets/mail.svg' height='22' width="22">
                 
                 
                 
@@ -126,7 +126,7 @@
                 
                 
                 
-                 <a class="text-1" href="notif.php"><img src="/fridaycamp/public_html/assets/megaphone.svg" height="30"></a>
+                 <a class="text-1" href="notif.php"><img src="/fridaycamp/public_html/assets/megaphone.svg" height="22" width="22"></a>
             
             
             
@@ -148,7 +148,7 @@
 
        echo $row['img_path'];
 
-       }   ?>" height="40" width="40" style="margin-left: 10px; border-radius: 5px; font-family: Josefin Slab;" />
+       }   ?>" height="30" width="30" style="margin-left: 10px; border-radius: 5px; font-family: Josefin Slab;" />
              
             <div class="dropdown-content" style="font-weight: bolder; ">
                 

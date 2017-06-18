@@ -4,14 +4,13 @@
 
 
 .search-main {
-    border-radius: 5px;
-    border: 2px solid #ddd;
+    border-radius: 2px;
+    border: 1px solid #ddd;
     padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: Josefin Slab;
-    font-weight: bolder;
-    font-size: 20px;
+    font-family: georgia;
+    font-size: 14px;
     width: 250px;
 }
 
@@ -129,7 +128,7 @@ width: 70%; float: right; margin-top: 20px;
 }
 
 .home-search {
-    border-radius: 5px; border: 2px solid #ddd;  padding-left: 15px; padding-top: 5px; padding-bottom: 5px; font-family: Josefin Slab; font-weight: bolder; font-size: 16px; 
+    border-radius: 2px; border: 1px solid #ddd;  padding-left: 15px; padding-top: 5px; padding-bottom: 5px; font-family: georgia;  font-size: 14px; 
     width: 200px; margin-left: 10px;
 }
 
@@ -142,7 +141,7 @@ width: 70%; float: right; margin-top: 20px;
 }
 
 .home-head {
-    display: table; margin: 0 auto; font-family: Josefin Slab; font-size: 26px; margin-top: -20px; margin-bottom: 40px;
+    display: table; margin: 0 auto; font-family: georgia; font-size: 20px; margin-top: -20px; margin-bottom: 40px; color: #8f8f8f;
 }
 
 .post-title {
@@ -179,11 +178,11 @@ width: 70%; float: right; margin-top: 20px;
 }
 
 .forum-details {
-    width: 100%; max-width: 500px;  font-family: Josefin Slab; font-weight: bolder; font-size: 20px; padding: 12px; border-radius: 5px; border: 2px solid #ddd; margin-bottom: 10px;
+    width: 100%; max-width: 500px;  font-family: georgia; font-size: 14px; padding: 12px; border-radius: 2px; border: 1px solid #ddd; margin-bottom: 10px;
 }
 
 .forum-title {
-    height: 40px; width: 100%; max-width: 500px;  font-family: Josefin Slab; font-weight: bolder; font-size: 20px; padding: 7px; border-radius: 5px; border: 2px solid #ddd; margin-bottom: 10px; 
+    height: 40px; width: 100%; max-width: 500px;  font-family: georgia; font-size: 14px; padding: 7px; border-radius: 2px; border: 1px solid #ddd; margin-bottom: 10px; 
 }
 
 .forum-post {
