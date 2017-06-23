@@ -57,7 +57,7 @@
             
             <?php
             
-            $this_post = $post->get_this_post($_GET['forum']); 
+            $this_post = $post->this_post($_GET['forum']); 
     
             $this_post_result = $this_post->get_result();   
                     

@@ -33,6 +33,33 @@ class Post {
     
     
     
+       public function edit_post($title_input, $body_input, $code_input, $owner_input, $id_input) {
+
+       global $database;
+        
+       $stmt = $database->connection->prepare("UPDATE forum SET title = ?, body = ?, code = ?, owner = ?  where id = ?");
+        
+       $stmt->bind_param("sssii", $title, $body, $code, $owner, $id);
+        
+       $title = $title_input;
+        
+       $body = $body_input;
+        
+       $code = $code_input;
+        
+       $owner = $owner_input;
+           
+       $id = $id_input;
+          
+       $stmt->execute();
+        
+        
+       return $stmt;    
+
+       }
+    
+    
+    
     
     
     
@@ -130,7 +157,7 @@ class Post {
     
     
     
-         public function get_this_post($id_of_post) {
+         public function this_post($id_of_post) {
          
          global $database;
                             
@@ -140,6 +167,27 @@ class Post {
          $stmt->bind_param("i", $id);
              
          $id = $id_of_post;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+         public function get_this_post($id_of_post, $current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT * FROM forum where id = ? AND owner = ? LIMIT 1");
+             
+         $stmt->bind_param("ii", $id, $current_user);
+             
+         $id = $id_of_post;
+             
+         $current_user = $current_user_input;
           
          $stmt->execute();
               

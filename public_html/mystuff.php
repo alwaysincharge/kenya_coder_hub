@@ -118,7 +118,7 @@
                     
                 
                     
-                <a href="/fridaycamp/public_html/code_bookmark.php?forumid=<?php echo $_GET['forum']; ?>" class="form-call">Edit</a> // <a class="form-call toggle">Delete</a> 
+                <a href="/fridaycamp/public_html/edit_post.php?forum=<?php echo $row['forumid']; ?>" class="form-call">Edit</a> // <a class="form-call toggle">Delete</a> 
                     
                     
                 <div class="selection" style="display: none; font-family: georgia;">
@@ -196,7 +196,7 @@
                         <a href="/fridaycamp/public_html/post/<?php echo $row['postid'];  ?>"><?php echo $row['code'];  ?></a>
 					</p>
 				
-                   <a href="/fridaycamp/public_html/code_bookmark.php?forumid=<?php echo $_GET['forum']; ?>" class="form-call">Edit</a> // <a class="form-call toggle">Delete</a>
+                   <a href="/fridaycamp/public_html/edit_comment.php?comment=<?php echo $row['commentid']; ?>" class="form-call">Edit</a> // <a class="form-call toggle">Delete</a>
                     
                     
                     <div class="selection" style="display: none; font-family: georgia;">
@@ -274,7 +274,7 @@
                         <a href="/fridaycamp/public_html/post/<?php echo $row['postid'];  ?>"><?php echo $row['code'];  ?></a>
 					</p>
 				
-                    <a href="/fridaycamp/public_html/code_bookmark.php?forumid=<?php echo $_GET['forum']; ?>" class="form-call">Edit</a> // <a class="form-call toggle">Delete</a>
+                    <a href="/fridaycamp/public_html/edit_reply.php?reply=<?php echo $row['replyid']; ?>&post=<?php echo $row['postid']; ?>" class="form-call">Edit</a> // <a class="form-call toggle">Delete</a>
                     
                     
                     <div class="selection" style="display: none; font-family: georgia;">

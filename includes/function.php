@@ -80,6 +80,14 @@ function check_lenght_2($property, $min, $max, $msg) {
 }
 
 
+function check_lenght_3($property, $min, $max, $msg, $url) {
+    if ((strlen($property) < $min) || (strlen($property) > $max)) {
+         alert_note($msg);
+      redirect_to($url);
+    }   
+}
+
+
 
 
 

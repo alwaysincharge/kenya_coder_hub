@@ -35,6 +35,33 @@ class Comment {
     
     
     
+       public function edit_comment($body_input, $code_input, $owner_input, $id_input) {
+
+       global $database;
+        
+       $stmt = $database->connection->prepare("UPDATE comment SET body = ?, code = ? where commentowner = ? and id = ?");
+        
+       $stmt->bind_param("ssii", $body, $code, $owner, $id);
+        
+       $body = $body_input;
+        
+       $code = $code_input;
+        
+       $owner = $owner_input;
+           
+       $id = $id_input;
+          
+       $stmt->execute();
+        
+        
+       return $stmt;    
+
+       }
+    
+    
+    
+    
+    
     
          public function get_these_comments($id_of_post) {
          
@@ -52,6 +79,31 @@ class Comment {
          return $stmt;  
         
          }
+    
+    
+    
+    
+         public function get_this_comment($id_of_post, $user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT * FROM comment where id = ? and commentowner = ? limit 1");
+             
+         $stmt->bind_param("ii", $id, $user);
+             
+         $id = $id_of_post;
+             
+         $user = $user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
     
     
     

@@ -36,6 +36,36 @@ class Reply {
     
     
     
+    
+    
+    
+       public function edit_reply($body_input, $code_input, $owner_input, $id_input) {
+
+       global $database;
+        
+       $stmt = $database->connection->prepare("UPDATE reply SET body = ?, code = ? where replyowner = ? and id = ?");
+        
+       $stmt->bind_param("ssii", $body, $code, $owner, $id);
+        
+       $body = $body_input;
+        
+       $code = $code_input;
+        
+       $owner = $owner_input;
+           
+       $id = $id_input;
+          
+       $stmt->execute();
+        
+        
+       return $stmt;    
+
+       }
+    
+    
+    
+    
+    
          public function get_these_replies($id_of_post) {
          
          global $database;
@@ -152,7 +182,7 @@ class Reply {
     
     
     
-         public function delete_replies($id_input, $owner_input) {
+         public function delete_reply($id_input, $owner_input) {
          
          global $database;
                             
@@ -163,6 +193,28 @@ class Reply {
          $id = $id_input;
              
          $owner = $owner_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
+         public function get_this_reply($id_of_post, $user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT * FROM reply where id = ? and replyowner = ? limit 1");
+             
+         $stmt->bind_param("ii", $id, $user);
+             
+         $id = $id_of_post;
+             
+         $user = $user_input;
           
          $stmt->execute();
               
