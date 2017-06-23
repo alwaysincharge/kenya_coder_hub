@@ -33,6 +33,18 @@
     
     
     
+            <?php  
+    
+            if (isset($_SESSION['note1'])) {
+            echo "<div style='display: table; margin: 0 auto; margin-bottom: 30px; margin-top: -30px;'>{$_SESSION['note1']}</div>";  
+            $_SESSION['note1'] = null;
+            }   else {
+            $_SESSION['note1'] = null;
+            }
+                
+            ?>
+    
+    
     
   <div class="col-md-4" style="display: table; margin: 0 auto;">
       
@@ -82,17 +94,17 @@
                         
                 <span class="post-username"><a href="/fridaycamp/public_html/user/<?php echo $row['username']; ?>"><?php echo $row['username'];  ?></a></span>
                         
-                <a href='post/<?php echo $row['id']; ?>' class="post-title"> <?php echo substr($row['title'], 0, 80); if (strlen($row['title']) > 70) {echo "...";}  ?></a>
+                <a href='post/<?php echo $row['forumid']; ?>' class="post-title"> <?php echo substr($row['title'], 0, 80); if (strlen($row['title']) > 70) {echo "...";}  ?></a>
                     
                 </p>
                     
                     
-                <p class="post-body">  <a href='post/<?php echo $row['id']; ?>' style="color: black;"><?php echo substr($row['body'], 0, 300); if (strlen($row['body']) > 260) {echo "...";}  ?></a> </p>
+                <p class="post-body">  <a href='post/<?php echo $row['forumid']; ?>' style="color: black;"><?php echo substr($row['body'], 0, 300); if (strlen($row['body']) > 260) {echo "...";}  ?></a> </p>
                     
                     
                 <?php    
                     
-                $num_comments = $comment->get_number_of_comments($row['id']); 
+                $num_comments = $comment->get_number_of_comments($row['forumid']); 
     
                 $num_comments_result = $num_comments->get_result();   
                     
@@ -102,7 +114,28 @@
                 <p class="comment-1"><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span class="comment-2"><?php echo $num['count'];  ?></span></p>
                     
                     
-                <?php }?>    
+                <?php }?> 
+                    
+                
+                    
+                <a href="/fridaycamp/public_html/code_bookmark.php?forumid=<?php echo $_GET['forum']; ?>" class="form-call">Edit</a> // <a class="form-call toggle">Delete</a> 
+                    
+                    
+                <div class="selection" style="display: none; font-family: georgia;">
+                         
+                        <form method="post" action="delete_post.php?id=<?php echo $row['forumid'];  ?>"><br>
+                        
+                        <p>Are you sure? </p>
+                            
+                        <input type="hidden" name="commentid" value="<?php echo $row['commentid']; ?>">
+                            
+                        <button class="forum-post btn" style="display: inline;" name="submit">Yes</button>
+                        
+                        </form>
+                         
+                </div>
+                    
+                //
                     
                 </div> 
                     
@@ -163,7 +196,24 @@
                         <a href="/fridaycamp/public_html/post/<?php echo $row['postid'];  ?>"><?php echo $row['code'];  ?></a>
 					</p>
 				
+                   <a href="/fridaycamp/public_html/code_bookmark.php?forumid=<?php echo $_GET['forum']; ?>" class="form-call">Edit</a> // <a class="form-call toggle">Delete</a>
                     
+                    
+                    <div class="selection" style="display: none; font-family: georgia;">
+                         
+                        <form method="post" action="delete_comment.php?id=<?php echo $row['commentid'];  ?>"><br>
+                        
+                        <p>Are you sure? </p>
+                            
+                        <input type="hidden" name="commentid" value="<?php echo $row['commentid']; ?>">
+                            
+                        <button class="forum-post btn" style="display: inline;" name="submit">Yes</button>
+                        
+                        </form>
+                         
+                    </div>
+                    
+                    //
 				</div>
                     
               </div> 
@@ -224,6 +274,25 @@
                         <a href="/fridaycamp/public_html/post/<?php echo $row['postid'];  ?>"><?php echo $row['code'];  ?></a>
 					</p>
 				
+                    <a href="/fridaycamp/public_html/code_bookmark.php?forumid=<?php echo $_GET['forum']; ?>" class="form-call">Edit</a> // <a class="form-call toggle">Delete</a>
+                    
+                    
+                    <div class="selection" style="display: none; font-family: georgia;">
+                        
+                        <form method="post" action="delete_reply.php?id=<?php echo $row['replyid'];  ?>"><br>
+                        
+                        <p>Are you sure? </p>
+                            
+                        <input type="hidden" name="commentid" value="<?php echo $row['commentid']; ?>">
+                            
+                        <button class="forum-post btn" style="display: inline;" name="submit">Yes</button>
+                        
+                        </form>
+                         
+                    
+                         
+                    </div>//
+                    
                     
 				</div>
                     
@@ -238,9 +307,10 @@
 </div>  
     
     
-    
+            
+     <?php include('js/general_javascript.php');  ?>  
     
 </body>
     
-    
+
 </html>

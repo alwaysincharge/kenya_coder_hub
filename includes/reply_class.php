@@ -84,6 +84,91 @@ class Reply {
     
     
     
+         public function notif_replies($current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT reply.id as replyid, reply.body, reply.code, comment.postid, reply.replyowner, reply.commentid, users.img_path, users.username, users.id as usersid FROM reply
+         
+         INNER JOIN users ON users.id = reply.replyowner 
+         
+         INNER JOIN comment ON comment.id = reply.commentid
+         
+         INNER JOIN forum ON forum.id = comment.postid
+         
+         where  reply.commentowner = ? AND reply.replyowner != ? order by reply.id desc");
+             
+         $stmt->bind_param("ii", $current_user, $current_user);
+             
+         $current_user = $current_user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
+         public function count_notif_replies($current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT count(*) as count FROM reply where  commentowner = ? AND replyowner != ? AND ready != 'read' ");
+             
+         $stmt->bind_param("ii", $current_user, $current_user);
+             
+         $current_user = $current_user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
+    
+        public function unset_notif_replies($current_user_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare(" UPDATE reply SET ready = 'read' where commentowner = ? ");
+             
+         $stmt->bind_param("i", $current_user);
+             
+         $current_user = $current_user_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+         public function delete_replies($id_input, $owner_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("DELETE FROM reply WHERE id = ? AND replyowner = ? LIMIT 1");
+             
+         $stmt->bind_param("ii", $id, $owner);
+             
+         $id = $id_input;
+             
+         $owner = $owner_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
     
     
     

@@ -195,7 +195,7 @@
 				<div class="row reply-box">
 					<div class="col-xs-2" style="">
 						<div class="dropdown">
-							<img class="reply-image-1" src="/fridaycamp/public_html/<?php echo $row['img_path'];  ?>">
+							<img class="reply-image-1" src="/fridaycamp/public_html/<?php echo $rows['img_path'];  ?>">
 						</div>
 					</div>
 

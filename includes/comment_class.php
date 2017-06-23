@@ -75,6 +75,73 @@ class Comment {
     
     
     
+    
+    
+    
+         public function notif_comments($current_user_input1, $current_user_input2) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT comment.id as commentid, comment.postid, comment.body, comment.code, comment.commentowner, comment.postowner, users.img_path, users.username, users.id as usersid, forum.id FROM comment
+         INNER JOIN users ON users.id = comment.commentowner INNER JOIN forum ON comment.postid = forum.id where comment.postowner = ? AND comment.commentowner != ? order by comment.id desc");
+             
+         $stmt->bind_param("ii", $current_user1, $current_user2);
+             
+         $current_user1 = $current_user_input1;
+             
+         $current_user2 = $current_user_input2;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
+         public function count_notif_comments($current_user_input1, $current_user_input2) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("SELECT count(*) as count FROM comment where postowner = ? AND commentowner != ? AND ready != 'read' ");
+             
+         $stmt->bind_param("ii", $current_user1, $current_user2);
+             
+         $current_user1 = $current_user_input1;
+             
+         $current_user2 = $current_user_input2;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+         public function unset_notif_comments($current_user_input1) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare(" UPDATE comment SET ready = 'read' where postowner = ?");
+             
+         $stmt->bind_param("i", $current_user1);
+             
+         $current_user1 = $current_user_input1;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+ 
+    
+    
+    
+    
          public function get_number_of_comments($id_of_post) {
          
          global $database;
@@ -84,6 +151,28 @@ class Comment {
          $stmt->bind_param("i", $id);
              
          $id = $id_of_post;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+    
+         public function delete_comment($id_input, $owner_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("DELETE FROM comment WHERE id = ? AND commentowner = ? LIMIT 1");
+             
+         $stmt->bind_param("ii", $id, $owner);
+             
+         $id = $id_input;
+             
+         $owner = $owner_input;
           
          $stmt->execute();
               

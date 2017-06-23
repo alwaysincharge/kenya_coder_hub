@@ -22,7 +22,7 @@
     
     
     
-<body>
+<body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
     
     
  <?php  include("nav.php"); ?>
@@ -559,3 +559,4 @@
      <?php include('js/general_javascript.php');  ?>  
     
 </html>
+

@@ -282,7 +282,7 @@ width: 70%; float: right; margin-top: 20px;
 
 
 .mess-body {
-    font-family: Josefin Slab; font-weight: bolder; font-size: 17px; padding: 12px; border-radius: 5px; border: 2px solid #ddd;
+    font-family: georgia; font-size: 15px; padding: 12px; border-radius: 2px; border: 1px solid #ddd;
 }
 
 .email-user {

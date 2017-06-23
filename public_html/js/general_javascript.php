@@ -17,4 +17,54 @@
 
 
 
+    <script>
+            
+      function replaceText1() {
+        var target = document.getElementById("main1");
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'ajax_message.php', true);
+        xhr.onreadystatechange = function () {
+          console.log('readyState: ' + xhr.readyState);
+          if(xhr.readyState == 2) {
+            target.innerHTML = '';
+          }
+          if(xhr.readyState == 4 && xhr.status == 200) {
+            target.innerHTML = xhr.responseText;
+          }
+        }
+        xhr.send();
+      }
+
+
+    </script>
+
+
+
+
+
+    <script>
+        
+        
+      function replaceText2() {
+        var target = document.getElementById("main2");
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'ajax_post.php', true);
+        xhr.onreadystatechange = function () {
+          console.log('readyState: ' + xhr.readyState);
+          if(xhr.readyState == 2) {
+            target.innerHTML = '';
+          }
+          if(xhr.readyState == 4 && xhr.status == 200) {
+            target.innerHTML = xhr.responseText;
+          }
+        }
+        xhr.send();
+      }
+
+
+    </script> 
+
+
+
+
 

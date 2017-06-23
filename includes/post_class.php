@@ -54,7 +54,7 @@ class Post {
          
          global $database;
                             
-         $stmt = $database->connection->prepare("SELECT forum.title, forum.id, forum.body, forum.code, forum.owner, users.img_path, users.username FROM forum
+         $stmt = $database->connection->prepare("SELECT forum.title, forum.id as forumid, forum.body, forum.code, forum.owner, users.img_path, users.username FROM forum
          INNER JOIN users ON users.id = forum.owner where forum.owner = ? order by forum.id DESC");
              
          $stmt->bind_param("i", $current_user);
@@ -160,6 +160,27 @@ class Post {
          $stmt->bind_param("s", $username);
              
          $username = $user_post;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
+    
+    
+    
+    
+         public function delete_post($id_input, $owner_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("DELETE FROM forum WHERE id = ? AND owner = ? LIMIT 1");
+             
+         $stmt->bind_param("ii", $id, $owner);
+             
+         $id = $id_input;
+             
+         $owner = $owner_input;
           
          $stmt->execute();
               
