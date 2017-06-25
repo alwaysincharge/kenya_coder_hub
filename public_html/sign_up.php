@@ -67,30 +67,30 @@ if (isset($_POST['submit']))  {
     
 
     
- does_it_contain($user_input, $space, $equal_sign, $single_quote);
+ does_it_contain($user_input, $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', 'login');
     
- does_it_contain($_POST['password'], $space, $equal_sign, $single_quote);
+ does_it_contain($_POST['password'], $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', 'login');
     
- does_it_contain($_POST['passwordagain'], $space, $equal_sign, $single_quote);
+ does_it_contain($_POST['passwordagain'], $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', 'login');
     
     
     
     
   
- check_emptiness($user_input, 'home', 'All fields have to be filled. Please try again.');
+ check_emptiness($user_input, 'login', 'All fields have to be filled. Please try again.');
     
- check_emptiness($_POST['password'], 'home', 'All fields have to be filled. Please try again.');
+ check_emptiness($_POST['password'], 'login', 'All fields have to be filled. Please try again.');
     
- check_emptiness($_POST['passwordagain'], 'home', 'All fields have to be filled. Please try again.');
-    
-    
+ check_emptiness($_POST['passwordagain'], 'login', 'All fields have to be filled. Please try again.');
     
     
- check_lenght($user_input, 7, 30);
     
- check_lenght($_POST['password'], 7, 30);    
     
- check_lenght($email_input, 5, 30); 
+ check_lenght($user_input, 7, 30, 'The username and password cannot be smaller than 7 characters or bigger than 30.', 'login');
+    
+ check_lenght($_POST['password'], 7, 30, 'The username and password cannot be smaller than 7 characters or bigger than 30.', 'login');    
+    
+ check_lenght($email_input, 5, 30, 'The username and password cannot be smaller than 7 characters or bigger than 30.', 'login'); 
     
     
     
@@ -98,13 +98,13 @@ if (isset($_POST['submit']))  {
  if (!filter_var($email_input, FILTER_VALIDATE_EMAIL) === false) {
  } else {
        alert_note('The email you entered is invalid. Please try again.');
-     redirect_to('index.php');
+     redirect_to('login');
  }
     
     
     
     
- are_both_passwords_equal('home');
+ are_both_passwords_equal('login', $_POST['password'], $_POST['passwordagain']);
     
     
         
@@ -135,7 +135,7 @@ if (isset($_POST['submit']))  {
     
         alert_note('The username you entered already exists. Please try again.');
      
-        redirect_to('home'); 
+        redirect_to('login'); 
      
  } 
     
@@ -148,7 +148,7 @@ if (isset($_POST['submit']))  {
  else  {
     
     alert_note('Please stop trying to hack the site. Thanks a lot.');
-     redirect_to('home'); 
+     redirect_to('login'); 
 }    
 
 

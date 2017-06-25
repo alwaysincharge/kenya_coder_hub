@@ -34,24 +34,24 @@ if (isset($_POST['submit']))  {
     
 
     
- does_it_contain($user_input, $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', 'authenticate.php');
+ does_it_contain($user_input, $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', 'login');
     
- does_it_contain($_POST['password'], $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', 'authenticate.php');
+ does_it_contain($_POST['password'], $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', 'login');
    
     
   
     
- check_emptiness($user_input, 'authenticate.php', 'All fields have to be filled. Please try again.');
+ check_emptiness($user_input, 'login', 'All fields have to be filled. Please try again.');
     
- check_emptiness($_POST['password'], 'authenticate.php', 'All fields have to be filled. Please try again.');
-    
-    
+ check_emptiness($_POST['password'], 'login', 'All fields have to be filled. Please try again.');
     
     
     
- check_lenght($user_input, 7, 30, 'The username and password cannot be smaller than 7 characters or bigger than 30.', 'authenticate.php');
     
- check_lenght($_POST['password'], 7, 30, 'The username and password cannot be smaller than 7 characters or bigger than 30.', 'authenticate.php');    
+    
+ check_lenght($user_input, 7, 30, 'The username and password cannot be smaller than 7 characters or bigger than 30.', 'login');
+    
+ check_lenght($_POST['password'], 7, 30, 'The username and password cannot be smaller than 7 characters or bigger than 30.', 'login');    
 
     
      
@@ -83,7 +83,7 @@ if (isset($_POST['submit']))  {
          
          alert_note('Login failed. Please try again with the right credentials.'); 
              
-         redirect_to('authenticate.php'); 
+         redirect_to('login'); 
                  
          }
      
@@ -97,7 +97,7 @@ if (isset($_POST['submit']))  {
     
          alert_note('Login failed. Please try again with the right credentials.');
      
-         redirect_to('authenticate.php'); 
+         redirect_to('login'); 
      
  }
     
@@ -112,7 +112,7 @@ if (isset($_POST['submit']))  {
 } else  {
     
      alert_note('Please stop trying to hack the site. Thanks a lot.');
-     redirect_to('authenticate.php'); 
+     redirect_to('login'); 
 }    
 
 

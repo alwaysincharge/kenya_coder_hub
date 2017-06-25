@@ -39,6 +39,8 @@ if (isset($_POST['submit']))  {
 
  $replyowner_input = $_POST['replyowner'];
     
+ $postid_input = $_POST['postid'];
+    
  
     
  
@@ -51,16 +53,18 @@ if (isset($_POST['submit']))  {
     
     
     
- check_lenght_2($body_input, 0, 2000, 'The maximum number of characters for each field is body: 2000, code: 2000. ');    
+ check_lenght_2($body_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. ');    
     
- check_lenght_2($code_input, 0, 2000, 'The maximum number of characters for each field is body: 2000, code: 2000. '); 
+ check_lenght_2($code_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. '); 
     
         
     
     
  $reply->create_reply($body_input, $code_input, $commentowner_input, $commentid_input, $replyowner_input); 
     
- 
+ alert_note_positive('You successfully made a reply. Scroll down to see it.');
+     
+ header("Location: {$_SERVER['HTTP_REFERER']}");
     
     
     

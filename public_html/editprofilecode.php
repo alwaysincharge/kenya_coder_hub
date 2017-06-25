@@ -12,8 +12,7 @@
 
 
 if(request_is_post()) {
-if(request_is_same_domain()) {
-if(is_session_valid())    {
+
     
     
 if (isset($_POST['submit']))  {
@@ -108,7 +107,9 @@ if (isset($_POST['submit']))  {
     
  $user->edit_user_profile($fullname_input, $story_input, $skill1_input, $skill2_input, $skill3_input, $skill4_input, $skill5_input, $skill6_input, $skill7_input, $skill8_input, $project1_input, $project2_input, $project3_input, $project4_input, $link1_input, $link2_input, $link3_input, $link4_input, $desc1_input, $desc2_input, $desc3_input, $desc4_input, $school1_input, $school2_input, $school3_input, $school4_input, $diplo1_input, $diplo2_input, $diplo3_input, $diplo4_input, $learn1_input, $learn2_input, $learn3_input, $learn4_input, $param_input); 
     
- alert_note('You successfully made a comment. Scroll down to see it.');
+ alert_note_positive('You successfully made an edit. Scroll down to see it.');
+    
+  header("Location: {$_SERVER['HTTP_REFERER']}");
      
  
     
@@ -126,21 +127,6 @@ if (isset($_POST['submit']))  {
      redirect_to('home'); 
 }    
 
-}
-    else  {
-    
-    alert_note('Please stop trying to hack the site. Thanks a lot. 2');
-     redirect_to('home'); 
-}
-    
-
-    }
-
- else  {
-    
-    alert_note('Please stop trying to hack the site. Thanks a lot. 4');
-     redirect_to('home'); 
-}
 
 
 

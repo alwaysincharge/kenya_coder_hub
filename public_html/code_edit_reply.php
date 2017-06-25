@@ -45,14 +45,14 @@ if (isset($_POST['submit']))  {
  
     
     
- check_emptiness($body_input, 'edit_reply.php?reply=' . $id_input, 'The body field cannot be empty. Please try again.');
+ check_emptiness($body_input, 'edit_reply.php?reply=' . $id_input . '&post=' . $post_id, 'The body field cannot be empty. Please try again.');
     
     
     
     
- check_lenght_3($body_input, 0, 2000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_reply.php?reply=' . $id_input);    
+ check_lenght_3($body_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_reply.php?reply=' . $id_input . '&post=' . $post_id);    
     
- check_lenght_3($code_input, 0, 2000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_reply.php?reply=' . $id_input); 
+ check_lenght_3($code_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_reply.php?reply=' . $id_input . '&post=' . $post_id); 
     
         
     

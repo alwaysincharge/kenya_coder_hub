@@ -6,6 +6,10 @@ RewriteRule ^home index.php [NC,L]
 
 RewriteRule ^forum forum.php [NC,L]
 
+RewriteRule ^login authenticate.php [NC,L]
+
+RewriteRule ^write write_post.php [NC,L]
+
 RewriteRule ^profile editprofile.php [NC,L]
 
 RewriteRule ^post/([0-9]+) post.php?forum=$1 [NC,L]

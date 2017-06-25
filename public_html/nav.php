@@ -298,6 +298,8 @@
             
               <form class="search1" method="get" action="search.php?keywords=<?php  echo $_GET['keywords'];   ?>">
                   
+                  <a href="write" style="margin-left: 12px;" class="choose-page">New Post</a>
+                  
               <input maxlength="100" name="keywords" class="search-main" placeholder="Search users and skills" />
         
               <input style="display: none;" type="submit" name="submit" value="submit" />

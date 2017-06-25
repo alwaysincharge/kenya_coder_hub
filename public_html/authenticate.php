@@ -33,38 +33,12 @@
         <nav style="width: 70%; max-width: 900px; margin: 0 auto; padding-top: 20px;"><br>
             
             
-               <img src="assets/logo.svg" height="40">
+               <img src="assets/campfire.svg" height="40">
 
-               <a class="text-1">Tsutsus</a>
             
-               <a class="text-1">Forum</a>
+               <a href="/fridaycamp/public_html/home" style="font-family: Josefin Slab; color: white; font-weight: bolder; margin-left: 20px; font-size: 20px; margin-left: 6px;">Friday<span style="color: white;">//</span>Camp</a>
             
-               <div class="dropdown">
-    
-                    <a class="text-1" style="font-weight: bolder; text-decoration: underline;">Login Here</a>
-            
-                    <div class="dropdown-content">
-                
-                    <p class="smalltext6">Fill the form to sign in.</p>
-                    
-                 
-                    <form method="post" action="sign_in.php" enctype="multipart/form-data">
-                         
-                        
-                    <input placeholder="username" type="text" name="username" class="form2">
-                
-                    <input placeholder="password" type="password" name="password" class="form2">
-            
-                    <button class="form2" type="submit" name="submit" value="submit">Log into Doc 95</button>
-                        
-                 
-                    
-                    </form>   
 
-                    </div>
-            
-            
-                </div>
               
         </nav>
         
@@ -99,7 +73,7 @@
         
         
         
-        <div style="width: 70%; max-width: 900px; margin: 0 auto;">
+        <div style="width: 100%; max-width: 1200px; display: table; margin: 0 auto;">
             
             
         <br><br><br>
@@ -107,7 +81,7 @@
             
             
             
-            <div class="col-xs-5">
+            <div class="col-xs-4">
                 
                  <p class="bigtext1">Kenya's whole tech community,</p>
                 
@@ -125,7 +99,23 @@
             
             
             
-            <div class="col-xs-2">
+            <div class="col-xs-4">
+                
+                
+                    <form method="post" action="sign_in.php" enctype="multipart/form-data">
+                        
+                    <h5 class="smalltext1">Login below.</h5>
+                         
+                        
+                    <input placeholder="username" type="text" name="username" class="form1">
+                
+                    <input placeholder="password" type="password" name="password" class="form1">
+            
+                    <button class="form1" style="font-family: Josefin Slab; font-weight: bolder;" type="submit" name="submit" value="submit">Submit</button>
+                        
+                 
+                    
+                    </form>   
                 
                  
             </div>
@@ -134,13 +124,13 @@
             
             
             
-            <div class="col-xs-5">
+            <div class="col-xs-4">
                 
                 
                 
                 <form method="post" action="sign_up.php" enctype="multipart/form-data">
                           
-                <h5 class="smalltext1">You should join us. Sign Up below.</h5>
+                <h5 class="smalltext1">Sign Up below.</h5>
                
                 
                 <input placeholder="username" type="text" class="form1" name="username" value="<?php if (isset($_POST['username'])) { echo $_POST['username'];}  ?>">
@@ -155,7 +145,7 @@
                 
                 <div class="toggle">
                     
-                <button class="form1" type="submit" name="submit" style="margin-bottom: 10px;">Sign Up for Doc 95</button>   
+                <button class="form1" style="font-family: Josefin Slab; font-weight: bolder;" type="submit" name="submit" style="margin-bottom: 10px;">Submit</button>   
                     
                 </div>
 

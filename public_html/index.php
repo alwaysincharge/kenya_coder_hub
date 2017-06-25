@@ -81,34 +81,7 @@
          
          
          
-               <form method='post' action="new_post.php"  class='forum-form'>
-            
-                     <textarea maxlength="500" placeholder='Do you have a question, job or story to share?' name="body" class="toggle forum-details"></textarea>
-                   
-                     <div class="selection" style="display: none;">
-                       
-                     <textarea maxlength="500" placeholder='Paste related code here.' name="code" class="toggle forum-details"></textarea>
-                    
-                               
-                     <textarea maxlength="500" placeholder="Title of your post." name="title" class="forum-title"></textarea> <br>
-               
-                     <button name="submit" class="forum-post btn">Post</button>
-               
-                     </div> 
-                       
-                     
-                   
-                     <div class="selection" style="display: none;">
-                   
-                     <a href="index.php"><p class="forum-logout">You need to sign-in to write a post.</p>
-                         
-                     </a>
-                   
-                     </div>
-                   
-                     <br><br>
-                   
-                </form>
+  
          
          
          
@@ -169,10 +142,7 @@
                     <div class="dropdown">
                     
                         <img class="post-img"  src="<?php echo $row['img_path'];  ?>" />
-                    
-                        <div class='dropdown-content post-drop'>
-                   
-                        </div>
+
                         
                     </div>
                        
@@ -206,7 +176,51 @@
                 <p class="comment-1"><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span class="comment-2"><?php echo $num['count'];  ?></span></p>
                     
                     
-                <?php }?>    
+                <?php }?> 
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                <?php
+                         
+                    if ($_SESSION['admin_id'] == $row['owner']) { ?>
+                                                                     
+                    <a href="/fridaycamp/public_html/edit_post.php?forum=<?php echo $row['id']; ?>" class="form-call">Edit</a> //
+                    <a class="toggle form-call">Delete</a> 
+                    
+                    
+                    
+                       <div class="selection" style="display: none; font-family: georgia;">
+                         
+                        <form method="post" action="/fridaycamp/public_html/delete_post.php?id=<?php echo $row['id']; ?>"><br>
+                        
+                        <p>Are you sure? </p>
+                            
+                        <input type="hidden" name="commentid" value="<?php echo $row['commentid']; ?>">
+                            
+                        <button class="forum-post btn" style="display: inline;" name="submit">Yes</button>
+                        
+                        </form>
+                         
+                    </div>
+                    
+                    
+                    
+                    //
+                    
+                    
+                    <?php }
+                                                                 
+                                                                 
+                    ?>
+                    
+                    
+                    
+                    
                     
                 </div> 
                     
@@ -283,9 +297,6 @@
                     
                         <img class="post-img"  src="<?php echo $popularrow['img_path'];  ?>" />
                     
-                        <div class='dropdown-content post-drop'>
-                   
-                        </div>
                         
                     </div>
                        
@@ -319,7 +330,46 @@
                 <p class="comment-1"><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span class="comment-2"><?php echo $num2['count'];  ?></span></p>
                     
                     
-                <?php }?>    
+                <?php }?>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                              <?php
+                         
+                    if ($_SESSION['admin_id'] == $popularrow['owner']) { ?>
+                                                                     
+                    <a href="/fridaycamp/public_html/edit_post.php?forum=<?php echo $popularrow['id']; ?>" class="form-call">Edit</a> //
+                    <a class="toggle form-call">Delete</a> 
+                    
+                    
+                    
+                       <div class="selection" style="display: none; font-family: georgia;">
+                         
+                        <form method="post" action="/fridaycamp/public_html/delete_post.php?id=<?php echo $popularrow['id']; ?>"><br>
+                        
+                        <p>Are you sure? </p>
+                            
+                        <input type="hidden" name="commentid" value="<?php echo $row['commentid']; ?>">
+                            
+                        <button class="forum-post btn" style="display: inline;" name="submit">Yes</button>
+                        
+                        </form>
+                         
+                    </div>
+                    
+                    
+                    
+                    //
+                    
+                    
+                    <?php }
+                                                                 
+                                                                 
+                    ?>
                     
                 </div> 
                     
@@ -359,10 +409,7 @@
                     <div class="dropdown">
                     
                         <img class="post-img"  src="<?php echo $rowsearch['img_path'];  ?>" />
-                    
-                        <div class='dropdown-content post-drop'>
-                   
-                        </div>
+
                         
                     </div>
                        
@@ -396,7 +443,43 @@
                 <p class="comment-1"><span class="glyphicon glyphicon-comment" style="color: #ddd;"></span><span class="comment-2"><?php echo $num['count'];  ?></span></p>
                     
                     
-                <?php }?>    
+                <?php }?> 
+                    
+                    
+                    
+                    
+                              <?php
+                         
+                    if ($_SESSION['admin_id'] == $rowsearch['owner']) { ?>
+                                                                     
+                    <a href="/fridaycamp/public_html/edit_post.php?forum=<?php echo $rowsearch['id']; ?>" class="form-call">Edit</a> //
+                    <a class="toggle form-call">Delete</a> 
+                    
+                    
+                    
+                       <div class="selection" style="display: none; font-family: georgia;">
+                         
+                        <form method="post" action="/fridaycamp/public_html/delete_post.php?id=<?php echo $rowsearch['id']; ?>"><br>
+                        
+                        <p>Are you sure? </p>
+                            
+                        <input type="hidden" name="commentid" value="<?php echo $row['commentid']; ?>">
+                            
+                        <button class="forum-post btn" style="display: inline;" name="submit">Yes</button>
+                        
+                        </form>
+                         
+                    </div>
+                    
+                    
+                    
+                    //
+                    
+                    
+                    <?php }
+                                                                 
+                                                                 
+                    ?>
                     
                 </div> 
                     

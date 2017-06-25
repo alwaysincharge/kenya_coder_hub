@@ -38,9 +38,9 @@ if (isset($_POST['submit']))  {
   
     
   
- check_emptiness($title_input, 'home', 'The body or title field cannot be empty. Please try again.');
+ check_emptiness($title_input, 'write', 'The body or title field cannot be empty. Please try again.');
     
- check_emptiness($body_input, 'home', 'The body or title field cannot be empty. Please try again.');
+ check_emptiness($body_input, 'write', 'The body or title field cannot be empty. Please try again.');
     
     
     

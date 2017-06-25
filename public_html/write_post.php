@@ -41,37 +41,23 @@
             ?>
                 
                 
-                
-                
-                
-            <?php
             
-            $this_post = $post->get_this_post($_GET['forum'], $_SESSION['admin_id']); 
-    
-            $this_post_result = $this_post->get_result();   
+                <form method='post' action="new_post.php"  class='forum-form'>
                     
-        
-            while($row = $this_post_result->fetch_assoc()) { ?>
-         
-               <form method='post' action="code_edit_post.php"  class='forum-form'>
-                   
-                   
-                    <p class="home-head">Edit your post.</p>
-                   
+                    
+                    <p class="home-head">Write a post.</p>
+                    
             
-                     <textarea maxlength="1000" style="height: 150px;" placeholder='Do you have a question, job or story to share?' name="body" class="forum-details"><?php echo $row["body"];  ?></textarea>
+                     <textarea maxlength="1000" placeholder='Do you have a question, job or story to share?' name="body" class="forum-details"></textarea>
                    
                      <div>
                        
-                     <textarea maxlength="1000" style="height: 150px;" placeholder='Paste related code here.' name="code" class="toggle forum-details"><?php echo $row["code"];  ?></textarea>
-                         
-                         
-                     <input maxlength="500" type="hidden" name="id" class="toggle forum-details" value="<?php echo $_GET["forum"];  ?>">
+                     <textarea maxlength="1000" placeholder='Paste related code here.' name="code" class="toggle forum-details"></textarea>
                     
                                
-                     <textarea maxlength="300" style="height: 80px;" placeholder="Title of your post." name="title" class="forum-title"><?php echo $row["title"];  ?></textarea> <br>
+                     <textarea maxlength="300" placeholder="Title of your post." name="title" class="forum-title"></textarea> <br>
                
-                     <button name="submit" class="forum-post btn">Edit</button>
+                     <button name="submit" class="forum-post btn">Post</button>
                
                      </div> 
                        
@@ -89,9 +75,7 @@
                    
                 </form>
                 
-            <?php }
-                
-            ?>
+
                 
                 
             </div>

@@ -104,7 +104,7 @@ class Post {
          global $database;
                             
          $stmt = $database->connection->prepare("SELECT forum.title, forum.id, forum.body, forum.code, forum.owner, users.img_path, users.username, comment.postid FROM forum
-         INNER JOIN users ON users.id = forum.owner INNER JOIN comment ON comment.postid = forum.id order by forum.id DESC");
+         INNER JOIN users ON users.id = forum.owner INNER JOIN comment ON comment.postid = forum.id group by forum.id order by forum.id DESC");
           
          $stmt->execute();
               
@@ -120,7 +120,7 @@ class Post {
          global $database;
                             
          $stmt = $database->connection->prepare("SELECT forum.title, forum.id, forum.body, forum.code, forum.owner, users.img_path, users.username, comment.postid FROM forum
-         INNER JOIN users ON users.id = forum.owner INNER JOIN comment ON comment.postid = forum.id order by forum.id DESC LIMIT ?, ?");
+         INNER JOIN users ON users.id = forum.owner INNER JOIN comment ON comment.postid = forum.id group by forum.id order by forum.id DESC LIMIT ?, ?");
              
          $stmt->bind_param("ii", $first_result, $results_per_page);
              

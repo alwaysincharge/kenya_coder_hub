@@ -15,7 +15,7 @@ $owner = $_SESSION['admin_id'];
   
     
     
-$reply->delete_replies($id_input, $owner);
+$reply->delete_reply($id_input, $owner);
     
 alert_note_positive('The reply has been deleted. Thanks a lot.');
     

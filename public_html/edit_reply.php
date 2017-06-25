@@ -69,11 +69,11 @@
                      <textarea maxlength="500" style="height: 150px; width: 300px;" placeholder='Paste related code here.' name="code" class="toggle forum-details"><?php echo $row["code"];  ?></textarea>
                          
                          
-                <input maxlength="500" style="height: 150px; width: 300px;" type="hidden" name="id" class="forum-details" value="<?php echo $_GET["reply"];  ?>">
+                <input maxlength="1000" style="height: 150px; width: 300px;" type="hidden" name="id" class="forum-details" value="<?php echo $_GET["reply"];  ?>">
                          
-                <input maxlength="500" style="height: 150px; width: 300px;" type="hidden" name="commentid" class="forum-details" value="<?php echo $row["commentid"];  ?>">
+                <input maxlength="1000" style="height: 150px; width: 300px;" type="hidden" name="commentid" class="forum-details" value="<?php echo $row["commentid"];  ?>">
                          
-                <input maxlength="500" style="height: 150px; width: 300px;" type="hidden" name="postid" class="forum-details" value="<?php echo $_GET["post"];  ?>">
+                <input maxlength="1000" style="height: 150px; width: 300px;" type="hidden" name="postid" class="forum-details" value="<?php echo $_GET["post"];  ?>">
                     
                            <br>    
                    

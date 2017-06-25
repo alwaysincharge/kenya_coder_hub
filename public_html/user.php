@@ -77,7 +77,7 @@
                     
                       <?php if ($details['id'] == $_SESSION['admin_id']) { ?>
                    
-                     <button name="submit" class="btn" style="font-family: georgia;"><a>Edit Profile</a></button>   
+                     <button name="submit" class="btn" style="font-family: georgia;"><a href="editprofile.php">Edit Profile</a></button>   
                        
                      <?php }  ?>
                     
@@ -85,7 +85,7 @@
                     
                       <?php if ($details['id'] != $_SESSION['admin_id']) { ?>
                    
-                     <button name="submit" class="btn" style="font-family: georgia;"><a>Send Message</a></button>   
+                     <button name="submit" class="btn" style="font-family: georgia;"><a href="messages.php?usersid=<?php echo $details['id']; ?>">Send Message</a></button>   
                        
                      <?php }  ?>
                      
@@ -349,7 +349,44 @@
                     
                 <p class="post-body">  <a href='../post/<?php echo $row['forumid']; ?>' style="color: black;"><?php echo substr($row['body'], 0, 300); if (strlen($row['body']) > 260) {echo "...";}  ?></a> </p>
                     
-                                        
+                    
+                    
+                    
+                    
+                    
+                    
+                    <?php
+                         
+                    if ($_SESSION['admin_id'] == $row['owner']) { ?>
+                                                                     
+                    <a href="/fridaycamp/public_html/edit_post.php?forum=<?php echo $row['forumid']; ?>" class="form-call">Edit</a> //
+                    <a class="toggle form-call">Delete</a> 
+                    
+                    
+                    
+                       <div class="selection" style="display: none; font-family: georgia;">
+                         
+                        <form method="post" action="/fridaycamp/public_html/delete_post.php?id=<?php echo $row['forumid']; ?>"><br>
+                        
+                        <p>Are you sure? </p>
+                            
+                        <input type="hidden" name="commentid" value="<?php echo $row['commentid']; ?>">
+                            
+                        <button class="forum-post btn" style="display: inline;" name="submit">Yes</button>
+                        
+                        </form>
+                         
+                    </div>
+                    
+                    
+                    
+                    //
+                    
+                    
+                    <?php }
+                                                                 
+                                                                 
+                    ?>
                  
                 </div> 
                     
@@ -378,6 +415,6 @@
     
     </body>
     
-    
+         <?php include('js/general_javascript.php');  ?>  
     
 </html>

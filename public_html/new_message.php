@@ -82,7 +82,7 @@ if (isset($_POST['submit']))  {
     
  $message->create_message($sender_input, $receiver_input, $message_input, $converse); 
     
- alert_note('You successfully made a comment. Scroll down to see it.');
+  header("Location: {$_SERVER['HTTP_REFERER']}");
      
  
     

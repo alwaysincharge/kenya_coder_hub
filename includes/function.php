@@ -75,7 +75,7 @@ function check_lenght($property, $min, $max, $msg, $url) {
 function check_lenght_2($property, $min, $max, $msg) {
     if ((strlen($property) < $min) || (strlen($property) > $max)) {
          alert_note($msg);
-      redirect_to('home');
+      redirect_to('write');
     }   
 }
 

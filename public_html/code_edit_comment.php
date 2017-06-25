@@ -48,9 +48,9 @@ if (isset($_POST['submit']))  {
     
     
     
- check_lenght_3($body_input, 0, 2000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_comment.php?comment=' . $id_input);    
+ check_lenght_3($body_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_comment.php?comment=' . $id_input);    
     
- check_lenght_3($code_input, 0, 2000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_comment.php?comment=' . $id_input); 
+ check_lenght_3($code_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_comment.php?comment=' . $id_input); 
     
         
     

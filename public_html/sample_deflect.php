@@ -9,11 +9,11 @@ if(request_is_post()) {
     
       alert_note('Log in to contact cool programmers around Kenya. Or sign-up below.');
 
-      redirect_to("home");      
+      redirect_to("sign");      
     
 }     else {
     
-      redirect_to("home");      
+      redirect_to("sign");      
        
 }  
 
@@ -21,8 +21,8 @@ if(request_is_post()) {
 
 }   else  {
     
-      alert_note('Please stop trying to hack the site. Thanks a lot.');
-      redirect_to('home'); 
+      alert_note('Log in to contact cool programmers around Kenya. Or sign-up below.');
+      redirect_to('sign'); 
 }    
 
 

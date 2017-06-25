@@ -33,7 +33,16 @@
                 
 
            
-
+            <?php  
+    
+            if (isset($_SESSION['note1'])) {
+            echo "<div style='display: table; margin: 0 auto; margin-top: -30px; margin-bottom: 20px;'>{$_SESSION['note1']}</div>";  
+            $_SESSION['note1'] = null;
+            }   else {
+            $_SESSION['note1'] = null;
+            }
+                
+            ?>
            
            
            

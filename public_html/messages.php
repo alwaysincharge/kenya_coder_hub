@@ -128,11 +128,11 @@
     
                          $one_info_result = $one_info->get_result();   
                     
-                         while($row3 = $one_info_result->fetch_assoc()) { 
+                         while($row3 = $one_info_result->fetch_assoc()) { ?>
                          
-                         echo $row3['username'];
+                         <span style="<?php if ($row2['receiver'] == $_GET['usersid']) { echo "padding: 3px; margin-bottom: 5px; background: #ddd; border-radius: 3px;"; } ?>"> <?php echo $row3['username']; ?> </span>
                          
-                         }
+                        <?php }
                          
                          
                          
@@ -142,11 +142,11 @@
     
                          $one_info_result = $one_info->get_result();   
                     
-                         while($row3 = $one_info_result->fetch_assoc()) { 
+                         while($row3 = $one_info_result->fetch_assoc()) { ?>
                          
-                         echo $row3['username'];
+                         <span style="<?php if ($row2['sender'] == $_GET['usersid']) { echo "padding: 3px; margin-bottom: 5px; background: #ddd; border-radius: 3px;"; } ?>">  <?php echo $row3['username']; ?> </span>
                              
-                         }
+                        <?php }
                   
                          }
                          
@@ -241,7 +241,19 @@
         
         <div class="col-xs-2">
             
-        <img height="60" width="60" class="img-right" src="/fridaycamp/public_html/male.png">
+        <?php
+                  
+        $one_info = $message->get_info_by_receiver($_GET['usersid']); 
+    
+        $one_info_result = $one_info->get_result();   
+                    
+        while($row4 = $one_info_result->fetch_assoc()) { ?>
+            
+        <img height="60" width="60" class="img-right" src="/fridaycamp/public_html/<?php  echo $row4['img_path']; ?>">
+         
+        <?php   }
+            
+        ?>
             
         </div>
         
@@ -296,7 +308,7 @@
     while($row = $conversation_result->fetch_assoc()) { ?>
     
     
-    <div class="row">
+    <div class="row" style="padding-bottom: 20px;">
         
         
         <div class="col-xs-2">
@@ -313,7 +325,7 @@
         
         
         <div class="col-xs-8">
-        <p class="mess-body"><a><?php echo $row['username']; ?></a> <?php echo $row['message']; ?></p>
+        <p class="mess-body"><a href="/fridaycamp/public_html/user/<?php echo $row['username']; ?>"><?php echo $row['username']; ?></a> <?php echo $row['message']; ?></p>
         </div>
         
         

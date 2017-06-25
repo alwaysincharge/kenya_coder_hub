@@ -62,11 +62,11 @@
                    <a href="post/<?php echo $row['postid'];  ?>" class="home-head-2">Visit related post.</a>
                    
             
-                     <textarea maxlength="500" style="height: 150px; width: 300px;" placeholder='Do you have a question, job or story to share?' name="body" class="forum-details"><?php echo $row["body"];  ?></textarea>
+                     <textarea maxlength="1000" style="height: 150px; width: 300px;" placeholder='Do you have a question, job or story to share?' name="body" class="forum-details"><?php echo $row["body"];  ?></textarea>
                    
                      <div>
                        
-                     <textarea maxlength="500" style="height: 150px; width: 300px;" placeholder='Paste related code here.' name="code" class="toggle forum-details"><?php echo $row["code"];  ?></textarea>
+                     <textarea maxlength="1000" style="height: 150px; width: 300px;" placeholder='Paste related code here.' name="code" class="toggle forum-details"><?php echo $row["code"];  ?></textarea>
                          
                          
                 <input maxlength="500" style="height: 150px; width: 300px;" type="hidden" name="id" class="forum-details" value="<?php echo $_GET["comment"];  ?>">
