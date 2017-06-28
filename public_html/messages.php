@@ -1,5 +1,7 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
+<?php $session->if_not_logged_in('login'); ?>
+
 <?php if(!isset($_GET['usersid'])) {$_GET['usersid'] = '';} ?>
 
 <?php if(!isset($_GET['status'])) {$_GET['status'] = '';} ?>
@@ -37,6 +39,20 @@
     
     
 <div class="row" style="width: 100%; max-width: 900px; display: table; margin: 0 auto;">
+    
+    
+    
+    
+            <?php  
+    
+            if (isset($_SESSION['note1'])) {
+            echo "<div style='display: table; margin: 0 auto; margin-bottom: 30px; margin-top: -30px;'>{$_SESSION['note1']}</div>";  
+            $_SESSION['note1'] = null;
+            }   else {
+            $_SESSION['note1'] = null;
+            }
+                
+            ?>
     
     
               <?php
@@ -315,7 +331,9 @@
             
             <?php if ($_SESSION['admin_id'] == $row['sender']) { ?>
                  
-             <img height="60" width="60" class="img-right" src="/fridaycamp/public_html/<?php  echo $row['img_path']; ?>">  
+             <img height="60" width="60" class="img-right" src="/fridaycamp/public_html/<?php  echo $row['img_path']; ?>"> 
+            
+         
             
             <?php }                                         
                                                        
@@ -326,6 +344,32 @@
         
         <div class="col-xs-8">
         <p class="mess-body"><a href="/fridaycamp/public_html/user/<?php echo $row['username']; ?>"><?php echo $row['username']; ?></a> <?php echo $row['message']; ?></p>
+            
+            
+            
+            <?php if ($_SESSION['admin_id'] == $row['sender']) { ?>
+            
+             <a class="form-call toggle" style="padding-top: -200px; font-size: 14px;">delete</a>//
+                    
+                    
+                <div class="selection" style="display: none; font-family: georgia;">
+                         
+                        <form method="post" action="delete_message.php?id=<?php echo $row['id'];  ?>"><br>
+                        
+                        <p>Are you sure? </p>
+                            
+                        <button class="forum-post btn" style="display: inline;" name="submit">Yes</button>
+                        
+                        </form>
+                         
+                </div>
+            
+            <?php }                                         
+                                                       
+            ?>
+            
+            
+            
         </div>
         
         

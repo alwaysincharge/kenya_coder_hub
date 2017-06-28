@@ -1,8 +1,10 @@
             <?php  include_once('../includes/all_classes_and_functions.php');  ?>   
 
 
+  <?php if (isset($_SESSION['admin_id'])) { ?>
             <?php
                 
+          
                 
             $my_comments = $comment->count_notif_comments($_SESSION['admin_id'], $_SESSION['admin_id']); 
     
@@ -40,7 +42,9 @@
             }
                 
             }
-                
+             
+
+            
                   
             ?>
-                   
+                   <?php } ?>

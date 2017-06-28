@@ -2,6 +2,7 @@
                  <?php  include_once('../includes/all_classes_and_functions.php');  ?>    
 
 
+                 <?php if (isset($_SESSION['admin_id'])) { ?>
 
                  <?php
                  
@@ -22,3 +23,6 @@
 
                     
                  } ?>
+
+
+                 <?php } ?>

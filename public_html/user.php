@@ -1,6 +1,8 @@
 
-<?php  include_once('../includes/all_classes_and_functions.php');  ?>
+<?php  include_once(dirname(__FILE__) . '\\' . '../includes/all_classes_and_functions.php');  ?>
 
+
+<?php $_SESSION['realredirect1'] = $_SERVER['REQUEST_URI']; ?>
 
 
 <!DOCTYPE html>
@@ -36,7 +38,9 @@
     
 
                 
-       <div class="row" style="background: white; padding-top: 40px; width: 100%; max-width: 900px; display: table; margin: 0 auto; padding: 20px;">   
+       <div class="row" style="background: white; padding-top: 20px; width: 100%; max-width: 900px; display: table; margin: 0 auto; padding: 20px;">   
+        
+           
         
         
            
@@ -75,7 +79,7 @@
                     <p class="email-user"><?php echo $details['email'];   ?></p>
                     
                     
-                      <?php if ($details['id'] == $_SESSION['admin_id']) { ?>
+                      <?php if ((isset($_SESSION['admin_id'])) && ($details['id'] == $_SESSION['admin_id']) ) { ?>
                    
                      <button name="submit" class="btn" style="font-family: georgia;"><a href="editprofile.php">Edit Profile</a></button>   
                        
@@ -83,7 +87,7 @@
                     
                     
                     
-                      <?php if ($details['id'] != $_SESSION['admin_id']) { ?>
+                      <?php if ((isset($_SESSION['admin_id'])) && ($details['id'] != $_SESSION['admin_id']) ) { ?>
                    
                      <button name="submit" class="btn" style="font-family: georgia;"><a href="messages.php?usersid=<?php echo $details['id']; ?>">Send Message</a></button>   
                        
@@ -357,7 +361,7 @@
                     
                     <?php
                          
-                    if ($_SESSION['admin_id'] == $row['owner']) { ?>
+                    if ((isset($_SESSION['admin_id'])) && ($_SESSION['admin_id'] == $row['owner'])) { ?>
                                                                      
                     <a href="/fridaycamp/public_html/edit_post.php?forum=<?php echo $row['forumid']; ?>" class="form-call">Edit</a> //
                     <a class="toggle form-call">Delete</a> 

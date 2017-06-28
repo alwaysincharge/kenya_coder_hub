@@ -1,5 +1,7 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
+<?php $session->if_not_logged_in('login'); ?>
+
 
 <?php
 
@@ -88,17 +90,7 @@ if (isset($_POST['submit']))  {
     $learn4_input =  $_POST['learn4'];
 
     $param_input = $_SESSION['admin_id'];
-    
-    
-    
-    
-    
-    
- check_lenght_2($fullname_input, 0, 1000, 'The maximum number of characters for each field is 1000. ');
-    
- check_lenght_2($story_input, 0, 1000, 'The maximum number of characters for each field is 1000. ');    
-    
- check_lenght_2($skill1_input, 0, 1000, 'The maximum number of characters for each field is 1000. ');  
+     
     
  
     

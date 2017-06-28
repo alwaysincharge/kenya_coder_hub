@@ -17,9 +17,9 @@ $owner = $_SESSION['admin_id'];
   
     
     
-$post->delete_post($id_input, $owner);
+$message->delete_message($id_input, $owner);
     
-alert_note_positive('The post has been deleted. Thanks a lot.');
+alert_note_positive('The message has been deleted. Thanks a lot.');
     
 header("Location: {$_SERVER['HTTP_REFERER']}");
     

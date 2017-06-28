@@ -1,5 +1,7 @@
-<?php  include_once('../includes/all_classes_and_functions.php');  ?>
+<?php  include_once(dirname(__FILE__) . '\\' . '../includes/all_classes_and_functions.php');  ?>
 
+
+<?php $_SESSION['realredirect1'] = $_SERVER['REQUEST_URI']; ?>
 
 
 <!DOCTYPE html>
@@ -23,7 +25,7 @@
 	<body>
         
         
-        <?php  include("nav.php"); ?>
+        <?php  include(dirname(__FILE__) . '\\' . "nav.php"); ?>
         
         
 
@@ -68,7 +70,8 @@
 			<div class="row posting-box">
 				<div class="col-xs-2" style="">
 					<div class="dropdown">
-						<img class="post-image-1" src="/fridaycamp/public_html/<?php echo $row['img_path'];  ?>">
+						<img class="post-image-1" src="/fridaycamp/public_html/<?php   echo  $row['img_path'];  ?>">
+                      <!--  <?php /* $path = dirname(__FILE__) . '\\' . $row['img_path'];  $path = str_replace('\\', '/', $path); echo $path; */?> -->
 					</div>
 				</div>
 
@@ -93,7 +96,7 @@
                     
                 <?php
                          
-                    if ($_SESSION['admin_id'] == $row['owner']) { ?>
+                    if ((isset($_SESSION['admin_id'])) && ($_SESSION['admin_id'] == $row['owner']) ) { ?>
                                                                      
                     <a href="/fridaycamp/public_html/edit_post.php?forum=<?php echo $row['forumid']; ?>" class="form-call">Edit</a> //
                     <a class="toggle form-call">Delete</a> 
@@ -130,6 +133,9 @@
                     
 					<a href="/fridaycamp/public_html/code_bookmark.php?forumid=<?php echo $_GET['forum']; ?>" class="form-call">Save</a> //
                     <a class="toggle form-call">Comment</a>
+                    
+                    <?php if (isset($_SESSION['admin_id'])) { ?>
+                    
 					<div class="selection" style="display: none;">
 						<br>
 
@@ -145,14 +151,23 @@
                             <input type="hidden" name="postid" value="<?php echo $row['forumid']; ?>">
                             
 							<button class="forum-post btn" name="submit">Post</button> 
-							<div class="selection" style="display: none;">
-								<a href="index.php">
-								<p class="forum-logout">
-									You need to sign-in to write a post.
-								</p></a>
-							</div>
+						
 						</form>
 					</div>
+                    
+                    <?php } ?>
+                    
+                    
+                    <?php if (!isset($_SESSION['admin_id'])) { ?>
+                    
+                    	<div class="selection" style="display: none;">
+								<a href="index.php">
+								<p class="forum-logout">
+									Sign-in to comment.
+								</p></a>
+							</div>
+                                        <?php } ?>
+                    
 				</div>
 			</div>
             
@@ -201,7 +216,7 @@
                     
                     <?php
                          
-                    if ($_SESSION['admin_id'] == $row['commentowner']) { ?>
+                    if ((isset($_SESSION['admin_id'])) && ($_SESSION['admin_id'] == $row['commentowner']) ) { ?>
                                                                      
                     <a href="/fridaycamp/public_html/edit_comment.php?comment=<?php echo $row['commentid']; ?>" class="form-call">Edit</a> //
                     <a class="toggle form-call">Delete</a> 
@@ -233,11 +248,14 @@
                     ?>
                     
 					<a class="toggle form-call">Reply</a>
+                    
+                    <?php if (isset($_SESSION['admin_id'])) { ?>
+                    
 					<div class="selection" style="display: none;">
-						<br>
 
 						<form action="/fridaycamp/public_html/new_reply.php" method='post'>
-							<textarea class="toggle forum-details" maxlength="1000" name="body" placeholder='Reply (required)'></textarea>
+                            
+							<textarea class="forum-details" maxlength="1000" name="body" placeholder='Reply (required)'></textarea>
                             
                             <input type="hidden" name="replyowner" value="<?php echo $_SESSION['admin_id']; ?>">
                             
@@ -248,15 +266,32 @@
                             <input type="hidden" name="postid" value="<?php echo $_GET['forum']; ?>">
 
 							<textarea class="toggle forum-details" maxlength="1000" name="code" placeholder='Paste related code here.'></textarea><br>
+                            
 							<button class="forum-post btn" name="submit">Post</button> 
-							<div class="selection" style="display: none;">
-								<a href="index.php">
-								<p class="forum-logout">
-									You need to sign-in to write a post.
-								</p></a>
-							</div>
+						
 						</form>
+                        
 					</div>
+                        
+                   <?php } ?>
+                    
+                    
+                    <?php if (!isset($_SESSION['admin_id'])) { ?>
+                    
+                    <div class="selection" style="display: none;">
+                        
+								<a href="login">
+                                    
+								<p class="forum-logout">
+									Sign-in to reply.
+								</p>
+                        
+                        </a>
+                        
+				    </div>
+                    
+                    <?php } ?>
+                    
 				</div>
                 
             
@@ -298,9 +333,9 @@
                         
                         
                         
-                                                            <?php
+                    <?php
                          
-                    if ($_SESSION['admin_id'] == $rows['replyowner']) { ?>
+                    if ( (isset($_SESSION['admin_id'])) && ($_SESSION['admin_id'] == $rows['replyowner'])  ) { ?>
                                                                      
                     <a href="/fridaycamp/public_html/edit_reply.php?reply=<?php echo $rows['replyid']; ?>&post=<?php echo $_GET['forum']; ?>" class="form-call">Edit</a> //
                     <a class="toggle form-call">Delete</a> 

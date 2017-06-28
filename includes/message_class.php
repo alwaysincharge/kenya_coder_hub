@@ -209,7 +209,23 @@ class Message {
     
     
     
-    
+         public function delete_message($id_input, $owner_input) {
+         
+         global $database;
+                            
+         $stmt = $database->connection->prepare("DELETE FROM messages WHERE id = ? AND sender = ? LIMIT 1");
+             
+         $stmt->bind_param("ii", $id, $owner);
+             
+         $id = $id_input;
+             
+         $owner = $owner_input;
+          
+         $stmt->execute();
+              
+         return $stmt;  
+        
+         }
     
     
     

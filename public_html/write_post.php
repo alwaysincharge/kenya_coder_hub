@@ -1,7 +1,6 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
-
-
+<?php $session->if_not_logged_in('login'); ?>
 
 
 <html lang="en">
@@ -48,14 +47,14 @@
                     <p class="home-head">Write a post.</p>
                     
             
-                     <textarea maxlength="1000" placeholder='Do you have a question, job or story to share?' name="body" class="forum-details"></textarea>
+                     <textarea maxlength="1000" placeholder='Do you have a question, job or story to share? (required)' name="body" class="forum-details"></textarea>
                    
                      <div>
                        
                      <textarea maxlength="1000" placeholder='Paste related code here.' name="code" class="toggle forum-details"></textarea>
                     
                                
-                     <textarea maxlength="300" placeholder="Title of your post." name="title" class="forum-title"></textarea> <br>
+                     <textarea maxlength="300" placeholder="Title of your post. (required)" name="title" class="forum-title"></textarea> <br>
                
                      <button name="submit" class="forum-post btn">Post</button>
                

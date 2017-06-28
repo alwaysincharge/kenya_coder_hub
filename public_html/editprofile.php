@@ -1,6 +1,6 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
-
+<?php $session->if_not_logged_in('login'); ?>
 
 <html lang="en">
     

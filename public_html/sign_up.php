@@ -151,6 +151,6 @@ if (isset($_POST['submit']))  {
      redirect_to('login'); 
 }    
 
-
+redirect_to('login');
 
 ?>

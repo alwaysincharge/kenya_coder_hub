@@ -22,16 +22,20 @@
                 
                 
 
-                         
-                <div class="dropdown">
+
+                
+                
+                
+                
+                
+                
+                
+                
+    <?php if (isset($_SESSION['admin_id'])) { ?>
     
-                <a class="text-1" style="font-weight: bolder; text-decoration: underline;">Login / Sign-up</a>
-            
-                </div>
-                
-                
     
-                
+    
+    
                  <a href="/fridaycamp/public_html/home" class="text-1"><img src="/fridaycamp/public_html/assets/house.svg" height="22" width="22"></a>
                 
                 
@@ -264,17 +268,25 @@
                 
                 
                 
-                                 <a href="mystuff.php" style="font-family: Josefin Slab;">My Stuff</a><br>
+                            <a href="mystuff.php" style="font-family: Josefin Slab;">My Stuff</a><br>
                 
-                
-                <a href="bookmark.php" style="font-family: Josefin Slab;">Saved Posts</a><br>
+                            <a href="bookmark.php" style="font-family: Josefin Slab;">Saved Posts</a><br>
                 
                             <a href="editprofilepicture.php" style="font-family: Josefin Slab;">Edit Profile Picture</a><br>
+                
                             <a href="editprofile.php" style="font-family: Josefin Slab;">Edit Info</a><br>
+                
                             <a href="editpassword.php" style="font-family: Josefin Slab;">Change Password</a><br>
+                
                             <a href="editusername.php" style="font-family: Josefin Slab;">Change Username</a><br>
+                
                             <a href="editemail.php" style="font-family: Josefin Slab;">Change E-mail</a><br>
-                            <a href="logout.php" style="font-family: Josefin Slab;">Logout</a><br>
+                
+                            <a href="/fridaycamp/public_html/out.php" style="font-family: Josefin Slab;">Logout</a><br>
+                
+                
+                
+                
         
             </div>     
                     
@@ -288,6 +300,14 @@
             </div>
 
             
+    
+    
+    
+    
+    
+    
+    <?php } ?>
+                
             
             
             
@@ -298,7 +318,18 @@
             
               <form class="search1" method="get" action="search.php?keywords=<?php  echo $_GET['keywords'];   ?>">
                   
-                  <a href="write" style="margin-left: 12px;" class="choose-page">New Post</a>
+                  
+                  
+                  <?php if (!isset($_SESSION['admin_id'])) { ?>
+                  
+                  <a href="/fridaycamp/public_html/login" style="margin-left: 12px; padding-top: 5px; padding-bottom: 5px;" class="choose-page">Sign Up / Login</a>
+                  
+                  <?php } ?>
+                  
+                  
+                  
+                  
+                  <a href="write" style="margin-left: 12px; padding-top: 5px; padding-bottom: 5px;" class="choose-page">New Post</a>
                   
               <input maxlength="100" name="keywords" class="search-main" placeholder="Search users and skills" />
         

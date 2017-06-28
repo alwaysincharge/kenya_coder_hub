@@ -195,7 +195,7 @@ width: 70%; float: right; margin-top: 20px;
 }
 
 .forum-logout {
-    font-family: Josefin Slab; font-weight: bold; color: blue; font-size: 17px;
+    font-family: georgia; padding-top: 10px; text-decoration: underline; font-size: 15px;
 }
 
 .single-post {

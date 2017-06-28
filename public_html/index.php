@@ -187,7 +187,7 @@
                     
                 <?php
                          
-                    if ($_SESSION['admin_id'] == $row['owner']) { ?>
+                    if ( (isset($_SESSION['admin_id'])) && ($_SESSION['admin_id'] == $row['owner'])  ){ ?>
                                                                      
                     <a href="/fridaycamp/public_html/edit_post.php?forum=<?php echo $row['id']; ?>" class="form-call">Edit</a> //
                     <a class="toggle form-call">Delete</a> 
@@ -338,9 +338,9 @@
                     
                     
                     
-                              <?php
+                    <?php
                          
-                    if ($_SESSION['admin_id'] == $popularrow['owner']) { ?>
+                    if ((isset($_SESSION['admin_id'])) && ($_SESSION['admin_id'] == $popularrow['owner']))  { ?>
                                                                      
                     <a href="/fridaycamp/public_html/edit_post.php?forum=<?php echo $popularrow['id']; ?>" class="form-call">Edit</a> //
                     <a class="toggle form-call">Delete</a> 
@@ -450,7 +450,7 @@
                     
                               <?php
                          
-                    if ($_SESSION['admin_id'] == $rowsearch['owner']) { ?>
+                    if ((isset($_SESSION['admin_id']))  && ($_SESSION['admin_id'] == $rowsearch['owner']) ) { ?>
                                                                      
                     <a href="/fridaycamp/public_html/edit_post.php?forum=<?php echo $rowsearch['id']; ?>" class="form-call">Edit</a> //
                     <a class="toggle form-call">Delete</a> 

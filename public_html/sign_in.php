@@ -75,6 +75,19 @@ if (isset($_POST['submit']))  {
          
          $_SESSION['admin_id'] = $row['id'];
              
+             
+        if (isset($_SESSION['realredirect1'])) {
+             
+             redirect_to($_SESSION['realredirect1']); 
+             
+          }
+             
+         else { 
+                                
+             redirect_to('home');     
+                                
+         }
+             
          
          
          }
@@ -116,5 +129,6 @@ if (isset($_POST['submit']))  {
 }    
 
 
+redirect_to('login');
 
 ?>
