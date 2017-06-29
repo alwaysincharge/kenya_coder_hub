@@ -1,14 +1,13 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
+
 <?php $session->if_not_logged_in('login'); ?>
 
 
 <?php
 
 
-
  $session->if_not_logged_in('rkjerjk');
-
 
 
  $body_input = '';
@@ -22,10 +21,8 @@
  $postowner_input = '';
 
 
-if(request_is_post()) {
-  
 
-    
+if(request_is_post()) {
     
 if (isset($_POST['submit']))  {
     
@@ -43,16 +40,9 @@ if (isset($_POST['submit']))  {
     
  $postid_input = $_POST['postid'];
     
- 
-    
- 
-    
- 
     
     
  check_emptiness($body_input, 'home', 'The body field cannot be empty. Please try again.');
-    
-    
     
     
  check_lenght_2($body_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. ');    
@@ -60,8 +50,6 @@ if (isset($_POST['submit']))  {
  check_lenght_2($code_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. '); 
     
         
-    
-    
  $reply->create_reply($body_input, $code_input, $commentowner_input, $commentid_input, $replyowner_input); 
     
  alert_note_positive('You successfully made a reply. Scroll down to see it.');
@@ -69,17 +57,14 @@ if (isset($_POST['submit']))  {
  header("Location: {$_SERVER['HTTP_REFERER']}");
     
     
-    
-    
-    
-    
-
 }}
     
  else  {
     
     alert_note('Please stop trying to hack the site. Thanks a lot. 1');
-     redirect_to('home'); 
+     
+    redirect_to('home'); 
+     
 }    
 
 

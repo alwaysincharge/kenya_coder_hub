@@ -22,7 +22,7 @@
       function replaceText1() {
         var target = document.getElementById("main1");
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'ajax_message.php', true);
+        xhr.open('GET', '/fridaycamp/public_html/ajax_message.php', true);
         xhr.onreadystatechange = function () {
           console.log('readyState: ' + xhr.readyState);
           if(xhr.readyState == 2) {
@@ -48,7 +48,7 @@
       function replaceText2() {
         var target = document.getElementById("main2");
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'ajax_post.php', true);
+        xhr.open('GET', '/fridaycamp/public_html/ajax_post.php', true);
         xhr.onreadystatechange = function () {
           console.log('readyState: ' + xhr.readyState);
           if(xhr.readyState == 2) {

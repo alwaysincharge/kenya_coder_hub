@@ -1,7 +1,8 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
-<?php if(!isset($_GET['state'])) {$_GET['state'] = '';} ?>
 
+
+<?php if(!isset($_GET['state'])) {$_GET['state'] = '';} ?>
 
 
 
@@ -60,11 +61,17 @@
         <?php  
     
         if (isset($_SESSION['note1'])) {
+            
         echo "<div style='display: table; margin: 0 auto; margin-top: -30px;'>{$_SESSION['note1']}</div>";  
+            
             $_SESSION['note1'] = null;
+            
         }   else {
+            
             $_SESSION['note1'] = null;
+            
         }
+     
         ?>
             
             
@@ -72,21 +79,7 @@
      
      
      
-     <div class="col-md-9">
-         
-         
-         
-         
-         
-         
-         
-         
-  
-         
-         
-         
-         
-         
+<div class="col-md-9">
          
 
          
@@ -177,11 +170,6 @@
                     
                     
                 <?php }?> 
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -387,6 +375,11 @@
          
          
          
+         
+         
+         
+         
+         
     
                 <?php if (isset($_GET['keywords'])) { ?>
                     
@@ -566,23 +559,7 @@
                        <?php }
                     
                     
-                    ?>
-                    
-
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
+                    ?> 
      
      
      </div>
@@ -606,8 +583,6 @@
                   
               </form>
            
-         
-         
                
                <div>
                
@@ -618,8 +593,6 @@
                <?php if (($_GET['state'] != 'all') && (!isset($_GET['keywords']))) { echo "<i class='fa fa-check' aria-hidden='true'></i>"; }   ?></p></a>
                
                <br>
-                   
-                   
                    
                
                <a href="index.php?state=all" class="choose-page">All Posts <?php if ($_GET['state'] == 'all') { echo "<i class='fa fa-check' aria-hidden='true'></i>"; }   ?></a>
@@ -639,7 +612,9 @@
     
     
     
-     <?php include('js/general_javascript.php');  ?>  
+    
+<?php include('js/general_javascript.php');  ?>  
+    
     
 </html>
 

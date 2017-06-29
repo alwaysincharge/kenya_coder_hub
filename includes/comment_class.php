@@ -102,10 +102,7 @@ class Comment {
          }
     
     
-    
-    
-    
-    
+
     
          public function my_comments($current_user_input) {
          
@@ -123,10 +120,6 @@ class Comment {
          return $stmt;  
         
          }
-    
-    
-    
-    
     
     
     
@@ -232,16 +225,7 @@ class Comment {
         
          }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      
+       
     
 }
 

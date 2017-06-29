@@ -56,7 +56,7 @@ EOT;
     <meta charset="UTF-8">
     <title>Contact form</title>
 </head>
-<body>
+<body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
 <h1>Contact us</h1>
 <?php if (!empty($msg)) {
     echo "<h2>$msg</h2>";

@@ -1,22 +1,16 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
+
 <?php $session->if_not_logged_in('login'); ?>
 
 
 <?php
 
-
-
- $session->if_not_logged_in('rkjerjk');
-
-
-
+$session->if_not_logged_in('rkjerjk');
 
 
 if(request_is_post()) {
-
-    
-    
+   
 if (isset($_POST['submit']))  {
     
 
@@ -90,9 +84,79 @@ if (isset($_POST['submit']))  {
     $learn4_input =  $_POST['learn4'];
 
     $param_input = $_SESSION['admin_id'];
-     
     
+    
+    
+    
+    check_lenght($fullname_input, 0, 30, 'The fullname field cannot be longer than 30.', 'editprofile.php');
+     
+    check_lenght($story_input, 0, 500, 'The story field cannot be longer than 500.', 'editprofile.php');
  
+    check_lenght($skill1_input, 0, 30, 'The skills field cannot be longer than 30.', 'editprofile.php');
+    
+    check_lenght($skill2_input, 0, 30, 'The skills field cannot be longer than 30.', 'editprofile.php');
+    
+    check_lenght($skill3_input, 0, 30, 'The skills field cannot be longer than 30.', 'editprofile.php');
+    
+    check_lenght($skill4_input, 0, 30, 'The skills field cannot be longer than 30.', 'editprofile.php');
+    
+    check_lenght($skill5_input, 0, 30, 'The skills field cannot be longer than 30.', 'editprofile.php');
+    
+    check_lenght($skill6_input, 0, 30, 'The skills field cannot be longer than 30.', 'editprofile.php');
+    
+    check_lenght($skill7_input, 0, 30, 'The skills field cannot be longer than 30.', 'editprofile.php');
+    
+    check_lenght($skill8_input, 0, 30, 'The skills field cannot be longer than 30.', 'editprofile.php');
+    
+    check_lenght($project1_input, 0, 50, 'The projects field cannot be longer than 50.', 'editprofile.php');
+    
+    check_lenght($project2_input, 0, 50, 'The projects field cannot be longer than 50.', 'editprofile.php');
+    
+    check_lenght($project3_input, 0, 50, 'The projects field cannot be longer than 50.', 'editprofile.php');
+    
+    check_lenght($project4_input, 0, 50, 'The projects field cannot be longer than 50.', 'editprofile.php');
+    
+    check_lenght($link1_input, 0, 300, 'The link field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($link2_input, 0, 300, 'The link field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($link3_input, 0, 300, 'The link field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($link4_input, 0, 300, 'The link field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($desc1_input, 0, 300, 'The description field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($desc2_input, 0, 300, 'The description field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($desc3_input, 0, 300, 'The description field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($desc4_input, 0, 300, 'The description field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($school1_input, 0, 60, 'The school field cannot be longer than 60.', 'editprofile.php');
+    
+    check_lenght($school2_input, 0, 60, 'The school field cannot be longer than 60.', 'editprofile.php');
+    
+    check_lenght($school3_input, 0, 60, 'The school field cannot be longer than 60.', 'editprofile.php');
+    
+    check_lenght($school4_input, 0, 60, 'The school field cannot be longer than 60.', 'editprofile.php');
+    
+    check_lenght($diplo1_input, 0, 60, 'The diploma field cannot be longer than 60.', 'editprofile.php');
+    
+    check_lenght($diplo2_input, 0, 60, 'The diploma field cannot be longer than 60.', 'editprofile.php');
+    
+    check_lenght($diplo3_input, 0, 60, 'The diploma field cannot be longer than 60.', 'editprofile.php');
+    
+    check_lenght($diplo4_input, 0, 60, 'The diploma field cannot be longer than 60.', 'editprofile.php');
+    
+    check_lenght($learn1_input, 0, 300, 'The learn field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($learn2_input, 0, 300, 'The learn field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($learn3_input, 0, 300, 'The learn field cannot be longer than 300.', 'editprofile.php');
+    
+    check_lenght($learn4_input, 0, 300, 'The learn field cannot be longer than 300.', 'editprofile.php');
+    
+    
     
         
     
@@ -101,37 +165,20 @@ if (isset($_POST['submit']))  {
     
  alert_note_positive('You successfully made an edit. Scroll down to see it.');
     
-  header("Location: {$_SERVER['HTTP_REFERER']}");
+ header("Location: {$_SERVER['HTTP_REFERER']}");
      
  
-    
-    
-    
-    
-    
-    
+     
 
 }}
     
  else  {
     
     alert_note('Please stop trying to hack the site. Thanks a lot. 1');
-     redirect_to('home'); 
+     
+    redirect_to('home'); 
+     
 }    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
 
 

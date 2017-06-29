@@ -1,19 +1,17 @@
-
 <?php  include_once(dirname(__FILE__) . '\\' . '../includes/all_classes_and_functions.php');  ?>
 
-
-<?php $_SESSION['realredirect1'] = $_SERVER['REQUEST_URI']; ?>
 
 
 <!DOCTYPE html>
 
 
 
-
 <html lang="en">
+
     
     
 <head>
+    
     
 	<title>Tsutsus - Meet Kenya's programmers.</title>
     
@@ -21,15 +19,15 @@
     
     <?php include('head_info.php'); ?>
     
+    
 </head>
     
  
     
+<body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)" >
     
-    
-<body>
 
-<?php  include("nav.php"); ?>
+       <?php  include("nav.php"); ?>
 
 
 <div style="background: white; min-height: 900px;">
@@ -38,18 +36,12 @@
     
 
                 
-       <div class="row" style="background: white; padding-top: 20px; width: 100%; max-width: 900px; display: table; margin: 0 auto; padding: 20px;">   
+<div class="row" style="background: white; padding-top: 20px; width: 100%; max-width: 900px; display: table; margin: 0 auto; padding: 20px;">   
         
            
-        
-        
-           
-           <div class="col-md-6" style=" min-height: 400px; border-radius: 2px;">
+               <div class="col-md-6" style=" min-height: 400px; border-radius: 2px;">
                
 
-                   
-               
-               
                <?php
             
                $all_details = $user->display_all_user_details_by_user($_GET['person']); 
@@ -413,12 +405,16 @@
            
         
         
-       </div> 
+</div> 
     
-       </div>
     
-    </body>
+</div>
     
-         <?php include('js/general_javascript.php');  ?>  
+    
+</body>
+    
+    
+<?php include('js/general_javascript.php');  ?> 
+    
     
 </html>

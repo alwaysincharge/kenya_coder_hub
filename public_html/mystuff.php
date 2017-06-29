@@ -1,9 +1,7 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
+
 <?php $session->if_not_logged_in('login'); ?>
-
-
-
 
 
 <html lang="en">
@@ -11,11 +9,13 @@
     
 <head>
     
+    
 	<title>Friday Camp - Meet Kenya's programmers.</title>
     
     <meta name="description" content="Create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.">
     
     <?php include('head_info.php'); ?>
+    
     
 </head>
     
@@ -23,25 +23,28 @@
     
     
     
-<body>
+<body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
     
     
- <?php  include("nav.php"); ?>
-    
+            <?php  include("nav.php"); ?>
     
     
 <div class="row" style="width: 100%; max-width: 1300px; display: table; margin: 0 auto;">
     
     
     
-    
             <?php  
     
             if (isset($_SESSION['note1'])) {
+                
             echo "<div style='display: table; margin: 0 auto; margin-bottom: 30px; margin-top: -30px;'>{$_SESSION['note1']}</div>";  
+                
             $_SESSION['note1'] = null;
+                
             }   else {
+                
             $_SESSION['note1'] = null;
+                
             }
                 
             ?>
@@ -309,8 +312,8 @@
 </div>  
     
     
-            
-     <?php include('js/general_javascript.php');  ?>  
+<?php include('js/general_javascript.php');  ?> 
+    
     
 </body>
     

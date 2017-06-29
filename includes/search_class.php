@@ -29,8 +29,6 @@ class Search {
     
     
     
-         
-    
           public function search_users($keyword_input) {
 
           global $database;
@@ -47,11 +45,7 @@ class Search {
  
           }
     
-    
-    
-    
-    
-    
+     
 }
 
 

@@ -1,4 +1,3 @@
-
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
 <?php $session->if_not_logged_in('login'); ?>
@@ -92,6 +91,7 @@ if (isset($_POST['submit']))  {
      
      
          if (password_verify($_POST['oldpassword'], $row['password'])) { 
+             
          
          $user->edit_password($password_db_input, $_SESSION['admin_id']);
              
@@ -99,11 +99,14 @@ if (isset($_POST['submit']))  {
      
          redirect_to('editpassword.php');
              
+             
          } else {
+             
              
          alert_note('You typed your current password wrong. Please try again. ');
      
          redirect_to('editpassword.php');
+             
              
          }
      

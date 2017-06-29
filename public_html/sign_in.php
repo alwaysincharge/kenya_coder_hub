@@ -1,8 +1,8 @@
-
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
-<?php
 
+
+<?php
 
 
 
@@ -11,11 +11,7 @@ $user_input = '';
 
 
 if(request_is_post()) {
-
-    
-    
-    
-    
+   
 if (isset($_POST['submit']))  {
     
     
@@ -23,8 +19,7 @@ if (isset($_POST['submit']))  {
  $user_input = $_POST['username'];
     
     
-
-    
+  
  $space = ' ';
     
  $equal_sign = '=';
@@ -33,19 +28,15 @@ if (isset($_POST['submit']))  {
     
     
 
-    
  does_it_contain($user_input, $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', 'login');
     
  does_it_contain($_POST['password'], $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', 'login');
    
     
   
-    
  check_emptiness($user_input, 'login', 'All fields have to be filled. Please try again.');
     
  check_emptiness($_POST['password'], 'login', 'All fields have to be filled. Please try again.');
-    
-    
     
     
     
@@ -61,63 +52,52 @@ if (isset($_POST['submit']))  {
     
     
     
-    
-    
-    
-    
  if($founduser_result->num_rows == 1) {
      
      
     
          while($row = $founduser_result->fetch_assoc()) {
+             
     
-         if (password_verify($_POST['password'], $row['password'])) { 
+               if (password_verify($_POST['password'], $row['password'])) { 
          
-         $_SESSION['admin_id'] = $row['id'];
+               $_SESSION['admin_id'] = $row['id'];
              
              
-        if (isset($_SESSION['realredirect1'])) {
+                    if (isset($_SESSION['realredirect1'])) {
              
-             redirect_to($_SESSION['realredirect1']); 
+                    redirect_to($_SESSION['realredirect1']); 
              
-          }
+                    }
              
-         else { 
+                    else { 
                                 
-             redirect_to('home');     
+                    redirect_to('home');     
                                 
-         }
+                    }
              
-         
-         
-         }
-     
-         else {
-         
-         alert_note('Login failed. Please try again with the right credentials.'); 
-             
-         redirect_to('login'); 
-                 
-         }
-     
-         }
-    
-    
-     
-     
 
+               }
+     
+               else {
+         
+               alert_note('Login failed. Please try again with the right credentials.'); 
+             
+               redirect_to('login'); 
+                 
+               }
+     
+         }
+    
+    
+     
 }  else {
     
          alert_note('Login failed. Please try again with the right credentials.');
      
          redirect_to('login'); 
      
- }
-    
-    
-    
-    
-  
+}
     
 
 }
@@ -125,7 +105,9 @@ if (isset($_POST['submit']))  {
 } else  {
     
      alert_note('Please stop trying to hack the site. Thanks a lot.');
+    
      redirect_to('login'); 
+    
 }    
 
 

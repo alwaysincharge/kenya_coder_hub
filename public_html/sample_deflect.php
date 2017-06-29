@@ -4,6 +4,7 @@
 <?php
 
 if(request_is_post()) {
+    
 
       if (!isset($_SESSION['admin_id']))  {
     
@@ -11,18 +12,20 @@ if(request_is_post()) {
 
       redirect_to("sign");      
     
-}     else {
+      }  else {
     
       redirect_to("sign");      
        
-}  
+      }  
 
 
 
 }   else  {
     
       alert_note('Log in to contact cool programmers around Kenya. Or sign-up below.');
+    
       redirect_to('sign'); 
+    
 }    
 
 

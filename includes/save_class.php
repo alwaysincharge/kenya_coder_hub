@@ -92,18 +92,8 @@ class Bookmark {
         
        return $stmt;   
            
-           
-           
-           
-       }
-    
-    
-    
-       
-    
-    
-    
-    
+                
+       } 
     
 }
 

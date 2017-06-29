@@ -36,7 +36,7 @@ if (array_key_exists('userfile', $_FILES)) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>PHPMailer Upload</title>
 </head>
-<body>
+<body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
 <?php if (empty($msg)) { ?>
     <form method="post" enctype="multipart/form-data">
         <input type="hidden" name="MAX_FILE_SIZE" value="100000"> Send this file: <input name="userfile" type="file">

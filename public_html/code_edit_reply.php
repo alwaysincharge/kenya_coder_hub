@@ -1,5 +1,6 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
+
 <?php $session->if_not_logged_in('login'); ?>
 
 
@@ -8,7 +9,6 @@
 
 
  $session->if_not_logged_in('rkjerjk');
-
 
 
  $body_input = '';
@@ -22,10 +22,10 @@
  $postowner_input = '';
 
 
+
+
 if(request_is_post()) {
 
-    
-    
 if (isset($_POST['submit']))  {
     
 
@@ -48,15 +48,10 @@ if (isset($_POST['submit']))  {
     
     
  check_emptiness($body_input, 'edit_reply.php?reply=' . $id_input . '&post=' . $post_id, 'The body field cannot be empty. Please try again.');
-    
-    
-    
-    
- check_lenght_3($body_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_reply.php?reply=' . $id_input . '&post=' . $post_id);    
-    
+      
+ check_lenght_3($body_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_reply.php?reply=' . $id_input . '&post=' . $post_id);      
  check_lenght_3($code_input, 0, 1000, 'The maximum number of characters for each field is body: 2000, code: 2000. ', 'edit_reply.php?reply=' . $id_input . '&post=' . $post_id); 
     
-        
     
     
  $reply->edit_reply($body_input, $code_input, $replyowner_input, $id_input); 
@@ -72,7 +67,9 @@ if (isset($_POST['submit']))  {
  else  {
     
     alert_note('Please stop trying to hack the site. Thanks a lot. 1');
-     redirect_to('home'); 
+     
+    redirect_to('home'); 
+     
 }    
 
 

@@ -1,11 +1,8 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
 
-<?php $session->if_not_logged_in('login'); ?>
-
 
 <html lang="en">
-    
     
     
 <head>
@@ -27,7 +24,6 @@
 <body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
     
     
-    
             <?php  include("nav.php"); ?>
     
                           
@@ -39,7 +35,7 @@
     
             if (isset($_SESSION['note1'])) {
                 
-            echo "<div style='display: table; margin: 0 auto; margin-top: -30px;'>{$_SESSION['note1']}</div>";  
+            echo "<div style='display: table; margin: 0 auto; margin-top: -30px; margin-bottom: 20px;'>{$_SESSION['note1']}</div>";  
                 
             $_SESSION['note1'] = null;
                 
@@ -54,28 +50,33 @@
                 
                 
                 
+            <form method="post" action="reclaim_code_editpassword.php">
                 
-            <form method="post"  action="/fridaycamp/public_html/code_edit_email.php">
-           
-            <br>
-            <p class="home-head">Change your email.</p>
+            <p class="home-head">Change your password.</p>
                 
             <div class="col-xs-6" style="">
                 
-            <textarea style="border: 2px solid #ddd; border-radius: 5px; font-family: georgia; height: 40px; padding: 5px; width: 100%; resize: none;" placeholder="email" name="email"></textarea>
-                        
-            </div>
-           
-            <div class="col-xs-6" style="">
-               
+            <input type="password" class="pass-style" name="password1" placeholder="new password">
+                
+            <input type="password" class="pass-style" name="oldpassword" placeholder="old password">
+                
+            <input type="hidden" class="pass-style" value="<?php echo $_GET['person']; ?>" name="person" placeholder="person">    
+                                       
             <button name="submit" class="btn" style="font-family: georgia;">Submit</button>
                     
             </div>
            
+           
+           
+            <div class="col-xs-6" style="">
+                
+            <input type="password" class="pass-style" name="password2" placeholder="repeat new password">
+                        
+            </div> 
+                
             </form>
-           
-           
-           </div>
+                
+            </div>
     
     
     

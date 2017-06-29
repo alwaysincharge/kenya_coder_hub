@@ -354,7 +354,7 @@ $example_code .= "\n}";
         }
     </script>
 </head>
-<body>
+<body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
 <?php
 if (version_compare(PHP_VERSION, '5.0.0', '<')) {
     echo 'Current PHP version: ' . phpversion() . "<br>";

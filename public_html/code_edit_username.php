@@ -1,20 +1,17 @@
-
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
+
 <?php $session->if_not_logged_in('login'); ?>
+
 
 <?php
 
 
- $user_input = '';
-
-
+$user_input = '';
 
 
 if(request_is_post()) {
-
-    
-    
+  
 if (isset($_POST['submit']))  {
     
     
@@ -30,16 +27,10 @@ if (isset($_POST['submit']))  {
  $single_quote = "'";  
     
     
-
     
  does_it_contain($user_input, $space, $equal_sign, $single_quote, 'The username cannot contain a space, equal sign or single quote.', 'editusername.php');
 
-    
-    
-  
  check_emptiness($user_input, 'editusername.php', 'The username field cannot be empty. Please try again.');
-    
-
     
  check_lenght($user_input, 7, 30, 'The username cannot be smaller than 7 characters or bigger than 30.', 'editusername.php');
     
@@ -88,7 +79,9 @@ if (isset($_POST['submit']))  {
  else  {
     
     alert_note('Please stop trying to hack the site. Thanks a lot.');
-     redirect_to('home'); 
+     
+    redirect_to('home'); 
+     
 }    
 
 

@@ -1,14 +1,17 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
-<?php if(!isset($_GET['state'])) {$_GET['state'] = '';} ?>
 
+
+<?php if(!isset($_GET['state'])) {$_GET['state'] = '';} ?>
 
 
 
 <html lang="en">
     
     
+    
 <head>
+    
     
 	<title>Friday Camp - Meet Kenya's programmers.</title>
     
@@ -16,25 +19,20 @@
     
     <?php include('head_info.php'); ?>
     
+    
 </head>
     
     
     
+<body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
     
     
-<body>
+              <?php  include("nav.php"); ?>
     
-    
- <?php  include("nav.php"); ?>
-    
-    
-    
-    
-    
+
               <div class="row" style="width: 100%; max-width: 800px; display: table; margin: 0 auto;">
     
                            <?php
-    
     
                            $search_users = $search->search_users('%' . $_GET['keywords'] . '%'); 
     
@@ -49,21 +47,21 @@
                            <img src="<?php echo $row['img_path']; ?>" style="width: 200px; border-radius: 5px; height: 210px;" />
                                
                                <p style="font-family: Josefin Slab; font-weight: bolder; font-size: 20px; margin-top:10px;"><a href='/fridaycamp/public_html/user/<?php echo $row['username']; ?>'><?php echo $row['username'];  ?></a></p>
-                               <!--
-                               <p style="font-family: georgia; height: 60px; "><?php if ($row['story']) {echo substr(nl2br($row['story']), 0, 62) . "..."; }  ?></p>
-                               -->
+                               
+                               <p><?php if ($row['story']) {echo substr(nl2br($row['story']), 0, 62) . "..."; }  ?></p>
+                               
 
                                <a href='/fridaycamp/public_html/messages.php?usersid=<?php echo $row['id'];  ?>'><button name='submit' class='btn' style='font-family: georgia;'>Message</button></a>
                                
                                
-                                    <a style="margin-left: 20px;" href='/fridaycamp/public_html/user/<?php echo $row['username']; ?>'><button name='submit' class='btn' style='font-family: georgia;'>Profile</button></a>
+                               <a style="margin-left: 20px;" href='/fridaycamp/public_html/user/<?php echo $row['username']; ?>'><button name='submit' class='btn' style='font-family: georgia;'>Profile</button></a>
+                               
                            </div>
            
                            </div>
     
     
                            <?php } ?>
-    
     
                 </div>    
     
@@ -72,21 +70,9 @@
     
     
 </body>
+       
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+<?php include('js/general_javascript.php');  ?>  
     
     
 </html>

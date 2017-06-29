@@ -3,12 +3,11 @@
 
 <?php $session->if_not_logged_in('login'); ?>
 
+
 <?php
 
 
-
  $session->if_not_logged_in('rkjerjk');
-
 
 
  $body_input = '';
@@ -22,10 +21,9 @@
  $postowner_input = '';
 
 
+
 if(request_is_post()) {
 
-    
-    
 if (isset($_POST['submit']))  {
     
 
@@ -36,23 +34,20 @@ if (isset($_POST['submit']))  {
 
  $receiver_input = $_POST['receiver'];
     
-
- 
     
  check_emptiness($message_input, 'home', 'The body field cannot be empty. Please try again.');
     
-     
+    
  check_lenght_2($message_input, 0, 2000, 'The maximum number of characters for each field is body: 2000, code: 2000. ');    
     
-
-    
-        
-    
+  
  $find = $message->conversation($sender_input, $receiver_input, $sender_input, $receiver_input);
     
  $result = $find->get_result();
 
  $numRows = $result->num_rows;
+    
+    
     
  if($numRows > 0) {
      
@@ -66,32 +61,25 @@ if (isset($_POST['submit']))  {
     
     
     
-    if ($numRows == 0) {
+ if ($numRows == 0) {
         
        echo  $min = min($sender_input, $receiver_input); 
         
        echo  $max = max($sender_input, $receiver_input);
      
-        
        $converse = $min . "," . $max;
 
-    
-    
-    }
+}
  
  
    
     
- $message->create_message($sender_input, $receiver_input, $message_input, $converse); 
+$message->create_message($sender_input, $receiver_input, $message_input, $converse); 
     
-  header("Location: {$_SERVER['HTTP_REFERER']}");
+header("Location: {$_SERVER['HTTP_REFERER']}");
      
- 
-    
-    
-    
-    
-    }
+
+}
     
 
 }
@@ -99,7 +87,9 @@ if (isset($_POST['submit']))  {
  else  {
     
     alert_note('Please stop trying to hack the site. Thanks a lot. 1');
-     redirect_to('home'); 
+     
+    redirect_to('home');
+     
 }    
 
 

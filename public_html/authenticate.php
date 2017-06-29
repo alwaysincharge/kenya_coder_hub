@@ -1,6 +1,13 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
 
+     <?php if (isset($_SESSION['admin_id'])) { 
+                  
+     redirect_to('home');
+                  
+     } ?>
+
+
 
 <!DOCTYPE html>
 
@@ -12,11 +19,13 @@
     
 <head>
     
+    
 	<title>Tsutsus - Meet Kenya's programmers.</title>
     
     <meta name="description" content="Create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.">
     
     <?php include('head_info.php'); ?>
+    
     
 </head>
     
@@ -27,19 +36,13 @@
 <body class="body-main">
         
                 
-
-        
-        
+    
         <nav style="width: 70%; max-width: 900px; margin: 0 auto; padding-top: 20px;"><br>
             
-            
                <img src="assets/campfire.svg" height="40">
-
             
                <a href="/fridaycamp/public_html/home" style="font-family: Josefin Slab; color: white; font-weight: bolder; margin-left: 20px; font-size: 20px; margin-left: 6px;">Friday<span style="color: white;">//</span>Camp</a>
-            
-
-              
+             
         </nav>
         
     
@@ -52,15 +55,20 @@
         
         <div style="display: table; margin: 0 auto;">
             
-        
         <?php  
     
         if (isset($_SESSION['note1'])) {
+            
         echo $_SESSION['note1'];  
+            
             $_SESSION['note1'] = null;
+            
         }   else {
+            
             $_SESSION['note1'] = null;
+            
         }
+            
         ?>
             
             
@@ -77,6 +85,8 @@
             
             
         <br><br><br>
+            
+            
         <div class="row" style="width: 100%; max-with: 900px;">
             
             
@@ -105,17 +115,30 @@
                     <form method="post" action="sign_in.php" enctype="multipart/form-data">
                         
                     <h5 class="smalltext1">Login below.</h5>
-                         
-                        
+                            
                     <input placeholder="username" type="text" name="username" class="form1">
                 
                     <input placeholder="password" type="password" name="password" class="form1">
             
                     <button class="form1" style="font-family: Josefin Slab; font-weight: bolder;" type="submit" name="submit" value="submit">Submit</button>
                         
-                 
-                    
                     </form>   
+                
+                
+
+                    <form method="post" action="reclaim_password.php"  enctype="multipart/form-data">
+                     
+                    <h5 class="smalltext-x toggle">Forgot password?</h5>
+                        
+                    <div class="selection"  style="display: none;">
+                         
+                    <input placeholder="username" type="text" name="username" class="form1">
+            
+                    <button class="form1" style="font-family: Josefin Slab; font-weight: bolder; margin-top: -30px;" type="submit" name="submit" value="submit">Reclaim Password</button>
+                        
+                    </div>
+                 
+                    </form>
                 
                  
             </div>
@@ -273,21 +296,13 @@
              
              
              
-          
-             
-             
-             
+                 
          
-         </div>
-        
+</div> 
         
 <br><br><br>
          
-         
-         
-         
-        
-    </div>   
+</div>   
         
         
         
@@ -300,12 +315,10 @@
         
     
     
-    </body>
+</body>
     
     
-    <?php include('js/general_javascript.php');  ?>
-          
-      
-    
+<?php include('js/general_javascript.php');  ?>
+           
     
 </html>

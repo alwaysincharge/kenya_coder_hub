@@ -1,10 +1,13 @@
 <?php  include_once(dirname(__FILE__) . '\\' . '../includes/all_classes_and_functions.php');  ?>
 
 
+
 <?php $_SESSION['realredirect1'] = $_SERVER['REQUEST_URI']; ?>
 
 
+
 <!DOCTYPE html>
+
 
 
 <html lang="en">
@@ -12,48 +15,42 @@
     
     
 	<head>
-		<title>
-			Tsutsus - Meet Kenya's programmers.
-		</title>
+        
+		<title>Tsutsus - Meet Kenya's programmers.</title>
+        
 		<meta content="Create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here." name="description">
+        
         <?php include('head_info.php'); ?>
+        
 	</head>
     
     
     
-    
-	<body>
+<body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
         
         
-        <?php  include(dirname(__FILE__) . '\\' . "nav.php"); ?>
+            <?php  include(dirname(__FILE__) . '\\' . "nav.php"); ?>
         
-        
-
-                            
+                    
             <?php  
     
             if (isset($_SESSION['note1'])) {
-            echo "<div style='display: table; margin: 0 auto; margin-top: -30px; margin-bottom: 20px;'>{$_SESSION['note1']}</div>";  
+                
+            echo "<div style='display: table; margin: 0 auto; margin-top: -30px; margin-bottom: 20px;'>{$_SESSION['note1']}</div>"; 
+                
             $_SESSION['note1'] = null;
+                
             }   else {
+                
             $_SESSION['note1'] = null;
+                
             }
                 
             ?>
             
 
         
-                        
-
-        
-        
-        
-        
-        
-        
-        
-		<div class="row whole-box" style="z-index: 1;">
-            
+<div class="row whole-box" style="z-index: 1;">
             
             
             <?php
@@ -62,10 +59,7 @@
     
             $this_post_result = $this_post->get_result();   
                     
-        
             while($row = $this_post_result->fetch_assoc()) { ?>
-            
-            
             
 			<div class="row posting-box">
 				<div class="col-xs-2" style="">
@@ -181,6 +175,9 @@
             
             
 
+    
+    
+    
             
             <?php
             
@@ -297,6 +294,9 @@
             
                 
                     
+                    
+                    
+                    
                                     
             <?php
             
@@ -373,39 +373,28 @@
                         
                         
                         
-					</div>
+				 </div>
                     
                     
-
-				</div>
+				 </div>
 			
             
-                 <?php }
-            
-            
-                 ?>
+                 <?php } ?>
                 
                 
-                </div>      
+                 </div>      
                 
 
-                
-                 <?php }
-            
-            
-                 ?>
+                 <?php } ?>
                 
                 
                 
                 
-          
-
-            
-            
-            
-            
-            
-		</div>
-		<?php include('js/general_javascript.php');  ?>
-	</body>
+         
+</div>
+    
+<?php include('js/general_javascript.php');  ?>
+    
+</body>
+    
 </html>

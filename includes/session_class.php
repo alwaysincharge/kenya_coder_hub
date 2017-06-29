@@ -15,33 +15,23 @@ class Session {
    
     
     
-    public function if_not_logged_in($url) {
+  public function if_not_logged_in($url) {
     
-    if (!isset($_SESSION['admin_id'])) {
+  if (!isset($_SESSION['admin_id'])) {
         
-    
-    
-    redirect_to($url);
+  redirect_to($url);
         
-    }
+  }
   
-    }
+  }
     
     
-    
-    
-    
-
-    
-   
+ 
 }
 
 
 
 $session = new Session();
-
-
-
 
 
 ?>

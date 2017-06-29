@@ -1,46 +1,26 @@
+<nav style="background: #fff; "><br>
+            
+            
+<div class="nav-div-1" >
+            
+            
+                <a href="/fridaycamp/public_html/home"><img src="/fridaycamp/public_html/assets/campfire.svg" height="25"></a>
+                
+                <a href="/fridaycamp/public_html/home" class="nav-title">Friday<span style="color: black;">//</span>Camp</a>
+                
+                
     
     
-    
-    
-            
-        
-        <nav style="background: #fff; "><br>
-            
-            
-            
-            
-            
-            <div style="width: 100%; max-width: 1000px; margin: 0 auto; padding-bottom: 10px; margin-bottom: 60px; border-bottom: 2px solid #ddd;" >
-            
-            
-            
-            
-        
-                <a href="/jjj/forum"><img src="/fridaycamp/public_html/assets/campfire.svg" height="25"></a>
-                
-                <a href="/fridaycamp/public_html/home" style="font-family: Josefin Slab; font-weight: bolder; margin-left: 20px; font-size: 20px; margin-left: 6px;">Friday<span style="color: black;">//</span>Camp</a>
-                
-                
-
-
-                
-                
-                
-                
-                
-                
-                
-                
-    <?php if (isset($_SESSION['admin_id'])) { ?>
+<?php if (isset($_SESSION['admin_id'])) { ?>
     
     
     
     
                  <a href="/fridaycamp/public_html/home" class="text-1"><img src="/fridaycamp/public_html/assets/house.svg" height="22" width="22"></a>
+    
                 
+    
                 
-        
-                     
                  <a class='text-1' href='messages.php?<?php
                  
                  $list = $message->first_conversation($_SESSION['admin_id'], $_SESSION['admin_id']); 
@@ -68,21 +48,15 @@
                  }
                      
                  } 
-                     
-                 
-                     
+                         
                  else {
                      
                  echo "status=empty";
                      
                  }
 
-
-                  ?>'><img src='/fridaycamp/public_html/assets/mail.svg' height='22' width="22">
-                
-                
-                
-                     
+                 ?>'><img src='/fridaycamp/public_html/assets/mail.svg' height='22' width="22">
+                  
                  <span id="main1">
                      
                  <?php
@@ -91,50 +65,25 @@
     
                  $unread_result = $unread->get_result();
                 
-                 
-                     
                  while($row = $unread_result->fetch_assoc()) {
                      
                      if ($row['count'] > 0) {
                          
-                       echo "<span style='font-family: Josefin Slab; color: blue; font-weight: bolder; font-size: 16px;'>(" . $row['count'] . ")</span>";
+                       echo "<span class='notif-text'>(" . $row['count'] . ")</span>";
                          
                      }
-                     
-
-                    
-                 } ?>
+                      
+                } ?>
                      
                 </span>
                      
-                     
-                
                 </a>
                 
                 
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                     
-                     
-                
-                
-                
-                
-                
-                
-                     
-                 
-                
-                
-                
+
+    
+    
                 
             <a class="text-1" href="post_notification.php"><img src="/fridaycamp/public_html/assets/megaphone.svg" height="22" width="22">
                 
@@ -152,12 +101,6 @@
             while($row1 = $my_comments_result->fetch_assoc()) {
                 
         
-                
-                
-                
-                
-                
-                
             $my_replies = $reply->count_notif_replies($_SESSION['admin_id']); 
     
             $my_replies_result = $my_replies->get_result();   
@@ -170,7 +113,7 @@
                 
                 if ($sum > 0) {
 
-                   echo "<span style='font-family: Josefin Slab; color: blue; font-weight: bolder; font-size: 16px;'>(" . $sum . ")</span>";
+                   echo "<span class='notif-text'>(" . $sum . ")</span>";
                     
                 }
                 
@@ -195,29 +138,10 @@
                 
                 
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-            
-            
-            
-            
-            <div class="dropdown">
-                
-
-                
-                
-              <img src="/fridaycamp/public_html/<?php   
-     
-     
+    
+       <div class="dropdown">
+                       
+       <img src="/fridaycamp/public_html/<?php   
      
        $newusername = $user->find_one_user($_SESSION['admin_id']); 
     
@@ -227,13 +151,11 @@
 
        echo $row['img_path'];
 
-       }   ?>" height="30" width="30" style="margin-left: 10px; border-radius: 5px; font-family: Josefin Slab;" />
+       }   ?>" height="30" width="30" class="profile-image-1" />
              
-            <div class="dropdown-content" style="font-weight: bolder; ">
+       <div class="dropdown-content" style="font-weight: bolder; ">
                 
-                            <p style=" font-family: Josefin Slab;"><?php   
-     
-     
+       <p style="font-family: Josefin Slab;"><?php   
      
        $newusername = $user->find_one_user($_SESSION['admin_id']); 
     
@@ -245,9 +167,7 @@
 
        }   ?></p>
                 
-                            <a href="user.php?person=<?php   
-     
-     
+       <a href="user.php?person=<?php   
      
        $newusername = $user->find_one_user($_SESSION['admin_id']); 
     
@@ -257,55 +177,28 @@
 
        echo $row['username'];
 
-       }   ?>" style="font-family: Josefin Slab;">View Profile</a><br>
+       }   ?>" class="profile-element">View Profile</a><br>
+                        
+       <a href="mystuff.php" class="profile-element">My Stuff</a><br>
                 
+       <a href="bookmark.php" class="profile-element">Saved Posts</a><br>
                 
+       <a href="editprofilepicture.php" class="profile-element">Edit Profile Picture</a><br>
                 
+       <a href="editprofile.php" class="profile-element">Edit Info</a><br>
                 
+       <a href="editpassword.php" class="profile-element">Change Password</a><br>
                 
+       <a href="editusername.php" class="profile-element">Change Username</a><br>
                 
+       <a href="editemail.php" class="profile-element">Change E-mail</a><br>
                 
+       <a href="/fridaycamp/public_html/out.php" class="profile-element">Logout</a><br>
                 
-                
-                
-                            <a href="mystuff.php" style="font-family: Josefin Slab;">My Stuff</a><br>
-                
-                            <a href="bookmark.php" style="font-family: Josefin Slab;">Saved Posts</a><br>
-                
-                            <a href="editprofilepicture.php" style="font-family: Josefin Slab;">Edit Profile Picture</a><br>
-                
-                            <a href="editprofile.php" style="font-family: Josefin Slab;">Edit Info</a><br>
-                
-                            <a href="editpassword.php" style="font-family: Josefin Slab;">Change Password</a><br>
-                
-                            <a href="editusername.php" style="font-family: Josefin Slab;">Change Username</a><br>
-                
-                            <a href="editemail.php" style="font-family: Josefin Slab;">Change E-mail</a><br>
-                
-                            <a href="/fridaycamp/public_html/out.php" style="font-family: Josefin Slab;">Logout</a><br>
-                
-                
-                
-                
-        
-            </div>     
+       </div>     
                     
-                    
-                    
-               
-            
-                
+       </div>
 
-
-            </div>
-
-            
-    
-    
-    
-    
-    
-    
     <?php } ?>
                 
             
@@ -316,43 +209,27 @@
             
 
             
-              <form class="search1" method="get" action="search.php?keywords=<?php  echo $_GET['keywords'];   ?>">
+    <form class="search1" method="get" action="search.php?keywords=<?php  echo $_GET['keywords'];   ?>">
+                              
+    <?php if (!isset($_SESSION['admin_id'])) { ?>
                   
+    <a href="/fridaycamp/public_html/login" class="choose-page choose-page-2">Sign Up / Login</a>
                   
+    <?php } ?>
+                          
+    <a href="write" class="choose-page choose-page-2">New Post</a>
                   
-                  <?php if (!isset($_SESSION['admin_id'])) { ?>
-                  
-                  <a href="/fridaycamp/public_html/login" style="margin-left: 12px; padding-top: 5px; padding-bottom: 5px;" class="choose-page">Sign Up / Login</a>
-                  
-                  <?php } ?>
-                  
-                  
-                  
-                  
-                  <a href="write" style="margin-left: 12px; padding-top: 5px; padding-bottom: 5px;" class="choose-page">New Post</a>
-                  
-              <input maxlength="100" name="keywords" class="search-main" placeholder="Search users and skills" />
+    <input maxlength="100" name="keywords" class="search-main" placeholder="Search users and skills" />
         
-              <input style="display: none;" type="submit" name="submit" value="submit" />
+     <input style="display: none;" type="submit" name="submit" value="submit" />
                   
-              </form>
-            
-
-            <br>
+    </form><br>
             
             
-           
-        
-            
-            
-            
-            </div>
-            
-            
-            
-            
-        
-        </nav>
+ 
+    </div>
+              
+</nav>
         
     
     

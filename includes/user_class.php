@@ -25,8 +25,7 @@ class User {
        $email = $email_input;   
           
        $stmt->execute();
-        
-        
+           
        return $stmt;    
 
        }

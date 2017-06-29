@@ -1,6 +1,9 @@
 <?php  include_once('../includes/all_classes_and_functions.php');  ?>
 
+
+
 <?php $session->if_not_logged_in('login'); ?>
+
 
 
 <?php
@@ -16,7 +19,9 @@ $reply->unset_notif_replies($_SESSION['admin_id']);
 <html lang="en">
     
     
+    
 <head>
+    
     
 	<title>Friday Camp - Meet Kenya's programmers.</title>
     
@@ -24,32 +29,25 @@ $reply->unset_notif_replies($_SESSION['admin_id']);
     
     <?php include('head_info.php'); ?>
     
+    
 </head>
     
     
+     
+<body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
     
     
-    
-<body>
-    
-    
- <?php  include("nav.php"); ?>
-    
+        <?php  include("nav.php"); ?>
     
     
 <div class="row" style="width: 100%; max-width: 850px; display: table; margin: 0 auto;">
     
     
+<div class="col-md-6">
     
     
     
-    
-    
-    
-  <div class="col-md-6">
-  <p class="home-head">Your comments.</p>
-      
-  
+            <p class="home-head">Comments on your posts.</p>
       
             <?php
             
@@ -98,20 +96,12 @@ $reply->unset_notif_replies($_SESSION['admin_id']);
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
+
   <div class="col-md-6">
-  <p class="home-head">Your replies.</p>
       
       
+            <p class="home-head">Replies on your comments.</p>
       
-            
             <?php
             
             $my_replies = $reply->notif_replies($_SESSION['admin_id']); 
@@ -167,6 +157,9 @@ $reply->unset_notif_replies($_SESSION['admin_id']);
     
     
 </body>
+    
+    
+<?php include('js/general_javascript.php');  ?>  
     
     
 </html>

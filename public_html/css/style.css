@@ -1,602 +1,928 @@
 .search1 {
-    display: inline; float: right;
+   display: inline;
+   float: right;
 }
-
 
 .search-main {
-    border-radius: 2px;
-    border: 1px solid #ddd;
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-family: georgia;
-    font-size: 14px;
-    width: 250px;
+   border-radius: 2px;
+   border: 1px solid #ddd;
+   padding-left: 15px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-family: georgia;
+   font-size: 14px;
+   width: 250px;
 }
-
-
 
 .search-main1 {
-    border-radius: 5px;
-    border: 2px solid #ddd;
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 250px;
-    font-family: Josefin Slab;
+   border-radius: 5px;
+   border: 2px solid #ddd;
+   padding-left: 15px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   width: 250px;
+   font-family: Josefin Slab;
 }
+
 .pagination-head {
-    display: table; margin: 0 auto; padding-bottom: 40px;
+   display: table;
+   margin: 0 auto;
+   padding-bottom: 40px;
 }
 
 .page-sub {
-    background: #ddd; padding: 7px; display: inline; margin-right: 20px; font-family: georgia; font-size: 15px;
+   background: #ddd;
+   padding: 7px;
+   display: inline;
+   margin-right: 20px;
+   font-family: georgia;
+   font-size: 15px;
 }
 
 .main-page {
-    background: #ddd; color: black; display: inline; padding: 7px; margin-right: 20px; font-family: georgia; font-size: 15px;
+   background: #ddd;
+   color: black;
+   display: inline;
+   padding: 7px;
+   margin-right: 20px;
+   font-family: georgia;
+   font-size: 15px;
 }
 
 .title-username {
-    font-family: georgia; word-wrap: break-word; max-width: 400px; 
+   font-family: georgia;
+   word-wrap: break-word;
+   max-width: 400px;
 }
 
 .post-image-1 {
-    height: 65px; width: 65px; border-radius: 5px; margin-left: 55px;
+   height: 65px;
+   width: 65px;
+   border-radius: 5px;
+   margin-left: 55px;
 }
 
 .name-box {
-    font-family: Josefin Slab; font-weight: bolder; font-size: 20px; word-wrap: break-word;
+   font-family: Josefin Slab;
+   font-weight: bolder;
+   font-size: 20px;
+   word-wrap: break-word;
 }
 
 .whole-box {
-    width: 100%; max-width: 900px; display: table; margin: 0 auto; height: 1000px;
+   width: 100%;
+   max-width: 900px;
+   display: table;
+   margin: 0 auto;
+   height: 1000px;
 }
 
 .posting-box {
-    width: 100%; margin-bottom: 30px;
+   width: 100%;
+   margin-bottom: 30px;
 }
 
 .body-box {
-    margin-top: 7px; font-family: georgia; word-wrap: break-word; 
+   margin-top: 7px;
+   font-family: georgia;
+   word-wrap: break-word;
 }
 
-
 .code-box {
-    margin-top: 7px; background: #eff0f1; padding: 10px; font-family: Inconsolata; word-wrap: break-word;
+   margin-top: 7px;
+   background: #eff0f1;
+   padding: 10px;
+   font-family: Inconsolata;
+   word-wrap: break-word;
 }
 
 .reply-box {
-width: 70%; float: right; margin-top: 20px;
+   width: 70%;
+   float: right;
+   margin-top: 20px;
 }
 
 .comment-box {
-    width: 80%; float: right; margin-bottom: 40px;
+   width: 80%;
+   float: right;
+   margin-bottom: 40px;
 }
 
 .comment-box-2 {
-    width: 100%; float: right; margin-bottom: 40px;
+   width: 100%;
+   float: right;
+   margin-bottom: 40px;
 }
 
 .form-box {
-    max-width: 500px; display: table; margin: 0 auto;
+   max-width: 500px;
+   display: table;
+   margin: 0 auto;
 }
 
 .head-of-form {
-    font-family: Josefin Slab; font-weight: bolder; font-size: 20px; display: table; margin: 0 auto; margin-top: 30px; margin-bottom: 30;
+   font-family: Josefin Slab;
+   font-weight: bolder;
+   font-size: 20px;
+   display: table;
+   margin: 0 auto;
+   margin-top: 30px;
+   margin-bottom: 30;
 }
 
-
 .input-1 {
-    border: 2px solid #ddd; border-radius: 5px; font-family: georgia; height: 40px; padding: 5px; width: 100%; resize: none; margin-bottom: 30px;
+   border: 2px solid #ddd;
+   border-radius: 5px;
+   font-family: georgia;
+   height: 40px;
+   padding: 5px;
+   width: 100%;
+   resize: none;
+   margin-bottom: 30px;
 }
 
 .input-2 {
-    border: 2px solid #ddd; border-radius: 5px; font-family: georgia; height: 40px; padding: 5px; height: 100px; width: 100%; resize: none; margin-bottom: 30px;
+   border: 2px solid #ddd;
+   border-radius: 5px;
+   font-family: georgia;
+   height: 40px;
+   padding: 5px;
+   height: 100px;
+   width: 100%;
+   resize: none;
+   margin-bottom: 30px;
 }
 
 .form-call {
-    font-family: georgia; cursor: pointer;
-        
+   font-family: georgia;
+   cursor: pointer;
 }
 
-
 .form-heading-1 {
-    display: table; margin: 0 auto; font-family: georgia; font-size: 15px; margin-top: 30px; margin-bottom: 30px;
+   display: table;
+   margin: 0 auto;
+   font-family: georgia;
+   font-size: 15px;
+   margin-top: 30px;
+   margin-bottom: 30px;
 }
 
 .username-post {
-    font-weight: bolder; word-wrap: break-word; font-family: Josefin Slab; font-size: 18px;
+   font-weight: bolder;
+   word-wrap: break-word;
+   font-family: Josefin Slab;
+   font-size: 18px;
 }
+
 .comment-image-1 {
-    height: 65px; width: 65px; border-radius: 5px; margin-left: 15px;
+   height: 65px;
+   width: 65px;
+   border-radius: 5px;
+   margin-left: 15px;
 }
+
 .comment-image-2 {
-    height: 65px; width: 65px; border-radius: 5px; margin-left: -10px;
+   height: 65px;
+   width: 65px;
+   border-radius: 5px;
+   margin-left: -10px;
 }
 
 .reply-image-1 {
-    height: 65px; width: 65px; border-radius: 5px; margin-left: 5px;
+   height: 65px;
+   width: 65px;
+   border-radius: 5px;
+   margin-left: 5px;
 }
 
 .comment-1 {
-    margin-top: -9px; font-family: Josefin Slab; font-weight: bolder; 
+   margin-top: -9px;
+   font-family: Josefin Slab;
+   font-weight: bolder;
 }
 
 .comment-2 {
-    font-size: 15px; margin-left: 10px;
+   font-size: 15px;
+   margin-left: 10px;
 }
 
 .home-search {
-    border-radius: 2px; border: 1px solid #ddd;  padding-left: 15px; padding-top: 5px; padding-bottom: 5px; font-family: georgia;  font-size: 14px; 
-    width: 200px; margin-left: 10px;
+   border-radius: 2px;
+   border: 1px solid #ddd;
+   padding-left: 15px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-family: georgia;
+   font-size: 14px;
+   width: 200px;
+   margin-left: 10px;
 }
 
 .choose-page {
-    margin-left: -5px; width: 80px; font-family: Josefin Slab; font-weight: bolder; padding: 10px; border-radius: 5px; margin-right: 10px; background: #ddd; margin-top: 30px;
+   margin-left: -5px;
+   width: 80px;
+   font-family: Josefin Slab;
+   font-weight: bolder;
+   padding: 10px;
+   border-radius: 5px;
+   margin-right: 10px;
+   background: #ddd;
+   margin-top: 30px;
 }
 
 .post-username {
-    font-family: Josefin Slab; font-weight: bolder; font-size: 20px; text-decoration: none ! important;
+   font-family: Josefin Slab;
+   font-weight: bolder;
+   font-size: 20px;
+   text-decoration: none ! important;
 }
 
 .home-head {
-    display: table; margin: 0 auto; font-family: georgia; font-size: 20px; margin-top: -20px; margin-bottom: 40px; color: #8f8f8f;
+   display: table;
+   margin: 0 auto;
+   font-family: georgia;
+   font-size: 20px;
+   margin-top: -20px;
+   margin-bottom: 40px;
+   color: #8f8f8f;
 }
 
-
 .home-head-2 {
-    display: table; margin: 0 auto; font-family: georgia; font-size: 17px; margin-top: -20px; margin-bottom: 10px; 
+   display: table;
+   margin: 0 auto;
+   font-family: georgia;
+   font-size: 17px;
+   margin-top: -20px;
+   margin-bottom: 10px;
 }
 
 .post-title {
-    color: black; text-decoration: underline; word-wrap: break-word; max-width: 400px; 
+   color: black;
+   text-decoration: underline;
+   word-wrap: break-word;
+   max-width: 400px;
 }
 
 .post-body {
-    margin-top: -9px; font-family: georgia; word-wrap: break-word; max-width: 400px; 
+   margin-top: -9px;
+   font-family: georgia;
+   word-wrap: break-word;
+   max-width: 400px;
 }
 
 .div-width {
-    width: 100%; max-width: 900px; display: table; margin: 0 auto;
-}
-.file-style-1 {
-    background: white; font-family: georgia; border: 2px solid #ddd; width: 160px;
+   width: 100%;
+   max-width: 900px;
+   display: table;
+   margin: 0 auto;
 }
 
+.file-style-1 {
+   background: white;
+   font-family: georgia;
+   border: 2px solid #ddd;
+   width: 160px;
+}
 
 .file-style-1:hover {
-    background: white; font-family: georgia; border: 2px solid #ddd; width: 160px;
+   background: white;
+   font-family: georgia;
+   border: 2px solid #ddd;
+   width: 160px;
 }
 
 .note-1 {
-    width: 300px;  font-family: Josefin Slab; font-weight: bolder;
+   width: 300px;
+   font-family: Josefin Slab;
+   font-weight: bolder;
 }
 
 .pass-style {
-    margin-bottom: 10px; border: 2px solid #ddd; border-radius: 5px; font-family: georgia; height: 40px; padding: 5px; width: 100%; resize: none;
+   margin-bottom: 10px;
+   border: 2px solid #ddd;
+   border-radius: 5px;
+   font-family: georgia;
+   height: 40px;
+   padding: 5px;
+   width: 100%;
+   resize: none;
 }
 
-
 .forum-form {
-    margin-top: 20px; width: 100%; max-width: 500px; display: table; margin: 0 auto;
+   margin-top: 20px;
+   width: 100%;
+   max-width: 500px;
+   display: table;
+   margin: 0 auto;
 }
 
 .forum-details {
-    width: 100%; max-width: 500px;  font-family: georgia; font-size: 14px; padding: 12px; border-radius: 2px; border: 1px solid #ddd; margin-bottom: 10px;
+   width: 100%;
+   max-width: 500px;
+   font-family: georgia;
+   font-size: 14px;
+   padding: 12px;
+   border-radius: 2px;
+   border: 1px solid #ddd;
+   margin-bottom: 10px;
 }
 
 .forum-title {
-    height: 40px; width: 100%; max-width: 500px;  font-family: georgia; font-size: 14px; padding: 7px; border-radius: 2px; border: 1px solid #ddd; margin-bottom: 10px; 
+   height: 40px;
+   width: 100%;
+   max-width: 500px;
+   font-family: georgia;
+   font-size: 14px;
+   padding: 7px;
+   border-radius: 2px;
+   border: 1px solid #ddd;
+   margin-bottom: 10px;
 }
 
 .forum-post {
-    margin-bottom: 20px; font-family: georgia;
+   margin-bottom: 20px;
+   font-family: georgia;
 }
 
 .forum-logout {
-    font-family: georgia; padding-top: 10px; text-decoration: underline; font-size: 15px;
+   font-family: georgia;
+   padding-top: 10px;
+   text-decoration: underline;
+   font-size: 15px;
 }
 
 .single-post {
-    width: 100%; max-width: 500px; display: table; margin: 0 auto; margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 10px; 
+   width: 100%;
+   max-width: 500px;
+   display: table;
+   margin: 0 auto;
+   margin-bottom: 30px;
+   border-bottom: 1px solid #ddd;
+   padding-bottom: 10px;
 }
 
-
 .post-img {
-    height: 65px; width: 65px; border-radius: 5px; margin-left: -14px;
+   height: 65px;
+   width: 65px;
+   border-radius: 5px;
+   margin-left: -14px;
 }
 
 .post-drop {
-    margin-top: -30px;
+   margin-top: -30px;
 }
 
-.body-main { 
+.body-main {
    background-image: url(../assets/back.jpg);
-    background-repeat:no-repeat;
-    display: block;
-     -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
+   background-repeat: no-repeat;
+   display: block;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
 }
 
 .clearfix {
-    *zoom: 1;
+   *zoom: 1;
 }
-
 
 .creating {
-    width: 250px; color: white; font-family: Josefin Slab; font-size: 15px;  padding-left: 0px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-                            
-    display: table;
-    margin: 0 auto; font-weight: bolder;
+   width: 250px;
+   color: white;
+   font-family: Josefin Slab;
+   font-size: 15px;
+   padding-left: 0px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   display: table;
+   margin: 0 auto;
+   font-weight: bolder;
 }
 
-
-
-.clearfix:before,.clearfix:after {
-    display: table;
-    content: "";
-    line-height: 0;
+.clearfix:before,
+.clearfix:after {
+   display: table;
+   content: "";
+   line-height: 0;
 }
 
 .clearfix:after {
-    clear: both;
+   clear: both;
 }
 
 .skill-style {
-    font-family: Josefin Slab; font-size: 20px; font-weight: bold; background: #ddd; border-radius: 5px; padding: 8px; cursor: default;
+   font-family: Josefin Slab;
+   font-size: 20px;
+   font-weight: bold;
+   background: #ddd;
+   border-radius: 5px;
+   padding: 8px;
+   cursor: default;
 }
 
 .img-right {
-    border-radius: 5px; float: right; margin-right: -20px;
+   border-radius: 5px;
+   float: right;
+   margin-right: -20px;
 }
 
-
 .img-left {
-    border-radius: 5px; float: left; margin-left: -20px;
+   border-radius: 5px;
+   float: left;
+   margin-left: -20px;
 }
 
 .hide-text {
-    font: 0/0 a;
-    color: transparent;
-    text-shadow: none;
-    background-color: transparent;
-    border: 0;
+   font: 0/0 a;
+   color: transparent;
+   text-shadow: none;
+   background-color: transparent;
+   border: 0;
 }
 
 .edit-pic-1 {
-    max-width: 500px; display: table; margin: 0 auto;
+   max-width: 500px;
+   display: table;
+   margin: 0 auto;
 }
 
 .loading-class {
-    width: 250px; color: blue; font-family: Josefin Slab; font-size: 15px;  padding-left: 0px; padding-top: 5px; padding-bottom: 5px; display: table; margin: 0 auto; font-weight: bolder;
+   width: 250px;
+   color: blue;
+   font-family: Josefin Slab;
+   font-size: 15px;
+   padding-left: 0px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   display: table;
+   margin: 0 auto;
+   font-weight: bolder;
 }
 
 .mess-insert {
- font-family: Josefin Slab; padding: 12px; border-radius: 5px; border: 2px solid #ddd; font-size: 20px; width: 100%; font-weight: bolder;
+   font-family: Josefin Slab;
+   padding: 12px;
+   border-radius: 5px;
+   border: 2px solid #ddd;
+   font-size: 20px;
+   width: 100%;
+   font-weight: bolder;
 }
 
 .mess-send {
-    margin-bottom: 20px; font-family: Josefin Slab;
+   margin-bottom: 20px;
+   font-family: Josefin Slab;
 }
 
-
-
 .mess-body {
-    font-family: georgia; font-size: 15px; padding: 12px; border-radius: 2px; border: 1px solid #ddd;
+   font-family: georgia;
+   font-size: 15px;
+   padding: 12px;
+   border-radius: 2px;
+   border: 1px solid #ddd;
 }
 
 .email-user {
-    font-family: Josefin Slab; font-weight: bolder; font-size: 17px; word-wrap: break-word; max-width: 400px;
+   font-family: Josefin Slab;
+   font-weight: bolder;
+   font-size: 17px;
+   word-wrap: break-word;
+   max-width: 400px;
 }
 
 .username-user {
-    font-family: Josefin Slab; font-weight: bolder; font-size: 20px;
+   font-family: Josefin Slab;
+   font-weight: bolder;
+   font-size: 20px;
 }
 
 .fullname-user {
-    font-family: Josefin Slab; font-weight: bolder; font-size: 20px;  word-wrap: break-word; max-width: 400px;
+   font-family: Josefin Slab;
+   font-weight: bolder;
+   font-size: 20px;
+   word-wrap: break-word;
+   max-width: 400px;
 }
 
 .head-subject {
-    font-family: Josefin Slab; font-weight: bolder; font-size: 24px; word-wrap: break-word; max-width: 400px; text-decoration: underline; margin-top: 20px;
+   font-family: Josefin Slab;
+   font-weight: bolder;
+   font-size: 24px;
+   word-wrap: break-word;
+   max-width: 400px;
+   text-decoration: underline;
+   margin-top: 20px;
 }
 
 .div-div {
-    margin-bottom: 40px;
+   margin-bottom: 40px;
 }
 
 .tab-1 {
-     font-family: Josefin Slab; font-size: 20px; font-weight: bold; word-wrap: break-word; max-width: 400px;
+   font-family: Josefin Slab;
+   font-size: 20px;
+   font-weight: bold;
+   word-wrap: break-word;
+   max-width: 400px;
 }
 
 .tab-2 {
-    font-family: Josefin Slab; font-size: 17px; font-weight: bold; word-wrap: break-word; max-width: 400px;
+   font-family: Josefin Slab;
+   font-size: 17px;
+   font-weight: bold;
+   word-wrap: break-word;
+   max-width: 400px;
 }
 
 .story-style {
-    padding: 5px; font-family: Josefin Slab; font-size: 17px; font-weight: bold; word-wrap: break-word; max-width: 400px; 
+   padding: 5px;
+   font-family: Josefin Slab;
+   font-size: 17px;
+   font-weight: bold;
+   word-wrap: break-word;
+   max-width: 400px;
 }
 
-
 .input-block-level {
-    display: block;
-    width: 100%;
-    min-height: 30px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+   display: block;
+   width: 100%;
+   min-height: 30px;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 .btn-file {
-    overflow: hidden;
-    position: relative;
-    vertical-align: middle;
+   overflow: hidden;
+   position: relative;
+   vertical-align: middle;
 }
 
 .btn-file>input {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    transform: translate(-300px,0) scale(4);
-    font-size: 23px;
-    direction: ltr;
-    cursor: pointer;
+   position: absolute;
+   top: 0;
+   right: 0;
+   margin: 0;
+   opacity: 0;
+   filter: alpha(opacity=0);
+   transform: translate(-300px, 0) scale(4);
+   font-size: 23px;
+   direction: ltr;
+   cursor: pointer;
 }
 
 .fileupload {
-    margin-bottom: 9px;
+   margin-bottom: 9px;
 }
 
 .fileupload .uneditable-input {
-    display: inline-block;
-    margin-bottom: 0;
-    vertical-align: middle;
-    cursor: text;
+   display: inline-block;
+   margin-bottom: 0;
+   vertical-align: middle;
+   cursor: text;
 }
 
 .fileupload .thumbnail {
-    overflow: hidden;
-    display: inline-block;
-    margin-bottom: 5px;
-    vertical-align: middle;
-    text-align: center;
+   overflow: hidden;
+   display: inline-block;
+   margin-bottom: 5px;
+   vertical-align: middle;
+   text-align: center;
 }
 
 .fileupload .thumbnail>img {
-    display: inline-block;
-    vertical-align: middle;
-    max-height: 100%;
+   display: inline-block;
+   vertical-align: middle;
+   max-height: 100%;
 }
 
 .fileupload .btn {
-    vertical-align: middle;
+   vertical-align: middle;
 }
 
-.fileupload-exists .fileupload-new,.fileupload-new .fileupload-exists {
-    display: none;
+.fileupload-exists .fileupload-new,
+.fileupload-new .fileupload-exists {
+   display: none;
 }
 
 .fileupload-inline .fileupload-controls {
-    display: inline;
+   display: inline;
 }
 
 .fileupload-new .input-append .btn-file {
-    -webkit-border-radius: 0 3px 3px 0;
-    -moz-border-radius: 0 3px 3px 0;
-    border-radius: 0 3px 3px 0;
+   -webkit-border-radius: 0 3px 3px 0;
+   -moz-border-radius: 0 3px 3px 0;
+   border-radius: 0 3px 3px 0;
 }
 
 .thumbnail-borderless .thumbnail {
-    border: none;
-    padding: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+   border: none;
+   padding: 0;
+   -webkit-border-radius: 0;
+   -moz-border-radius: 0;
+   border-radius: 0;
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   box-shadow: none;
 }
 
 .fileupload-new.thumbnail-borderless .thumbnail {
-    border: 1px solid #ddd;
+   border: 1px solid #ddd;
 }
 
 .control-group.warning .fileupload .uneditable-input {
-    color: #a47e3c;
-    border-color: #a47e3c;
+   color: #a47e3c;
+   border-color: #a47e3c;
 }
 
 .control-group.warning .fileupload .fileupload-preview {
-    color: #a47e3c;
+   color: #a47e3c;
 }
 
 .control-group.warning .fileupload .thumbnail {
-    border-color: #a47e3c;
+   border-color: #a47e3c;
 }
 
 .control-group.error .fileupload .uneditable-input {
-    color: #b94a48;
-    border-color: #b94a48;
+   color: #b94a48;
+   border-color: #b94a48;
 }
 
 .control-group.error .fileupload .fileupload-preview {
-    color: #b94a48;
+   color: #b94a48;
 }
 
 .control-group.error .fileupload .thumbnail {
-    border-color: #b94a48;
+   border-color: #b94a48;
 }
 
 .control-group.success .fileupload .uneditable-input {
-    color: #468847;
-    border-color: #468847;
+   color: #468847;
+   border-color: #468847;
 }
 
 .control-group.success .fileupload .fileupload-preview {
-    color: #468847;
+   color: #468847;
 }
 
 .control-group.success .fileupload .thumbnail {
-    border-color: #468847;
+   border-color: #468847;
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+   position: relative;
+   display: inline-block;
 }
 
 .dropdown-content {
-
-    border-radius: 5px;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
+   border-radius: 5px;
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+   padding: 12px 16px;
+   z-index: 1;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+   display: block;
 }
 
 .message-box {
-    width: 650px; margin-left: 15px; height: 100%; min-height: 400px;  border: 2px solid #ddd; border-radius: 5px; padding-top: 30px;
+   width: 650px;
+   margin-left: 15px;
+   height: 100%;
+   min-height: 400px;
+   border: 2px solid #ddd;
+   border-radius: 5px;
+   padding-top: 30px;
 }
 
 .smallhead1 {
-    margin: 0 auto; width: 450px; font-family: Josefin Slab; font-size: 20px; font-weight: bold; margin-bottom: 10px;
+   margin: 0 auto;
+   width: 450px;
+   font-family: Josefin Slab;
+   font-size: 20px;
+   font-weight: bold;
+   margin-bottom: 10px;
 }
 
 .smalltext6 {
-    width: 100%; margin: 0 auto; font-family: Josefin Slab; font-weight: bold; color: black; font-size: 20px; margin-bottom: 20px;
+   width: 100%;
+   margin: 0 auto;
+   font-family: Josefin Slab;
+   font-weight: bold;
+   color: black;
+   font-size: 20px;
+   margin-bottom: 20px;
 }
 
 .smalltext3 {
-    font-family: Josefin Slab; color: black; font-size: 20px; width: 70%; max-width: 500px; margin: 0 auto;
+   font-family: Josefin Slab;
+   color: black;
+   font-size: 20px;
+   width: 70%;
+   max-width: 500px;
+   margin: 0 auto;
 }
 
 .smalltext4 {
-    font-family: Inconsolata; font-weight: bold; color: black; font-size: 15px; width: 70%; max-width: 500px; margin: 0 auto; padding-bottom: 40px;
+   font-family: Inconsolata;
+   font-weight: bold;
+   color: black;
+   font-size: 15px;
+   width: 70%;
+   max-width: 500px;
+   margin: 0 auto;
+   padding-bottom: 40px;
 }
 
 .profile-info {
-    font-size: 15px; font-family: Inconsolata; padding-right: 25px; width: 100%; margin: 0 auto; margin-top: 10px; padding-left: 25px; height: 80px;
+   font-size: 15px;
+   font-family: Inconsolata;
+   padding-right: 25px;
+   width: 100%;
+   margin: 0 auto;
+   margin-top: 10px;
+   padding-left: 25px;
+   height: 80px;
 }
 
 .profile-name {
-    font-size: 20px; font-weight: bolder;  font-family: Josefin Slab; width: 100%; margin: 0 auto; margin-top: 10px; padding-left: 25px; padding-right: 25px;
+   font-size: 20px;
+   font-weight: bolder;
+   font-family: Josefin Slab;
+   width: 100%;
+   margin: 0 auto;
+   margin-top: 10px;
+   padding-left: 25px;
+   padding-right: 25px;
 }
 
 .profile-pic {
-    margin: 0 auto; border-radius: 5px; width: 200px;
-}
-.text-1 {
-    font-family: Inconsolata; font-size: 17px; margin-left: 20px; color: white;
+   margin: 0 auto;
+   border-radius: 5px;
+   width: 200px;
 }
 
+.text-1 {
+   font-family: Inconsolata;
+   font-size: 17px;
+   margin-left: 20px;
+   color: white;
+}
 
 .text-1:hover {
-    font-family: Inconsolata; font-size: 17px; margin-left: 20px; color: white;
+   font-family: Inconsolata;
+   font-size: 17px;
+   margin-left: 20px;
+   color: white;
 }
 
 .profile1 {
-    width: 204px;  margin-top: -40px ! important; border: 2px solid #ddd; border-radius: 5px; margin: 0 auto; margin-bottom: 70px;
+   width: 204px;
+   margin-top: -40px ! important;
+   border: 2px solid #ddd;
+   border-radius: 5px;
+   margin: 0 auto;
+   margin-bottom: 70px;
 }
 
-
 .bigtext1 {
-    font-family: Josefin Slab; font-weight: bold; color: white; font-size: 40px;
+   font-family: Josefin Slab;
+   font-weight: bold;
+   color: white;
+   font-size: 40px;
 }
 
 .smalltext1 {
- font-family: Josefin Slab; font-weight: bold; color: white; font-size: 20px; padding-bottom: 20px; line-height: 130%; display: table; margin: 0 auto;
+   font-family: Josefin Slab;
+   font-weight: bold;
+   color: white;
+   font-size: 20px;
+   padding-bottom: 20px;
+   line-height: 130%;
+   display: table;
+   margin: 0 auto;
 }
 
+.nav-title {
+   font-family: Josefin Slab;
+   font-weight: bolder;
+   margin-left: 20px;
+   font-size: 20px;
+   margin-left: 6px;
+}
 
-.bigtext2  {
-    font-family: Josefin Slab; font-weight: bold; color: white; font-size: 22px; width: 400px; line-height: 130%;
+.smalltext-x {
+   font-family: georgia;
+   text-decoration: underline;
+   color: white;
+   font-size: 16px;
+   margin-top: -40px;
+   cursor: pointer;
+   padding-bottom: 20px;
+   line-height: 130%;
+   display: table;
+   margin: 0 auto;
+}
+
+.choose-page-2 {
+   margin-left: 12px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+}
+
+.profile-element {
+   font-family: Josefin Slab;
+}
+
+.profile-image-1 {
+   margin-left: 10px;
+   border-radius: 5px;
+   font-family: Josefin Slab;
+}
+
+.notif-text {
+   font-family: Josefin Slab;
+   color: blue;
+   font-weight: bolder;
+   font-size: 16px;
+}
+
+.nav-div-1 {
+   width: 100%;
+   max-width: 1000px;
+   margin: 0 auto;
+   padding-bottom: 10px;
+   margin-bottom: 60px;
+   border-bottom: 2px solid #ddd;
+}
+
+.bigtext2 {
+   font-family: Josefin Slab;
+   font-weight: bold;
+   color: white;
+   font-size: 22px;
+   width: 400px;
+   line-height: 130%;
 }
 
 .form1 {
-    width: 250px ! important;
-    
-        border-radius: 5px;
-    border: 2px solid #ddd;
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-family: Inconsolata;
-    display: table;
-    margin: 0 auto;
-    margin-bottom: 40px;
+   width: 250px ! important;
+   border-radius: 5px;
+   border: 2px solid #ddd;
+   padding-left: 15px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-family: Inconsolata;
+   display: table;
+   margin: 0 auto;
+   margin-bottom: 40px;
 }
-
-
-
-
-
-
-
-
 
 .form9 {
-    width: 250px;
-    
-        border-radius: 5px;
-    
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-family: Inconsolata;
-    display: table;
-    margin: 0 auto;
-    margin-bottom: 40px;
+   width: 250px;
+   border-radius: 5px;
+   padding-left: 15px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-family: Inconsolata;
+   display: table;
+   margin: 0 auto;
+   margin-bottom: 40px;
 }
 
-
-
 .skills {
-    color: red ! important;
+   color: red ! important;
 }
 
 textarea {
-    resize: none;
+   resize: none;
 }
 
 .form2 {
-    width: 250px;
-    float: right;
-        border-radius: 5px;
-    border: 2px solid #ddd;
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-family: Inconsolata;
-    display: block;
-    margin-bottom: 10px;
+   width: 250px;
+   float: right;
+   border-radius: 5px;
+   border: 2px solid #ddd;
+   padding-left: 15px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-family: Inconsolata;
+   display: block;
+   margin-bottom: 10px;
 }
-
 
 .formx {
-    width: 180px;
-    
-        border-radius: 5px;
-    border: 2px solid #ddd;
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-family: Inconsolata;
-    display: block;
-    margin: 0 auto;
+   width: 180px;
+   border-radius: 5px;
+   border: 2px solid #ddd;
+   padding-left: 15px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   font-family: Inconsolata;
+   display: block;
+   margin: 0 auto;
 }
-

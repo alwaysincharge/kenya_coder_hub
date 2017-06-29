@@ -1,10 +1,11 @@
-            <?php  include_once('../includes/all_classes_and_functions.php');  ?>   
+<?php  include_once('../includes/all_classes_and_functions.php');  ?>   
 
 
-  <?php if (isset($_SESSION['admin_id'])) { ?>
+
+<?php if (isset($_SESSION['admin_id'])) { ?>
+
+
             <?php
-                
-          
                 
             $my_comments = $comment->count_notif_comments($_SESSION['admin_id'], $_SESSION['admin_id']); 
     
@@ -16,11 +17,7 @@
                 
         
                 
-                
-                
-                
-                
-                
+            
             $my_replies = $reply->count_notif_replies($_SESSION['admin_id']); 
     
             $my_replies_result = $my_replies->get_result();   
@@ -36,15 +33,11 @@
                    echo "<span style='font-family: Josefin Slab; color: blue; font-weight: bolder; font-size: 16px;'>(" . $sum . ")</span>";
                     
                 }
-                
-              
-                
+                    
             }
                 
             }
              
-
-            
-                  
             ?>
-                   <?php } ?>
+
+<?php } ?>
