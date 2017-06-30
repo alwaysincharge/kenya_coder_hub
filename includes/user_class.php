@@ -20,7 +20,7 @@ class User {
         
        $password = $password_input;
         
-       $img_path = "male.png";
+       $img_path = "../pictures/male.png";
         
        $email = $email_input;   
           

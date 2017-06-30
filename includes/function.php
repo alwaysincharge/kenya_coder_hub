@@ -76,6 +76,21 @@ function check_emptiness($property, $url, $msg) {
 
 
 
+
+function check_emptiness_3($property, $msg, $url) {  
+    
+   if(trim($property) === '') {
+       
+   alert_note($msg);
+       
+   redirect_to($url);
+
+   }    
+    
+}
+
+
+
 function check_lenght($property, $min, $max, $msg, $url) {
     
     if ((strlen($property) < $min) || (strlen($property) > $max)) {
@@ -91,10 +106,25 @@ function check_lenght_2($property, $min, $max, $msg) {
     
     if ((strlen($property) < $min) || (strlen($property) > $max)) {
          alert_note($msg);
-      redirect_to('write');
+      redirect_to($_SESSION['url_placeholder'] . 'write');
     }   
     
 }
+
+
+function check_lenght_4($property, $min, $max, $msg, $url) {
+    
+    if ((strlen($property) < $min) || (strlen($property) > $max)) {
+        
+         alert_note($msg);
+        
+         redirect_to($url);
+        
+    }   
+    
+}
+
+
 
 
 function check_lenght_3($property, $min, $max, $msg, $url) {

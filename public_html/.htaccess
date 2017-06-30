@@ -2,19 +2,30 @@
 
 RewriteEngine on
 
-RewriteRule ^home index.php [NC,L]
 
-RewriteRule ^forum forum.php [NC,L]
+RewriteRule ^home views/index.php [NC,L]
 
-RewriteRule ^login authenticate.php [NC,L]
+RewriteRule ^state/([a-z,A-Z,0-9]+)$ views/index.php?state=$1 [NC,L]
 
-RewriteRule ^write write_post.php [NC,L]
 
-RewriteRule ^profile editprofile.php [NC,L]
+RewriteRule ^page/([a-z,A-Z,0-9]+)/([a-z,A-Z,0-9]+)$ views/index.php?state=$1&page=$2 [NC,L]
 
-RewriteRule ^post/([0-9]+) post.php?forum=$1 [NC,L]
+RewriteRule ^keywords/([a-z,A-Z,0-9]+)$ views/index.php?keywords=$1 [NC,L]
 
-RewriteRule ^user/([a-z,A-Z,0-9]+) user.php?person=$1 [NC,L]
 
-RewriteRule ^message/conversation/([0-9]+) messages.php?usersid=$1 [NC,L]
+RewriteRule ^forum views/forum.php [NC,L]
+
+RewriteRule ^relay views/search_relay.php [NC,L]
+
+RewriteRule ^login views/authenticate.php [NC,L]
+
+RewriteRule ^write views/write_post.php [NC,L]
+
+RewriteRule ^profile views/editprofile.php [NC,L]
+
+RewriteRule ^post/([0-9]+) views/post.php?forum=$1 [NC,L]
+
+RewriteRule ^user/([a-z,A-Z,0-9]+) views/user.php?person=$1 [NC,L]
+
+RewriteRule ^message/conversation/([0-9]+) views/messages.php?usersid=$1 [NC,L]
 
