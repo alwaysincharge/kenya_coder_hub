@@ -2,6 +2,9 @@
 
 
 
+<?php $_SESSION['realredirect1'] = $_SERVER['REQUEST_URI']; ?>
+
+
 <?php // Don't return an error if this value is not set.
 
 if(!isset($_GET['state'])) {$_GET['state'] = '';}
@@ -644,7 +647,9 @@ if(!isset($_GET['state'])) {$_GET['state'] = '';}
     
     
     
-</div>   
+</div>  
+    
+
     
 </body>
     
@@ -654,6 +659,12 @@ if(!isset($_GET['state'])) {$_GET['state'] = '';}
     
     
 <?php include('../js/general_javascript.php');  ?>  
+  
+    
+    
+    
+
+    
     
     
 </html>

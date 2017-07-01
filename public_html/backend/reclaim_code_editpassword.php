@@ -60,7 +60,7 @@ if (isset($_POST['submit']))  {
              
  alert_note_positive('Your password has been successfully changed. Login below.');
      
- redirect_to('login');
+ redirect_to('../login');
              
     
  }
@@ -74,13 +74,8 @@ if (isset($_POST['submit']))  {
 } 
  
 
-}}
-    
- else  {
-    
-        alert_note('Please stop trying to hack the site. Thanks a lot.');
-    
-}    
+
+ 
 
 
 

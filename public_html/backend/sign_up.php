@@ -58,6 +58,44 @@ if (isset($_POST['submit']))  {
     
     $single_quote = "'";  
     
+    
+    if (ctype_alnum($user_input)) {
+        
+        
+    } else {
+
+        alert_note('All fields can only contain letters and/or numbers.');
+     
+        redirect_to('../login'); 
+    
+    }
+    
+    
+    
+    if (ctype_alnum($_POST['password'])) {
+        
+        
+    } else {
+
+        alert_note('All fields can only contain letters and/or numbers.');
+     
+        redirect_to('../login'); 
+    
+    }
+    
+    
+    
+    if (ctype_alnum($_POST['passwordagain'])) {
+        
+        
+    } else {
+
+        alert_note('All fields can only contain letters and/or numbers.');
+     
+        redirect_to('../login'); 
+    
+    }
+    
 
     
     does_it_contain($user_input, $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', '../login');

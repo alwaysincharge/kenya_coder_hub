@@ -6,7 +6,7 @@
 
 
 
-require 'phpmailer/PHPMailerAutoload.php';
+require '../phpmailer/PHPMailerAutoload.php';
 
 
 $user_input = '';
@@ -30,15 +30,15 @@ if (isset($_POST['submit']))  {
     
     
     
- does_it_contain($user_input, $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', 'login');
+ does_it_contain($user_input, $space, $equal_sign, $single_quote, 'Username or password cannot contain a space, equal sign or single quote.', '../login');
     
    
     
- check_emptiness($user_input, 'login', 'All fields have to be filled. Please try again.');
+ check_emptiness($user_input, '../login', 'All fields have to be filled. Please try again.');
 
     
     
- check_lenght($user_input, 7, 30, 'The username and password cannot be smaller than 7 characters or bigger than 30.', 'login');
+ check_lenght($user_input, 7, 30, 'The username and password cannot be smaller than 7 characters or bigger than 30.', '../login');
     
      
   
@@ -66,11 +66,9 @@ if (isset($_POST['submit']))  {
 
              $mail2->Subject = 'Change your password.';
 
-             $mail2->AddEmbeddedImage('male.png', 'campfire');
+             $mail2->AddEmbeddedImage('../assets/campfire.svg', 'campfire');
 
-             $mail2->Body    = '<p>allen <img src="cid:campfire"/></p>  <a href="fridaycamp.com/reclaim_editpassword.php?person=' . $row['id']  . ' ">Click this link.</a>';
-
-             $mail2->addAttachment('male.png'); 
+             $mail2->Body    = '<p>Here is a link to change your password. <img src="cid:campfire"/></p>  <a href="fridaycamp.com/reclaim_editpassword.php?person=' . $row['id']  . ' ">Click this link.</a>';
 
              $mail2->isHTML(true); 
              
@@ -78,7 +76,9 @@ if (isset($_POST['submit']))  {
      
              $mail2->ClearAddresses();
              
+             alert_note_positive('A password recovery email has been sent to you.');
      
+             redirect_to('../login');
          }
     
     
@@ -86,7 +86,7 @@ if (isset($_POST['submit']))  {
     
          alert_note('The username you entered is not associated with any account.');
      
-         redirect_to('login'); 
+         redirect_to('../login'); 
      
 }
     
@@ -97,10 +97,10 @@ if (isset($_POST['submit']))  {
     
          alert_note('Please stop trying to hack the site. Thanks a lot.');
     
-         redirect_to('login'); 
+         redirect_to('../login'); 
 }    
 
 
-         redirect_to('login');
+         redirect_to('../login');
 
 ?>

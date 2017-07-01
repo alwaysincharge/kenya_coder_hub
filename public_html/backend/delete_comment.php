@@ -1,7 +1,7 @@
 <?php  include_once('../../includes/all_classes_and_functions.php');  ?>
 
 
-<?php $session->if_not_logged_in('login'); ?>
+<?php $session->if_not_logged_in('../login'); ?>
 
 
 <?php
@@ -28,7 +28,7 @@ header("Location: {$_SERVER['HTTP_REFERER']}");
     
     alert_note('Please stop trying to hack the site. Thanks a lot.');
      
-    redirect_to('home');
+    redirect_to('../login');
      
 }    
 

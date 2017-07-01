@@ -72,7 +72,7 @@ if (isset($_POST['submit']))  {
              
                     else { 
                                 
-                    redirect_to('../home');     
+                    redirect_to('../login');     
                                 
                     }
              

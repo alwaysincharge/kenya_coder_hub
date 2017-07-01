@@ -10,8 +10,7 @@ RewriteRule ^state/([a-z,A-Z,0-9]+)$ views/index.php?state=$1 [NC,L]
 
 RewriteRule ^page/([a-z,A-Z,0-9]+)/([a-z,A-Z,0-9]+)$ views/index.php?state=$1&page=$2 [NC,L]
 
-RewriteRule ^keywords/([a-z,A-Z,0-9]+)$ views/index.php?keywords=$1 [NC,L]
-
+RewriteRule ^keywords/(.*)$ views/index.php?keywords=$1 [NC,L]
 
 RewriteRule ^forum views/forum.php [NC,L]
 

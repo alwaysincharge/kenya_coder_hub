@@ -3,7 +3,7 @@
 <?php
 
 
-redirect_to('keywords/' . $_POST['keywords']);
+redirect_to('keywords/' . htmlspecialchars($_POST['keywords']));
 
 
 

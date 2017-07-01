@@ -1,6 +1,9 @@
 <?php  include_once('../../includes/all_classes_and_functions.php');  ?>
 
 
+<?php $_SESSION['realredirect1'] = $_SERVER['REQUEST_URI']; ?>
+
+
 
 <!DOCTYPE html>
 

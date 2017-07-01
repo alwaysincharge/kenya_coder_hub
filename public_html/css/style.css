@@ -80,12 +80,15 @@
 .posting-box {
    width: 100%;
    margin-bottom: 30px;
+   word-wrap: break-word;
+   max-width: 1000px;
 }
 
 .body-box {
    margin-top: 7px;
    font-family: georgia;
    word-wrap: break-word;
+   color: black !important;
 }
 
 .code-box {
@@ -100,18 +103,20 @@
    width: 70%;
    float: right;
    margin-top: 20px;
+    max-width: 900px;
 }
 
 .comment-box {
    width: 80%;
    float: right;
    margin-bottom: 40px;
+    max-width: 700px;
 }
 
 .comment-box-2 {
    width: 100%;
-   float: right;
    margin-bottom: 40px;
+   word-wrap: break-word;
 }
 
 .form-box {
@@ -418,6 +423,8 @@
    border-radius: 5px;
    padding: 8px;
    cursor: default;
+    word-wrap: break-word;
+    max-width: 190px;
 }
 
 .img-right {

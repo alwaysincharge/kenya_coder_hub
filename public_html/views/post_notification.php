@@ -2,7 +2,7 @@
 
 
 
-<?php $session->if_not_logged_in('login'); ?>
+<?php $session->if_not_logged_in('../login'); ?>
 
 
 
@@ -43,7 +43,7 @@ $reply->unset_notif_replies($_SESSION['admin_id']);
 <div class="row" style="width: 100%; max-width: 850px; display: table; margin: 0 auto;">
     
     
-<div class="col-md-6">
+<div class="col-md-6" style="max-width: 450px;">
     
     
     
@@ -97,7 +97,7 @@ $reply->unset_notif_replies($_SESSION['admin_id']);
     
     
 
-  <div class="col-md-6">
+  <div class="col-md-6" style="max-width: 450px;">
       
       
             <p class="home-head">Replies on your comments.</p>

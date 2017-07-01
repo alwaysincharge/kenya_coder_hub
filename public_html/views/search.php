@@ -46,7 +46,7 @@
                            
                            <img src="<?php echo $row['img_path']; ?>" style="width: 200px; border-radius: 5px; height: 210px;" />
                                
-                           <p style="font-family: Josefin Slab; font-weight: bolder; font-size: 20px; margin-top:10px;"><a href="<?php echo $_SESSION['url_placeholder']; ?>backend/user/<?php echo $row['username']; ?>"><?php echo $row['username'];  ?></a></p>
+                           <p style="font-family: Josefin Slab; font-weight: bolder; font-size: 20px; margin-top:10px;"><a href="<?php echo $_SESSION['url_placeholder']; ?>user/<?php echo $row['username']; ?>"><?php echo $row['username'];  ?></a></p>
                                
                                <p><?php if ($row['story']) {echo substr(nl2br($row['story']), 0, 62) . "..."; }  ?></p>
                                

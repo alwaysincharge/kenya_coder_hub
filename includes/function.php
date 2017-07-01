@@ -112,6 +112,22 @@ function check_lenght_2($property, $min, $max, $msg) {
 }
 
 
+
+function makeClickableLinks($text) {
+    
+$text = html_entity_decode($text);
+$text = " ".$text;
+$text= preg_replace("/(^|[\n ])([\w]*?)([\w]*?:\/\/[\w]+[^ \,\"\n\r\t<]*)/is", "$1$2<a style='color: blue;' href=\"$3\" >$3</a>", $text);  
+$text= preg_replace("/(^|[\n ])([\w]*?)((www|wap)\.[^ \,\"\t\n\r<]*)/is", "$1$2<a style='color: blue;' href=\"http://$3\" >$3</a>", $text);
+$text= preg_replace("/(^|[\n ])([\w]*?)((ftp)\.[^ \,\"\t\n\r<]*)/is", "$1$2<a style='color: blue;' href=\"$4://$3\" >$3</a>", $text);  
+$text= preg_replace("/(^|[\n ])([a-z0-9&\-_\.]+?)@([\w\-]+\.([\w\-\.]+)+)/i", "$1<a style='color: blue;' href=\"mailto:$2@$3\">$2@$3</a>", $text);  
+$text= preg_replace("/(^|[\n ])(mailto:[a-z0-9&\-_\.]+?)@([\w\-]+\.([\w\-\.]+)+)/i", "$1<a style='color: blue;' href=\"$2@$3\">$2@$3</a>", $text);  
+$text= preg_replace("/(^|[\n ])(skype:[^ \,\"\t\n\r<]*)/i", "$1<a style='color: blue;' href=\"$2\">$2</a>", $text);  
+        return $text;
+    
+}
+
+
 function check_lenght_4($property, $min, $max, $msg, $url) {
     
     if ((strlen($property) < $min) || (strlen($property) > $max)) {

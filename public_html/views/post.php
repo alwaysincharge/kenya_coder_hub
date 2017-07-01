@@ -29,7 +29,7 @@
 <body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
         
         
-            <?php  include(dirname(__FILE__) . '\\' . "nav.php"); ?>
+            <?php  include("nav.php"); ?>
         
                     
             <?php  
@@ -75,7 +75,7 @@
 					</p>
 
 					<p class="body-box">
-						<?php  echo $row['body'];  ?>
+						<?php  echo makeClickableLinks($row['body']);  ?>
 					</p>
 
 					<p class='code-box'>
@@ -203,7 +203,7 @@
 					</p>
 
 					<p class="body-box">
-						<?php echo $row['body'];  ?>
+						<?php echo makeClickableLinks($row['body']);  ?>
 					</p>
 
 					<p class='code-box'>
@@ -321,7 +321,7 @@
 						</p>
 
 						<p class="body-box">
-							<?php echo $rows['body'];  ?>
+							<?php echo makeClickableLinks($rows['body']);  ?>
 						</p>
 
 						<p class='code-box'>
@@ -394,6 +394,8 @@
 </div>
     
 <?php include('../js/general_javascript.php');  ?>
+    
+   
     
 </body>
     

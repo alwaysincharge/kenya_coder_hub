@@ -20,6 +20,7 @@ if(request_is_post()) {
     
 if (isset($_POST['submit']))  {
     
+   
     
 
  
@@ -33,7 +34,49 @@ if (isset($_POST['submit']))  {
  $oldpassword = $_POST['oldpassword'];
     
     
+ 
     
+    if (ctype_alnum($_POST['password1'])) {
+        
+        
+    } else {
+
+        alert_note('All fields can only contain letters and/or numbers.');
+     
+        redirect_to('../views/editpassword.php'); 
+    
+    }
+    
+    
+    
+    
+    
+    if (ctype_alnum($_POST['password2'])) {
+        
+        
+    } else {
+
+        alert_note('All fields can only contain letters and/or numbers.');
+     
+        redirect_to('../views/editpassword.php'); 
+    
+    }
+    
+    
+    
+    
+    
+    
+    if (ctype_alnum($_POST['oldpassword'])) {
+        
+        
+    } else {
+
+        alert_note('All fields can only contain letters and/or numbers.');
+     
+        redirect_to('../views/editpassword.php'); 
+    
+    }
     
     
  $space = ' ';

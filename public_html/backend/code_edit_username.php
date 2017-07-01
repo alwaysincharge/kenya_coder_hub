@@ -19,6 +19,18 @@ if (isset($_POST['submit']))  {
  $user_input = $_POST['username'];
     
     
+     if (ctype_alnum($user_input)) {
+        
+        
+    } else {
+
+        alert_note('All fields can only contain letters and/or numbers.');
+     
+        redirect_to('../views/editusername.php'); 
+    
+    }
+    
+    
     
  $space = ' ';
     

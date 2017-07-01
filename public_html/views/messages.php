@@ -1,7 +1,7 @@
 <?php  include_once('../../includes/all_classes_and_functions.php');  ?>
 
 
-<?php $session->if_not_logged_in('login'); ?>
+<?php $session->if_not_logged_in('../login'); ?>
 
 
 <?php if(!isset($_GET['usersid'])) {$_GET['usersid'] = '';} ?>
@@ -399,7 +399,7 @@
         
         
         <div class="col-xs-8">
-        <p class="mess-body"><a href="<?php echo $_SESSION['url_placeholder']; ?>user/<?php echo $row['username']; ?>"><?php echo $row['username']; ?></a> <?php echo $row['message']; ?></p>
+        <p class="mess-body" style="max-width: 400px; word-wrap: break-word;"><a href="<?php echo $_SESSION['url_placeholder']; ?>user/<?php echo $row['username']; ?>"><?php echo $row['username']; ?></a> <?php echo $row['message']; ?></p>
             
             
             

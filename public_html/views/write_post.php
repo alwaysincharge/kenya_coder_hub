@@ -2,7 +2,7 @@
 
 
 
-<?php $session->if_not_logged_in('login'); ?>
+<?php $session->if_not_logged_in('../login'); ?>
 
 
 
