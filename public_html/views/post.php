@@ -5,6 +5,25 @@
 <?php $_SESSION['realredirect1'] = $_SERVER['REQUEST_URI']; ?>
 
 
+               <?php
+
+               // Leave the page if the GET value doesn't exist.
+            
+               $this_post = $post->this_post($_GET['forum']); 
+    
+               $this_post_result = $this_post->get_result();  
+
+               $numRows = $this_post_result->num_rows;
+      
+               if ($numRows == 0) {
+                   
+               alert_note('The page you are looking for does not exist or has been deleted.');
+     
+               redirect_to('../home'); 
+
+               } ?>
+
+
 
 <!DOCTYPE html>
 
@@ -16,9 +35,23 @@
     
 	<head>
         
-		<title>Tsutsus - Meet Kenya's programmers.</title>
+        <?php
         
-		<meta content="Create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here." name="description">
+        // Get and display information about the post.
+            
+        $this_post = $post->this_post($_GET['forum']); 
+    
+        $this_post_result = $this_post->get_result();   
+                    
+        while($row_x = $this_post_result->fetch_assoc()) { ?>
+        
+        
+		<title><?php echo $row_x['title']; ?> - Friday Camp - Meet Kenya's programmers.</title>
+        
+		<meta content="<?php echo htmlspecialchars($row_x['body']); ?>" name="description">
+        
+        
+        <?php } ?>
         
         <?php include('head_info.php'); ?>
         
@@ -54,6 +87,8 @@
             
             
             <?php
+    
+             // Get and display information about the post.
             
             $this_post = $post->this_post($_GET['forum']); 
     
@@ -89,6 +124,8 @@
                                         
                     
                 <?php
+                                                            
+                    // Administrative options for the comment owner.
                          
                     if ((isset($_SESSION['admin_id'])) && ($_SESSION['admin_id'] == $row['owner']) ) { ?>
                                                                      
@@ -180,6 +217,8 @@
     
             
             <?php
+    
+            // Get and display information about the post's comments.
             
             $these_comments = $comment->get_these_comments($_GET['forum']); 
     
@@ -299,6 +338,8 @@
                     
                                     
             <?php
+                                                                 
+            // Get and display information about the comment's replies.
             
             $these_replies = $reply->get_these_replies($row['commentid']); 
     

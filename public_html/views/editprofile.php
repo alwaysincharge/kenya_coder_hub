@@ -10,7 +10,7 @@
 <head>
     
     
-	<title>Tsutsus - Meet Kenya's programmers.</title>
+	<title>Friday Camp - Meet Kenya's programmers.</title>
     
     <meta name="description" content="Create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.">
     

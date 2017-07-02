@@ -69,7 +69,7 @@ if (isset($_POST['submit']) )  {
     
     
     
-        $filepath = "../pictures/" . ( time() + 679 ) . $filename; 
+        $filepath = "../pictures/" . $_SESSION['admin_id'] . 'and' . ( time() + 679 ); 
             
         move_uploaded_file($filetmp, $filepath);
     

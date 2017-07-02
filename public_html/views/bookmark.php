@@ -67,6 +67,8 @@
       
             <?php
       
+            // List of posts the current user has saved.
+      
             $mybookmarks = $bookmark->my_bookmarks($_SESSION['admin_id']); 
     
             $mybookmarks_result = $mybookmarks->get_result();   

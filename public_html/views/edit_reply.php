@@ -55,6 +55,8 @@
                 
                 
             <?php
+                
+            // Display incumbent information in form fields.
             
             $this_reply = $reply->get_this_reply($_GET['reply'], $_SESSION['admin_id']); 
     

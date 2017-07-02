@@ -1,6 +1,28 @@
 <?php  include_once('../../includes/all_classes_and_functions.php');  ?>
 
 
+
+
+               <?php
+            
+               $this_user = $user->find_one_user($_GET['usersid']); 
+    
+               $this_user_result = $this_user->get_result();  
+
+               $numRows = $this_user_result->num_rows;
+      
+               if ($numRows == 0) {
+                   
+               alert_note('The page you are looking for does not exist or has been deleted.');
+     
+               redirect_to($_SESSION['url_placeholder'] . 'home'); 
+
+               } ?>
+
+
+
+
+
 <?php $session->if_not_logged_in('../login'); ?>
 
 
@@ -10,7 +32,7 @@
 <?php if(!isset($_GET['status'])) {$_GET['status'] = '';} ?>
 
 
-<?php  if ($_GET['usersid'] == $_SESSION['admin_id']) {redirect_to($_SESSION['url_placeholder'] . 'home');}    ?>
+<?php  if ($_GET['usersid'] == $_SESSION['admin_id']) {alert_note('Dude, that\'s your own page. You can\'t message yourself.'); redirect_to($_SESSION['url_placeholder'] . 'home'); }    ?>
 
 
 <?php $message->mark_as_read($_GET['usersid'], $_SESSION['admin_id']); ?>
@@ -30,7 +52,7 @@
 <head>
     
     
-	<title>Tsutsus - Meet Kenya's programmers.</title>
+	<title>Friday Camp - Meet Kenya's programmers.</title>
     
     <meta name="description" content="Create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.">
     
@@ -53,6 +75,8 @@
     
     
             <?php  
+    
+            // Text notifications.
     
             if (isset($_SESSION['note1'])) {
                 
@@ -77,7 +101,10 @@
     
     
               <?php
-                 
+    
+    
+              // Page title with receipient's username.
+    
               $one_user = $user->find_one_user($_GET['usersid']); 
     
               $one_user_result = $one_user->get_result();   
@@ -107,6 +134,8 @@
     
               <?php
     
+              // If there are more than zero notifications.
+    
               if ($_GET['status'] != 'empty') { ?>
                  
             
@@ -122,6 +151,8 @@
     
     
               <?php
+                  
+              // List of all conversations the current user is part of.
                  
               $list = $message->all_conversation($_SESSION['admin_id'], $_SESSION['admin_id']); 
     
@@ -129,7 +160,7 @@
                     
               while($row = $list_result->fetch_assoc()) { ?>
         
-              <a href="<?php echo $_SESSION['url_placeholder']; ?>views/messages.php?usersid=<?php                      if ($row['sender'] == $_SESSION['admin_id']) {
+              <a href="<?php echo $_SESSION['url_placeholder']; ?>message/conversation/<?php                      if ($row['sender'] == $_SESSION['admin_id']) {
                          
                         echo $row['receiver']; 
                          
@@ -145,6 +176,8 @@
                 
                 
               <?php
+                                                         
+              // Find the latest message for each conversation.
                  
               $one_message = $message->one_message($row['max']); 
     
@@ -191,6 +224,8 @@
                       
                       
                 <div class="col-xs-9" style="">
+                    
+                    <!-- Display the latest message for each conversation-->
                     
                      <p style=" font-family: Josefin Slab; font-weight: bolder; font-size: 17px;">
                          
@@ -309,9 +344,11 @@
     
     
         <div class="row">
+            
+        <!-- Form for writing new messages. -->
         
         
-        <div class="col-xs-2">
+        <div class="col-xs-2" style="background: red;">
             
         <?php
                   
@@ -372,6 +409,8 @@
     
     
     <?php
+                  
+    // Display messages and profile messages for this very conversation. 
                  
     $conversation = $message->conversation($_SESSION['admin_id'], $_GET['usersid'], $_GET['usersid'], $_SESSION['admin_id']); 
     

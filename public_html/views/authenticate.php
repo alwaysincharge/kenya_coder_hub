@@ -20,7 +20,7 @@
 <head>
     
     
-	<title>Tsutsus - Meet Kenya's programmers.</title>
+	<title>Friday Camp - Meet Kenya's programmers.</title>
     
     <meta name="description" content="Create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.">
     
@@ -111,6 +111,7 @@
             
             <div class="col-xs-4">
                 
+                    <!-- Sign In  -->
                 
                     <form method="post" action="<?php echo $_SESSION['url_placeholder']; ?>backend/sign_in.php" enctype="multipart/form-data">
                         
@@ -126,6 +127,8 @@
                 
                 
 
+                    <!-- Forgot Password  -->
+                
                     <form method="post" action="<?php echo $_SESSION['url_placeholder']; ?>backend/reclaim_password.php"  enctype="multipart/form-data">
                      
                     <h5 class="smalltext-x toggle">Forgot password?</h5>
@@ -149,7 +152,7 @@
             
             <div class="col-xs-4">
                 
-                
+                <!-- Sign Up  -->
                 
                 <form method="post" action="<?php echo $_SESSION['url_placeholder']; ?>backend/sign_up.php" enctype="multipart/form-data">
                           

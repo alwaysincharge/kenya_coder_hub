@@ -29,10 +29,15 @@
     
               <?php  include("nav.php"); ?>
     
+    
+              <p class="home-head">Showing results for '<?php echo $_GET['keywords'];  ?>'.</p>
+    
 
               <div class="row" style="width: 100%; max-width: 800px; display: table; margin: 0 auto;">
     
                            <?php
+                  
+                           // Search for users where keyword is equal to $_GET['keywords'].
     
                            $search_users = $search->search_users('%' . $_GET['keywords'] . '%'); 
     
@@ -48,11 +53,11 @@
                                
                            <p style="font-family: Josefin Slab; font-weight: bolder; font-size: 20px; margin-top:10px;"><a href="<?php echo $_SESSION['url_placeholder']; ?>user/<?php echo $row['username']; ?>"><?php echo $row['username'];  ?></a></p>
                                
-                               <p><?php if ($row['story']) {echo substr(nl2br($row['story']), 0, 62) . "..."; }  ?></p>
+                             <!--  <p><? // php if ($row['story']) {echo substr(nl2br($row['story']), 0, 62) . "..."; }  ?></p> -->
                                
                                
 
-                               <a href="<?php echo $_SESSION['url_placeholder']; ?>views/messages.php?usersid=<?php echo $row['id'];  ?>"><button name='submit' class='btn' style='font-family: georgia;'>Message</button></a>
+                               <a href="<?php echo $_SESSION['url_placeholder']; ?>message/conversation/<?php echo $row['id'];  ?>"><button name='submit' class='btn' style='font-family: georgia;'>Message</button></a>
                                
                                
                                <a style="margin-left: 20px;" href="<?php echo $_SESSION['url_placeholder']; ?>user/<?php echo $row['username']; ?>"><button name='submit' class='btn' style='font-family: georgia;'>Profile</button></a>

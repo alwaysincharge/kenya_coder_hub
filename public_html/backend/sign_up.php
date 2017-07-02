@@ -6,25 +6,7 @@
 
 require '../phpmailer/PHPMailerAutoload.php';
 
-$mail = new PHPMailer;
-
-$mail->ClearAddresses();
-
-$mail->addAddress('junenewjoint@gmail.com', 'Atsu Davoh'); 
-
-$mail->setFrom('atsunewjoint@tsutsus.com', 'Diamond App');
-
-$foo = 'http://www.tsutsus.com/forum.php';
-
-$mail->Subject = 'Boys know how.';
-
-$mail->AddEmbeddedImage('male.png', 'Kartka');
-
-$mail->Body    = '<p>allen <img src="cid:Kartka"/></p>';
-
-$mail->addAttachment('male.png'); 
-
-$mail->isHTML(true);   
+ 
 
 
 
@@ -158,9 +140,29 @@ if (isset($_POST['submit']))  {
      
        $_SESSION['admin_id'] = $last_id;
      
+       $mail = new PHPMailer;
+
+       $mail->ClearAddresses();
+
+       $mail->addAddress($_POST['email'], $_POST['username']); 
+
+       $mail->setFrom('noreply@fridaycamp.com', 'Friday Camp');
+
+       $mail->Subject = 'Thanks for signing up.';
+
+       $mail->AddEmbeddedImage('campfire.svg', 'campfire');
+
+       $mail->Body = '<p>Thanks for signing up. <img src="cid:campfire"/></p>';
+
+       $mail->isHTML(true);
+     
        $mail->send();
      
        $mail->ClearAddresses();
+     
+       alert_note_positive('Thanks for joining Friday Camp. A welcome email has been sent to you.');
+     
+       redirect_to('../home');
      
 
 }  else {

@@ -54,6 +54,8 @@
                 
                 
             <?php
+                
+            // Display incumbent information in form fields.
             
             $this_post = $post->get_this_post($_GET['forum'], $_SESSION['admin_id']); 
     

@@ -1,6 +1,16 @@
 <?php  include_once('../../includes/all_classes_and_functions.php');  ?>
 
 
+<?php if(!request_is_post()) {
+    
+        alert_note('You can only access this page via an email link.');
+     
+        redirect_to('../home'); 
+
+}  
+
+?>
+
 
 <html lang="en">
     
@@ -32,6 +42,8 @@
                 
                 
             <?php  
+                
+            // Text notification.
     
             if (isset($_SESSION['note1'])) {
                 
@@ -49,6 +61,9 @@
                 
                 
                 
+                
+                
+            <!-- Users can reset their password here after being redirected from their email. This is used by users who have forgotten their password. -->
                 
             <form method="post" action="reclaim_code_editpassword.php">
                 

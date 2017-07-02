@@ -60,7 +60,7 @@ if (isset($_POST['submit']))  {
 
              $mail2->ClearAddresses();
 
-             $mail2->addAddress($row['email'], 'Friday Camp'); 
+             $mail2->addAddress($row['email'], $row['username']); 
 
              $mail2->setFrom('noreply@fridaycamp.com', 'Friday Camp');
 

@@ -33,7 +33,9 @@
     
     
     
-            <?php  
+            <?php 
+    
+            // Text notifications.
     
             if (isset($_SESSION['note1'])) {
                 
@@ -60,6 +62,8 @@
       
       
             <?php
+      
+            // Display current user's posts.
       
             $myposts = $post->my_posts($_SESSION['admin_id']); 
     
@@ -164,6 +168,8 @@
   
       
             <?php
+      
+            // Display current user's comments.
             
             $my_comments = $comment->my_comments($_SESSION['admin_id']); 
     
@@ -242,6 +248,8 @@
       
             
             <?php
+      
+            // Display current user's replies.
             
             $my_replies = $reply->my_replies($_SESSION['admin_id']); 
     

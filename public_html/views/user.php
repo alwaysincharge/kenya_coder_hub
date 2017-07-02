@@ -5,6 +5,26 @@
 
 
 
+               <?php
+            
+               // If user does not exist, leave page.
+
+               $all_details = $user->display_all_user_details_by_user($_GET['person']); 
+    
+               $all_details_result = $all_details->get_result();   
+
+               $numRows = $all_details_result->num_rows;
+      
+               if ($numRows == 0) {
+                   
+               alert_note('The page you are looking for does not exist or has been deleted.');
+     
+               redirect_to('../home'); 
+
+               } ?>
+
+
+
 <!DOCTYPE html>
 
 
@@ -16,7 +36,7 @@
 <head>
     
     
-	<title>Tsutsus - Meet Kenya's programmers.</title>
+	<title><?php echo $_GET['person']; ?>'s profile - Friday Camp - Meet Kenya's programmers.</title>
     
     <meta name="description" content="Create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.">
     
@@ -45,6 +65,8 @@
     
             <?php  
     
+            // Text notifications.
+    
             if (isset($_SESSION['note1'])) {
                 
             echo "<div style='display: table; margin: 0 auto; margin-bottom: 30px; margin-top: -30px;'>{$_SESSION['note1']}</div>"; 
@@ -64,6 +86,8 @@
                
 
                <?php
+                   
+               // Get all the details about the user and display below.
             
                $all_details = $user->display_all_user_details_by_user($_GET['person']); 
     

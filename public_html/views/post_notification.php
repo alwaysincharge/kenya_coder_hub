@@ -8,6 +8,8 @@
 
 <?php
 
+// Set ajax post notifications as read.
+
 $comment->unset_notif_comments($_SESSION['admin_id']);
 
 $reply->unset_notif_replies($_SESSION['admin_id']);
@@ -50,6 +52,8 @@ $reply->unset_notif_replies($_SESSION['admin_id']);
             <p class="home-head">Comments on your posts.</p>
       
             <?php
+            
+            // List of comments on your posts.
             
             $my_comments = $comment->notif_comments($_SESSION['admin_id'], $_SESSION['admin_id']); 
     
@@ -103,6 +107,8 @@ $reply->unset_notif_replies($_SESSION['admin_id']);
             <p class="home-head">Replies on your comments.</p>
       
             <?php
+      
+            // List of replies on your comments.
             
             $my_replies = $reply->notif_replies($_SESSION['admin_id']); 
     

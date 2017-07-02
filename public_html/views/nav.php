@@ -9,7 +9,7 @@
                 <a href="<?php echo $_SESSION['url_placeholder']; ?>home" class="nav-title">Friday<span style="color: black;">//</span>Camp</a>
                 
                 
-    
+                <a href="https://github.com/alwaysincharge/fridaycamp" class="text-1"><img src="<?php echo $_SESSION['url_placeholder']; ?>assets/github.svg" height="22" width="22"></a>
     
 <?php if (isset($_SESSION['admin_id'])) { ?>
     
@@ -18,10 +18,11 @@
     
                  <a href="<?php echo $_SESSION['url_placeholder']; ?>home" class="text-1"><img src="<?php echo $_SESSION['url_placeholder']; ?>assets/house.svg" height="22" width="22"></a>
     
+
                 
-    
-                
-                 <a class='text-1' href="<?php echo $_SESSION['url_placeholder']; ?>views/messages.php?<?php
+                 <a class='text-1' href="<?php echo $_SESSION['url_placeholder']; ?><?php
+                                         
+                 // Redirect to the first/most recent conversation on the message page.
                  
                  $list = $message->first_conversation($_SESSION['admin_id'], $_SESSION['admin_id']); 
     
@@ -35,11 +36,11 @@
                      
                      if ($row['sender'] == $_SESSION['admin_id']) {
                          
-                        echo "usersid={$row['receiver']}"; 
+                        echo "message/conversation/{$row['receiver']}"; 
                          
                      } elseif ($row['receiver'] == $_SESSION['admin_id']) {
                          
-                        echo "usersid={$row['sender']}";
+                        echo "message/conversation/{$row['sender']}";
                          
                      }
                      
@@ -51,7 +52,7 @@
                          
                  else {
                      
-                 echo "status=empty";
+                 echo "noconvo";
                      
                  }
 
@@ -60,9 +61,11 @@
                  <span id="main1">
                      
                  <?php
+                                         
+                 //  Number of unread messages.                
                  
                  $unread = $message->all_unread($_SESSION['admin_id']); 
-    
+                                
                  $unread_result = $unread->get_result();
                 
                  while($row = $unread_result->fetch_assoc()) {
@@ -91,6 +94,7 @@
                 
             <?php
                 
+            // Number of unread post notifications.                             
                 
             $my_comments = $comment->count_notif_comments($_SESSION['admin_id'], $_SESSION['admin_id']); 
     
@@ -142,6 +146,8 @@
        <div class="dropdown">
                        
        <img src="<?php echo $_SESSION['url_placeholder']; ?>backend/<?php   
+                                         
+       // display profile picture of current user and user options.
      
        $newusername = $user->find_one_user($_SESSION['admin_id']); 
     
@@ -210,6 +216,8 @@
 
             
     <form class="search1" method="get" action="<?php echo $_SESSION['url_placeholder']; ?>views/search.php?keywords=<?php  echo $_GET['keywords'];   ?>">
+        
+    <!-- Search for users. -->
                               
     <?php if (!isset($_SESSION['admin_id'])) { ?>
                   

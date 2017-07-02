@@ -54,6 +54,8 @@
                 
                 
             <?php
+                
+            // Display incumbent information in form fields.
             
             $this_comment = $comment->get_this_comment($_GET['comment'], $_SESSION['admin_id']); 
     
