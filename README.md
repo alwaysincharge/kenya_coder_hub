@@ -24,6 +24,8 @@ All non-API code was written from scratch. [Friday Camp website.](http://fridayc
 
 8. Change profile pictures.
 
+9. Comment on posts and reply on comments.
+
 
 
 ## Homepage.
@@ -46,3 +48,4 @@ Server: Apache.
 ## Contact.
 
 You can contact me at atsunewjoint@gmail.com
+
