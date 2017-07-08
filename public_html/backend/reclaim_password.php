@@ -68,7 +68,7 @@ if (isset($_POST['submit']))  {
 
              $mail2->AddEmbeddedImage('../assets/campfire.svg', 'campfire');
 
-             $mail2->Body    = '<p>Here is a link to change your password. <img src="cid:campfire"/></p>  <a href="fridaycamp.com/reclaim_editpassword.php?person=' . $row['id']  . ' ">Click this link.</a>';
+             $mail2->Body    = '<p>Here is a link to change your password. <img src="cid:campfire"/></p>  <a href="fridaycamp.000webhostapp.com/views/reclaim_editpassword.php?person=' . $row['id']  . ' ">Click this link.</a>';
 
              $mail2->isHTML(true); 
              

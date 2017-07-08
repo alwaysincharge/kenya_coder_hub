@@ -36,7 +36,7 @@ class User {
          
          global $database;
                             
-         $stmt = $database->connection->prepare("select id, username, password from users where username = ?");
+         $stmt = $database->connection->prepare("select id, username, password, email from users where username = ?");
         
          $stmt->bind_param("s", $username);
 

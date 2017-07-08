@@ -4,6 +4,8 @@
 
 
                <?php
+
+               if ($_GET['status'] != 'empty') {
             
                $this_user = $user->find_one_user($_GET['usersid']); 
     
@@ -17,7 +19,7 @@
      
                redirect_to($_SESSION['url_placeholder'] . 'home'); 
 
-               } ?>
+               } } ?>
 
 
 
