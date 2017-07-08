@@ -148,7 +148,7 @@
     
             
     
-<div class="col-md-4">
+<div class="col-xs-4">
     
     
     
@@ -341,7 +341,7 @@
     
     
     
-<div class="col-md-8">
+<div class="col-xs-8">
     
     
     
@@ -350,7 +350,7 @@
         <!-- Form for writing new messages. -->
         
         
-        <div class="col-xs-2" style="background: red;">
+        <div class="col-xs-2">
             
         <?php
                   

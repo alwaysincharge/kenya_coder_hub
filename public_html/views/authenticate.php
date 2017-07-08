@@ -134,10 +134,12 @@
                     <h5 class="smalltext-x toggle">Forgot password?</h5>
                         
                     <div class="selection"  style="display: none;">
+                        
+                    <p class="form1" style="color: white; margin-bottom: 5px;">Enter and submit your username below.</p>    
                          
                     <input placeholder="username" type="text" name="username" class="form1">
             
-                    <button class="form1" style="font-family: Josefin Slab; font-weight: bolder; margin-top: -30px;" type="submit" name="submit" value="submit">Reclaim Password</button>
+                    <button class="form1" style="font-family: Josefin Slab; font-weight: bolder; margin-top: -30px;" type="submit" name="submit" value="submit">Submit</button>
                         
                     </div>
                  
@@ -216,7 +218,7 @@
              
              
          
-             <div class="col-md-4">
+             <div class="col-xs-4">
                  
                  <div class="profile1">
                  
@@ -247,7 +249,7 @@
              
              
              
-             <div class="col-md-4">
+             <div class="col-xs-4">
                  
                  <div class="profile1">
                  
@@ -276,7 +278,7 @@
              
              
              
-            <div class="col-md-4">
+            <div class="col-xs-4">
                  
                  <div class="profile1">
                  

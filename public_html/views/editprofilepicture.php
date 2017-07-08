@@ -91,7 +91,7 @@
            
             <div class="selection" style="display: none;">
                     
-                <p class='loading-1'>Uploading picture...</p>
+                <p class='creating' style='color: black;'>Uploading picture...</p>
                             
            </div>
 
@@ -114,5 +114,3 @@
     
     
 </html>
-         
-         

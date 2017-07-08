@@ -18,8 +18,4 @@
 
 <?php include_once('save_class.php'); ?>
 
-<?php $_SESSION['url_placeholder'] = '/fridaycamp/public_html/' ?>
-
-
-
-
+<?php $_SESSION['url_placeholder'] = '/' ?>

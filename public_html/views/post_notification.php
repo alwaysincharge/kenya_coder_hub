@@ -45,7 +45,7 @@ $reply->unset_notif_replies($_SESSION['admin_id']);
 <div class="row" style="width: 100%; max-width: 850px; display: table; margin: 0 auto;">
     
     
-<div class="col-md-6" style="max-width: 450px;">
+<div class="col-xs-6" style="max-width: 450px;">
     
     
     
@@ -101,7 +101,7 @@ $reply->unset_notif_replies($_SESSION['admin_id']);
     
     
 
-  <div class="col-md-6" style="max-width: 450px;">
+  <div class="col-xs-6" style="max-width: 450px;">
       
       
             <p class="home-head">Replies on your comments.</p>

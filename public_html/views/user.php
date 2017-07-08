@@ -82,7 +82,7 @@
             ?>
         
            
-               <div class="col-md-6" style=" min-height: 400px; border-radius: 2px;">
+               <div class="col-xs-6" style=" min-height: 400px; border-radius: 2px;">
                
 
                <?php
@@ -351,7 +351,7 @@
            
            
            
-           <div class="col-md-6" style="min-height: 400px; border-radius: 2px; padding-left: 60px;">
+           <div class="col-xs-6" style="min-height: 400px; border-radius: 2px; padding-left: 60px;">
            
              <?php
             

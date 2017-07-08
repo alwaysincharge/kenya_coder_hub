@@ -54,6 +54,37 @@ if (isset($_POST['submit']))  {
      
      
          while($row = $founduser_result->fetch_assoc()) {
+             
+             
+                          
+            function randomString($length = 6) {
+                 
+	            $str = "";
+                 
+	            $characters = array_merge(range('A','Z'), range('a','z'), range('0','9'));
+                 
+	            $max = count($characters) - 1;
+                 
+	            for ($i = 0; $i < $length; $i++) {
+                    
+		        $rand = mt_rand(0, $max);
+                    
+		        $str .= $characters[$rand];
+                    
+	            }
+                 
+	            return $str;
+                 
+             }
+
+
+
+
+             $_SESSION['random_string'] = randomString(13);
+             
+             $_SESSION['password_user'] = $row['id'];
+             
+             
     
 
              $mail2 = new PHPMailer;
@@ -64,11 +95,30 @@ if (isset($_POST['submit']))  {
 
              $mail2->setFrom('noreply@fridaycamp.com', 'Friday Camp');
 
-             $mail2->Subject = 'Change your password.';
+             $mail2->Subject = 'Reset your password.';
 
-             $mail2->AddEmbeddedImage('../assets/campfire.svg', 'campfire');
+             $mail2->AddEmbeddedImage('../assets/email_image.png', 'campfire');
 
-             $mail2->Body    = '<p>Here is a link to change your password. <img src="cid:campfire"/></p>  <a href="fridaycamp.000webhostapp.com/views/reclaim_editpassword.php?person=' . $row['id']  . ' ">Click this link.</a>';
+             $mail2->Body = "<div style='background: #ffd;  padding-top: 20px; border-radius: 25px; padding-bottom: 40px;'><img style='width: 150px; height: 150px; display: table; margin: 0 auto;' src='cid:campfire'/><p style='font-family: georgia;'>
+
+             <h1 style='font-family: georgia; color: black; display: table; margin: 0 auto; margin-top: 30px;'>Hello " . $row['username'] .  ", </h1><br><br>
+
+             <span style='color: black; font-family: georgia; padding-left: 10px; padding-right: 10px; width: 100%; max-width: 400px; display: table; margin: 0 auto; padding-bottom: 40px;'>
+We are very sorry for the inconvenience of forgetting your password. Copy and paste the string below while completing the password reset form. <br><br><b> " . $_SESSION['random_string'] . "</b>
+
+             <br><br>
+
+       If you have any questions, you can email me at atsunewjoint@gmail.com <br><br>
+
+       Thanks, <br><br>
+
+       Atsu Davoh, Founder. <br><br></span>
+       
+       </p></div>";
+             
+
+
+             
 
              $mail2->isHTML(true); 
              
@@ -76,9 +126,13 @@ if (isset($_POST['submit']))  {
      
              $mail2->ClearAddresses();
              
-             alert_note_positive('A password recovery email has been sent to you.');
+             alert_note_positive('A password recovery email has been sent to you. The email includes a random string that you must input below to complete the form.');
+                     
+
+
+
      
-             redirect_to('../login');
+             redirect_to('../views/reclaim_editpassword.php');
          }
     
     

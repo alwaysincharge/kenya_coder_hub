@@ -46,8 +46,3 @@ $database->open_db();
 
 
 ?>
-
-
-
-
-

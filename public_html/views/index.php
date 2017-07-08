@@ -31,7 +31,7 @@ if(!isset($_GET['state'])) {$_GET['state'] = '';}
     
     
     
-<body onload="setInterval(replaceText1, 100)" onpageshow="setInterval(replaceText2, 100)">
+<body onload="setInterval(replaceText1, 1000)" onpageshow="setInterval(replaceText2, 1000)">
     
     
  <?php  include("nav.php"); ?>
@@ -93,7 +93,7 @@ if(!isset($_GET['state'])) {$_GET['state'] = '';}
      
      
      
-<div class="col-md-9">
+<div class="col-xs-9">
          
 
          
@@ -612,7 +612,7 @@ if(!isset($_GET['state'])) {$_GET['state'] = '';}
      
      
      
-     <div class="col-md-3" style="padding-bottom: 40px;">
+     <div class="col-xs-3" style="padding-bottom: 40px;">
          
               <!-- Side bar with menus to switch the view of the page. -->
          
@@ -668,4 +668,3 @@ if(!isset($_GET['state'])) {$_GET['state'] = '';}
     
     
 </html>
-

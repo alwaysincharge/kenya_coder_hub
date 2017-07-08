@@ -30,7 +30,3 @@ RewriteRule ^message/conversation/([0-9]+) views/messages.php?usersid=$1 [NC,L]
 
 RewriteRule ^noconvo views/messages.php?status=empty [NC,L]
 
-
-
-
-

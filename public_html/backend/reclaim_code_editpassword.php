@@ -9,7 +9,6 @@
 
  $password_input2 = '';
 
- $oldpassword = '';
 
 
 
@@ -35,32 +34,55 @@ if (isset($_POST['submit']))  {
 
     
  
- does_it_contain($_POST['password1'], $space, $equal_sign, $single_quote, 'Passwords cannot contain a space, equal sign or single quote.', 'reclaim_editpassword.php');
+ does_it_contain($_POST['password1'], $space, $equal_sign, $single_quote, 'Passwords cannot contain a space, equal sign or single quote.', '../views/reclaim_editpassword.php');
     
- does_it_contain($_POST['password2'], $space, $equal_sign, $single_quote, 'Passwords cannot contain a space, equal sign or single quote.', 'reclaim_editpassword.php');
+ does_it_contain($_POST['password2'], $space, $equal_sign, $single_quote, 'Passwords cannot contain a space, equal sign or single quote.', '../views/reclaim_editpassword.php');
     
  
 
- check_emptiness($_POST['password1'], 'reclaim_editpassword.php', 'All fields have to be filled. Please try again.');
+ check_emptiness($_POST['password1'], '../views/reclaim_editpassword.php', 'All fields have to be filled. Please try again.');
     
- check_emptiness($_POST['password2'], 'reclaim_editpassword.php', 'All fields have to be filled. Please try again.');
+ check_emptiness($_POST['password2'], '../views/reclaim_editpassword.php', 'All fields have to be filled. Please try again.');
     
     
     
- check_lenght($_POST['password1'], 7, 30, 'The password cannot be smaller than 7 characters or bigger than 30.', 'reclaim_editpassword.php'); 
+ check_lenght($_POST['password1'], 7, 30, 'The password cannot be smaller than 7 characters or bigger than 30.', '../views/reclaim_editpassword.php'); 
     
- check_lenght($_POST['password2'], 7, 30, 'The password cannot be smaller than 7 characters or bigger than 30.', 'reclaim_editpassword.php');
+ check_lenght($_POST['password2'], 7, 30, 'The password cannot be smaller than 7 characters or bigger than 30.', '../views/reclaim_editpassword.php');
     
  
      
- are_both_passwords_equal('reclaim_editpassword.php', $_POST['password1'], $_POST['password2']);
+ are_both_passwords_equal('../views/reclaim_editpassword.php', $_POST['password1'], $_POST['password2']);
     
     
- $user->edit_password($password_db_input, $_POST['person']);
+    
+    
+    
+ if ($_SESSION['random_string'] == $_POST['randomstring']) {
+    
+    
+ $user->edit_password($password_db_input, $_SESSION['password_user']);
              
  alert_note_positive('Your password has been successfully changed. Login below.');
      
+ $_SESSION['random_string'] = null;
+     
  redirect_to('../login');
+     
+ } else {
+     
+     
+ alert_note("The string you entered is wrong. Check your email for the correct one. Or fill up the 'forget password' form again <a style='color: black;' href='../login'>here</a>." );
+     
+ redirect_to('../views/reclaim_editpassword.php');  
+     
+ }
+    
+    
+    
+    
+    
+    
              
     
  }

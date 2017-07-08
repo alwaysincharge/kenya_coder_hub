@@ -40,7 +40,7 @@
     
     
     
-  <div class="col-md-12" style="display: table; margin: 0 auto;">
+  <div class="col-xs-12" style="display: table; margin: 0 auto;">
       
   <p class="home-head">Your saved posts.</p>
       

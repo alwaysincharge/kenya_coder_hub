@@ -150,9 +150,21 @@ if (isset($_POST['submit']))  {
 
        $mail->Subject = 'Thanks for signing up.';
 
-       $mail->AddEmbeddedImage('campfire.svg', 'campfire');
+       $mail->AddEmbeddedImage('../assets/email_image.png', 'campfire');
 
-       $mail->Body = '<p>Thanks for signing up. <img src="cid:campfire"/></p>';
+       $mail->Body = "<div style='background: #ffd;  padding-top: 20px; border-radius: 25px; padding-bottom: 40px;'><img style='width: 150px; height: 150px; display: table; margin: 0 auto;' src='cid:campfire'/><p style='font-family: georgia;'>
+
+       <h1 style='font-family: georgia; display: table; margin: 0 auto; margin-top: 30px;'>Hello " . $_POST['username'] .  ", </h1><br><br>
+
+       <span style='color: black; font-family: georgia; padding-left: 10px; padding-right: 10px; width: 100%; max-width: 400px; display: table; margin: 0 auto; padding-bottom: 40px;'>Thanks for joining Friday Camp. We are the very first hub & directory for programmers here in Kenya. You can create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here. It's as simple as that. <br><br>
+
+       If you have any questions, you can email me at atsunewjoint@gmail.com <br><br>
+
+       Thanks, <br><br>
+
+       Atsu Davoh, Founder. <br><br></span>
+       
+       </p></div>";
 
        $mail->isHTML(true);
      
@@ -160,7 +172,7 @@ if (isset($_POST['submit']))  {
      
        $mail->ClearAddresses();
      
-       alert_note_positive('Thanks for joining Friday Camp. A welcome email has been sent to you.');
+       alert_note_positive("Thanks for joining Friday Camp. A welcome email has been sent to you at <span style='color: black;'>" . $_POST['email']  .  "</span>. If that is not your correct email, change it <a href='". $_SESSION['url_placeholder'] .   "views/editemail.php" . "' style='color: blue; text-decoration: underline;'>here</a>. We want your real email so we can successfully communicate with you in the future. Thanks. ");
      
        redirect_to('../home');
      

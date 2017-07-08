@@ -53,7 +53,7 @@
     
     
     
-  <div class="col-md-4" style="display: table; margin: 0 auto;">
+  <div class="col-xs-4" style="display: table; margin: 0 auto;">
       
   <p class="home-head">Your posts.</p>
       
@@ -162,7 +162,7 @@
     
     
     
-  <div class="col-md-4" style="max-width: 420px;">
+  <div class="col-xs-4" style="max-width: 420px;">
   <p class="home-head">Your comments.</p>
       
   
@@ -241,7 +241,7 @@
     
     
     
-  <div class="col-md-4" style="max-width: 420px;">
+  <div class="col-xs-4" style="max-width: 420px;">
   <p class="home-head">Your replies.</p>
       
       

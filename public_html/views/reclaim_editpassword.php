@@ -73,9 +73,7 @@
                 
             <input type="password" class="pass-style" name="password1" placeholder="new password">
                 
-            <input type="password" class="pass-style" name="oldpassword" placeholder="old password">
-                
-            <input type="hidden" class="pass-style" value="<?php echo $_GET['person']; ?>" name="person" placeholder="person">    
+            <input type="password" class="pass-style" name="randomstring" placeholder="random string">  
                                        
             <button name="submit" class="btn" style="font-family: georgia;">Submit</button>
                     

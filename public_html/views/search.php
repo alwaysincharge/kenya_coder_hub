@@ -45,7 +45,7 @@
                     
                            while($row = $search_users_result->fetch_assoc()) { ?>
     
-                           <div class="col-md-4" style=" min-height: 400px; border-radius: 2px; margin-top: 20px; margin-bottom: -30px;">
+                           <div class="col-xs-4" style=" min-height: 400px; border-radius: 2px; margin-top: 20px; margin-bottom: -30px;">
                            
                            <div style="width: 200px; display: table; margin: 0 auto; border-bottom: 2px solid #ddd; padding-bottom: 20px;">
                            

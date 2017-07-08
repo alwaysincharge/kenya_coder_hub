@@ -1,6 +1,4 @@
-
-
-  <script>
+<script>
       
       // Jquery slide down.
       
@@ -33,7 +31,7 @@
       function replaceText1() {
         var target = document.getElementById("main1");
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/fridaycamp/public_html/views/ajax_message.php', true);
+        xhr.open('GET', '/views/ajax_message.php', true);
         xhr.onreadystatechange = function () {
           console.log('readyState: ' + xhr.readyState);
           if(xhr.readyState == 2) {
@@ -58,7 +56,7 @@
       function replaceText2() {
         var target = document.getElementById("main2");
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', '/fridaycamp/public_html/views/ajax_post.php', true);
+        xhr.open('GET', '/views/ajax_post.php', true);
         xhr.onreadystatechange = function () {
           console.log('readyState: ' + xhr.readyState);
           if(xhr.readyState == 2) {
@@ -72,9 +70,4 @@
       }
 
 
-    </script> 
-
-
-
-
-
+    </script>
