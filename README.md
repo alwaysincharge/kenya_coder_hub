@@ -1,6 +1,6 @@
-# Friday Camp - A hub for Kenyan programmers (Written from scratch in PHP 7).
+# A hub for Kenyan programmers (Written from scratch in PHP 7).
 
-With Friday Camp, you can create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.
+You can create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.
 
 All non-API code was written from scratch.
 
