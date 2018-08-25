@@ -2,7 +2,7 @@
 
 With Friday Camp, you can create, display and update your resume, find jobs, find a co-founder, message your hero, meet other techies, all here.
 
-All non-API code was written from scratch. [Friday Camp website.](http://fridaycamp.com/home)
+All non-API code was written from scratch.
 
 
 
@@ -25,12 +25,6 @@ All non-API code was written from scratch. [Friday Camp website.](http://fridayc
 8. Change profile pictures.
 
 9. Comment on posts and reply on comments.
-
-
-
-## Homepage.
-
-Visit the hosted site at [Friday Camp](http://fridaycamp.com/home).
 
 
 
